@@ -1,0 +1,4 @@
+dist/
+.parsel-cache/
+node_modules
+build
