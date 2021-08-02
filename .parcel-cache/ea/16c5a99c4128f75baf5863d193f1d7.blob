@@ -1,0 +1,6 @@
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+var _stylesCss = require("./css/styles.css");
+var _stylesCssDefault = parcelHelpers.interopDefault(_stylesCss);
+var _newCard = require("./components/NewCard/NewCard");
+const newCard = new _newCard.NewCard();
+newCard.render();

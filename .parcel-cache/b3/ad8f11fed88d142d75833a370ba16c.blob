@@ -1,0 +1,14 @@
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "NewCard", ()=>NewCard
+);
+var _newCardCss = require("./NewCard.css");
+var _newCardCssDefault = parcelHelpers.interopDefault(_newCardCss);
+var _newCardTemplate = require("./NewCardTemplate");
+function NewCard() {
+    this.component = _newCardTemplate.NewCardTemplate.content.querySelector('div').cloneNode(true);
+    this.render = function() {
+        const body = document;
+        this.append(this.component);
+    };
+}
