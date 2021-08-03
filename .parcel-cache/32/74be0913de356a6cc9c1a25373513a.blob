@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>coolSoft</title>
-    <link rel="stylesheet" href="./src/fonts/icomoon/fonts/button/button_icon_style.css">
+    <link rel="stylesheet" href="6d2d3fc806e1293c3dd476bc153e127f">
   </head>
   <body>
     <header class="header">
@@ -23,7 +23,7 @@
       </div>
     </main>
 
-    <script src="/src/app.js"></script>
+    <script src="f5fd1042cb69733d50572c592c740ded"></script>
 
   </body>
 </html>

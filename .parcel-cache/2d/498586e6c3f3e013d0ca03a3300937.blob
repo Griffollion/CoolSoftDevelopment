@@ -1,0 +1,33 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('5982c20a3765cb35f9a651a638a13b36');
+  src:  url('70603b0f1384777f9a9b3de2ebd5eec5') format('embedded-opentype'),
+    url('8d77cc68d9e9ceae4dd6ca1b10bea6cc') format('truetype'),
+    url('c3b9be919438a3f2b9177a0be0882d29') format('woff'),
+    url('a8750d4ac99305f5b0ad52d70ed1e7ac') format('svg'),
+    url('eafaa67513f886e40397d55a5def4990') format('truetype'),
+    url('56caddc2a2d7321e9339dea14900a267') format('woff'),
+    url('b92fed3868cf1ed3f3334d71afb7313f') format('svg');
+
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="ic-"], [class*=" ic-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.ic-trello:before {
+  content: "\e900";
+}

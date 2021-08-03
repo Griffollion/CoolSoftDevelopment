@@ -1,0 +1,71 @@
+@font-face {
+    font-family: 'icomoon';
+    src:  url('58a238822fc472edb5ec8590e758b659');
+    src:  url('b3033247113fe0e65c0e00c201c8fc92') format('embedded-opentype'),
+      url('05a379082e46f9f021c24d7a6939e286') format('truetype'),
+      url('9abb39ca9ccaa7a24aaec066e2efb4fe') format('woff'),
+      url('3bcbef377adfa6059d6537244022ed52') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+  }
+  
+  [class^="icn__btn"], [class*=" icn__btn"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    margin-right: 10px;
+  
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  .icn__btneye:before {
+    content: "\e901";
+  }
+  
+  .icn__btnclock:before {
+    content: "\e94e";
+  }
+  
+  .icn__btnattachment:before {
+    content: "\e9cd";
+  }
+  
+  .icn__btnarrow-right2:before {
+    content: "\ea3c";
+  }
+  
+  .icn__btnplus:before {
+    content: "\e902";
+  }
+  
+  .icn__btninput-checked:before {
+    content: "\e904";
+  }
+  
+  .icn__btntag:before {
+    content: "\e906";
+  }
+  
+  .icn__btnvideo_label:before {
+    content: "\e907";
+  }
+  
+  .icn__btncontent_copy:before {
+    content: "\e908";
+  }
+  
+  .icn__btnaccess_time:before {
+    content: "\e909";
+  }
+  
+  .icn__btnuser:before {
+    content: "\e90b";
+  }
+  
