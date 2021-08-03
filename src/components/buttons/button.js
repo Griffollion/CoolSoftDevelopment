@@ -1,11 +1,11 @@
 import styles from './button.css'
 
-export function Button (node, text) {
+export function Button (text) {
   this.template = document.createElement('div')
   this.template.className = 'button'
   this.template.textContent = text
   this.render = function () {
-    const container = document.querySelector(node)
+    const container = document.body
     container.append(this.template)
     
   }
