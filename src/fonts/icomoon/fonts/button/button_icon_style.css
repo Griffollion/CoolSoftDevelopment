@@ -27,35 +27,46 @@
   
   .icn__btneye:before {
     content: "\e901";
+    margin-right: 10px;
   }
   .icn__btnclock:before {
     content: "\e94e";
+    margin-right: 10px;
   }
   .icn__btnattachment:before {
     content: "\e9cd";
+    margin-right: 10px;
   }
   .icn__btnarrow-right2:before {
     content: "\ea3c";
+    margin-right: 10px;
   }
   .icn__btnplus:before {
     content: "\e902";
+    margin-right: 10px;
   }
   .icn__btninput-checked:before {
     content: "\e904";
+    margin-right: 10px;
   }
   .icn__btntag:before {
     content: "\e906";
+    margin-right: 10px;
   }
   .icn__btnvideo_label:before {
     content: "\e907";
+    margin-right: 10px;
   }
   .icn__btncontent_copy:before {
     content: "\e908";
+    margin-right: 10px;
   }
   .icn__btnaccess_time:before {
     content: "\e909";
+    margin-right: 10px;
   }
   .icn__btnuser:before {
     content: "\e90b";
+    margin-right: 10px;
   }
   
