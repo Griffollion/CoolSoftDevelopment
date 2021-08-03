@@ -1,6 +1,3 @@
-.button__list {
-    display: block;
-}
 .button {
     display: flex;
     height: 32px;
@@ -13,9 +10,7 @@
     box-sizing: border-box;
     margin-top: 8px;
 }
-.button__title {
-     text-align: left;
-}
+
 .button:hover {
     background-color: rgb(199, 196, 196);
 }
