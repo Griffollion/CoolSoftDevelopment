@@ -5,11 +5,6 @@ import { NewCard } from './components/NewCard/NewCard'
 const newCard = new NewCard('.container-global')
 newCard.render()
 
-// function buttonCreator (icon, node, name) {
-//   const button = new Button(icon, node, name)
-//   button.render()
-// }
-// buttonCreator('icn__btnuser', '.user', 'Участники')
 const usersButton = new Button('icn__btnuser', '.user', 'Участники')
 usersButton.render()
 const dateButton = new Button('icn__btnaccess_time', '.data', 'Дата')
