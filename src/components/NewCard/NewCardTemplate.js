@@ -25,7 +25,7 @@ NewCardTemplate.innerHTML = `
                         <div class="card-info__container-term-wrapper">
                             <div class="card-info__container-term-input"><input type="checkbox"></div>
                             <div class="card-info__container-term-btn">
-                                <span class="container-term-btn__data">cрок исполнения</span>
+                                <span class="container-term-btn__data"></span>
                                 <span class="container-term-btn__status">статус</span>
                                 <span></span>
                             </div>
