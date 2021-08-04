@@ -1,6 +1,7 @@
 import styles from './css/styles.css'
 import { Button } from './components/buttons/button'
 import { NewCard } from './components/NewCard/NewCard'
+import { Data } from './components/Data/Data'
 
 const newCard = new NewCard('.container-global')
 newCard.render()
@@ -19,3 +20,6 @@ const showButton = new Button('', '.card-info__actions-btn', 'Показать �
 showButton.render()
 const changeButton = new Button('', '.card-info__description-btn', 'Изменить')
 changeButton.render()
+
+const inputData = new Data('.container-term-btn__data')
+inputData.render()

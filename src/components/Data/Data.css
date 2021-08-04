@@ -1,0 +1,8 @@
+.myDate{
+    cursor: pointer;
+    border: none;
+    outline: none;
+    width: 100%;
+    margin: 0;
+    background-color: rgba(9,30,66,.04)
+}
