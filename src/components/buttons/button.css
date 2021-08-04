@@ -14,3 +14,8 @@
 .button:hover {
     background-color: rgb(199, 196, 196);
 }
+
+.button__small {
+    width: 32px;
+    height: 32px;
+}

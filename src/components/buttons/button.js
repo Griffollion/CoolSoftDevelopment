@@ -7,7 +7,6 @@ export function Button (node, text) {
   this.render = function () {
     const container = document.querySelector(node)
     container.append(this.template)
-    
   }
   
   // this.template.onclick = function () {
