@@ -2,67 +2,76 @@
 @import url('../fonts/icomoon/style.css');
 
 html {
-  box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 *,
 *::before,
 *::after {
-  box-sizing: inherit;
+	box-sizing: inherit;
 }
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: 400;
-  font-size: 17px;
-  white-space: nowrap;
-  color: rgba(0, 0, 0, 1);
-  background: url(/src/img/sky-1.jpg) no-repeat;
-  background-size: cover;
+	white-space: nowrap;
+
+	color: rgba(0, 0, 0, 1);
+	background: url(/src/img/sky-1.jpg) no-repeat;
+	background-size: cover;
+
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 17px;
+	font-weight: 400;
 }
 
 .wrapper {
-  width: 1400px;
-  margin: 0 auto;
-  max-width: 100%;
-  padding: 0 10px 50px 10px;
+	width: 1400px;
+	max-width: 100%;
+	margin: 0 auto;
+	padding: 0 10px 50px 10px;
 }
 
 /* slyles header */
 .header {
-  padding: 20px;
-  display: flex;
-  justify-content:space-around;
-  align-items: center;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+
+	padding: 20px;
 }
 
 .logo {
-  display: inline-block;
+	display: inline-block;
 }
 
 .logo a {
-  font-size: 30px;
-  font-weight: 700;
-  color: gray;
-  text-decoration: none;
+	text-decoration: none;
+
+	color: gray;
+
+	font-size: 30px;
+	font-weight: 700;
 }
 
 .logo:hover a {
-  color: honeydew;
-  transition: color 0.3s ease;
+	transition: color 0.3s ease;
+
+	color: honeydew;
 }
 
-.icon-users{
-  background: gray;
-  font-weight: 600;
-  color: antiquewhite;
-  padding: 10px 30px;
-  border-radius: 15px;
+.icon-users {
+	padding: 10px 30px;
+
+	color: antiquewhite;
+	border-radius: 15px;
+	background: gray;
+
+	font-weight: 600;
 }
 
-.icon-users:hover{
-  cursor: pointer;
-  background: antiquewhite;
-  color: gray;
-  transition: color 0.3s ease, background 0.3s ease;
+.icon-users:hover {
+	cursor: pointer;
+	transition: color 0.3s ease, background 0.3s ease;
+
+	color: gray;
+	background: antiquewhite;
 }
