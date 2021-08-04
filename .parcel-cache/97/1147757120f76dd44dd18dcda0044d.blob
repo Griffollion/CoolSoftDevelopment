@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>coolSoft</title>
+    <link rel="stylesheet" href="3c7b63757348cefd8c9aca84784bcd3d">
+  </head>
+  <body>
+    <header class="header">
+      <div class="logo">
+        <a href="#">
+          <span class="ic-trello path1"></span>
+          <span>Trello</span>
+        </a>
+      </div>
+      <div class="icon-users">users</div>
+    </header>
+    <main class="main">
+      <div class="container-global">
+        <div class="container-cards"></div>
+      </div>
+    </main>
+
+    <script src="f5fd1042cb69733d50572c592c740ded"></script>
+
+  </body>
+</html>
