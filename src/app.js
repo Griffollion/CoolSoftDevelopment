@@ -3,7 +3,11 @@ import { Button } from './components/buttons/button'
 import { createCard } from './components/card/card'
 
 
-// const button = new Button('.container-global','название кнопки')
-// button.render()
-const card = new createCard ()
-card.render('.container-global')
+const cardToDo = new createCard ("todo")
+cardToDo.render('.container-cards')
+
+const cardInProgress = new createCard ("in progress")
+cardInProgress.render('.container-cards')
+
+const cardDone = new createCard ("done")
+cardDone.render('.container-cards')

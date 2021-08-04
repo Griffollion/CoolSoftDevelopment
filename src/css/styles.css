@@ -1,5 +1,5 @@
-@import url('./normolize.css');
-@import url('../fonts/icomoon/style.css');
+@import url("./normolize.css");
+@import url("../fonts/icomoon/style.css");
 
 html {
   box-sizing: border-box;
@@ -32,7 +32,7 @@ body {
 .header {
   padding: 20px;
   display: flex;
-  justify-content:space-around;
+  justify-content: space-around;
   align-items: center;
 }
 
@@ -52,7 +52,7 @@ body {
   transition: color 0.3s ease;
 }
 
-.icon-users{
+.icon-users {
   background: gray;
   font-weight: 600;
   color: antiquewhite;
@@ -60,9 +60,13 @@ body {
   border-radius: 15px;
 }
 
-.icon-users:hover{
+.icon-users:hover {
   cursor: pointer;
   background: antiquewhite;
   color: gray;
   transition: color 0.3s ease, background 0.3s ease;
+}
+
+.container-cards {
+  display: flex;
 }
