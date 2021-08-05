@@ -2,6 +2,20 @@ import styles from './css/styles.css'
 import { Button } from './components/buttons/button'
 import { NewCard } from './components/NewCard/NewCard'
 import { Data } from './components/Data/Data'
+import { createCard } from './components/card/card'
+
+const cardToDo = new createCard ("todo")
+cardToDo.render('.container-cards')
+
+const cardInProgress = new createCard ("in progress")
+cardInProgress.render('.container-cards')
+
+const cardDone = new createCard ("done")
+cardDone.render('.container-cards')
+
+const cardButton = new Button('', '.card__button', '+ Добавить карточку')
+cardButton.render()
+
 
 const newCard = new NewCard('.container-global')
 newCard.render()
@@ -23,3 +37,19 @@ changeButton.render()
 
 const inputData = new Data('.container-term-btn__data')
 inputData.render()
+
+// cardButton.addEventListener('click', () => {
+//     const input = document.createElement('div')
+//     input.innerHTML=`
+//     <input type="text" name="card-task" class="card_task" />
+//     `
+//     let container = document.querySelector('.card_list-tasks')
+//     return container.append(input)
+// })
+  
+
+
+
+
+
+

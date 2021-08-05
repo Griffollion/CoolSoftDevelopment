@@ -8,6 +8,7 @@ export function Button (icon, node, text) {
     const container = document.querySelector(node)
     container.append(this.template)
   }
-  // this.template.onclick = function () {
-  //  }
+//   this.template.onclick = function () {
+   
+//    }
 }
