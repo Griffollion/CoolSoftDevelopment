@@ -1,0 +1,139 @@
+.users-search__wraper{
+    position: relative;
+}
+.user-search {
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    background-color: gray;
+    width: 180px;
+    height: 250px;
+    position: absolute;
+    top: 50px;
+    right: -35px;
+    color: antiquewhite;
+    z-index: 3;
+}
+.user-search__header{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1ак;
+    grid-template-rows: 1fr;
+    grid-template-areas: 'none title exit';
+    border-bottom-style: solid;
+    border-width: 1px;
+    font-size: 15px;
+    margin-bottom: 5px;
+    grid-gap: 5px;
+    height: 20px;
+    
+
+}
+.user-search__header--title{
+    grid-area: title;
+    text-align: center;
+
+}
+.user-search__header--exit{
+    grid-area: exit;
+    text-align: end;
+    text-decoration: none;
+    color: antiquewhite;
+    
+}
+.user-search__header--exit:hover{
+    color: red;
+}
+.user-search__form{
+    font-size: 10px;
+    padding: 5px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+
+}
+input::placeholder{
+    color: red;
+    font-size: 10px;
+    background-color: ;
+    
+}
+.user-search__title2{
+    text-align: left;
+    font-size: 10px;
+    justify-content: left;
+    width: 180px;
+    margin-bottom: 10px;
+    margin-top: 5px;
+    padding-left: 5px;
+    
+}
+#app{
+    padding: 5px;
+    width: auto;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 170px;
+    width: 180px;
+}
+#app::-webkit-scrollbar{
+    display: none;
+}
+.user-search__form--user-list{
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 5px;
+    transition: 0s;
+    
+
+}
+.user-search__form--user-list:last-child{
+   
+    margin-bottom: 0;
+
+}
+.user-search__form--user-list:hover{
+    background-color: rgb(199, 196, 196);
+    color: gray;
+}
+.user-list__avatar{
+    width: 20px;
+    height: 20px;
+    border-style: solid;
+    border-color: black;
+    border-radius: 50px;
+    margin-right: 10px;
+
+}
+.user-list--ticker{
+    display: flex;
+    align-items: flex-start;
+    overflow-x: hidden;
+    float: left;
+    margin-top: 5px;
+}
+/* .user-list--ticker:hover div {
+    position: absolute;
+    transform: translateX(0);
+    transition: 0s;
+    white-space: nowrap; */
+    
+
+}
+
+/* .user-list--ticker:hover div {
+    transform: translateX(calc(100px - 100%));
+    transition: 3s;
+  } */
+.user-list__name{
+    text-align: left;
+    padding-top: 5px;
+    
+
+}
+.user-list__nickname{
+    margin-left: 3px;
+    padding-top: 5px;
+}
