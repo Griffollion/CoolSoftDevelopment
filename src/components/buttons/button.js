@@ -1,6 +1,6 @@
 import styles from './button.css'
 
-export function Button (icon, node, text) {
+export function Button (icon, node, text, doAction) {
   this.template = document.createElement('div')
   this.template.className = `button ${icon}`
   this.template.textContent = text
@@ -8,7 +8,7 @@ export function Button (icon, node, text) {
     const container = document.querySelector(node)
     container.append(this.template)
   }
-//   this.template.onclick = function () {
-   
-//    }
+  this.template.onclick = () => {
+    doAction()
+   }
 }

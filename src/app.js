@@ -1,4 +1,5 @@
 import styles from './css/styles.css'
+import { addTask} from './components/components'
 import { Button } from './components/buttons/button'
 import { NewCard } from './components/NewCard/NewCard'
 import { Data } from './components/Data/Data'
@@ -13,7 +14,7 @@ cardInProgress.render('.container-cards')
 const cardDone = new createCard ("done")
 cardDone.render('.container-cards')
 
-const cardButton = new Button('', '.card__button', '+ Добавить карточку')
+const cardButton = new Button('', '.card__button', '+ Добавить карточку', addTask)
 cardButton.render()
 
 
@@ -37,19 +38,3 @@ changeButton.render()
 
 const inputData = new Data('.container-term-btn__data')
 inputData.render()
-
-// cardButton.addEventListener('click', () => {
-//     const input = document.createElement('div')
-//     input.innerHTML=`
-//     <input type="text" name="card-task" class="card_task" />
-//     `
-//     let container = document.querySelector('.card_list-tasks')
-//     return container.append(input)
-// })
-  
-
-
-
-
-
-
