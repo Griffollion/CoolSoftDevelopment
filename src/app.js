@@ -54,18 +54,24 @@ inputData.render();
 
 
 
-let cal = 0;
-let textArea = document.querySelector(".textarea");
+if (!localStorage.getItem("cal")){
+    localStorage.setItem("cal", 0)
+} 
 
+let textArea = document.querySelector(".textarea");
 textArea.onclick = function () {
   let content = document.querySelector(".card_task");
   let node = document.createElement("div");
   content.addEventListener("change", () => {
     node.innerHTML = content.value
+    let cal = +localStorage.getItem("cal")
     localStorage.setItem(`task${cal}`, content.value);
-    content.remove();
     cal++
+    localStorage.setItem("cal",cal)
+    content.remove();
     addTask(node)
+   
+   
   
   });
 };
