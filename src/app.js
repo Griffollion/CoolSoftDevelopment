@@ -66,6 +66,7 @@ textArea.onclick = function () {
     let task = {
       title: content.value,
     };
+    
     localStorage.setItem(`numberTask${cal}`, JSON.stringify(task));
     cal++;
     localStorage.setItem("cal", cal);
