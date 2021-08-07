@@ -12,15 +12,15 @@ html {
 }
 
 body {
+	width: 1400px;
+	margin: 0 auto;
 	white-space: nowrap;
-
-	color: rgba(0, 0, 0, 1);
 	background: url(/src/img/sky-1.jpg) no-repeat;
 	background-size: cover;
-
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 17px;
 	font-weight: 400;
+	color: #172B4D;
 }
 
 .wrapper {
@@ -34,8 +34,7 @@ body {
 .header {
 	display: flex;
 	align-items: center;
-	justify-content: space-around;
-
+	justify-content: space-between;
 	padding: 20px;
 }
 
@@ -78,5 +77,6 @@ body {
 
 .container-cards {
   display: flex;
+  justify-content: center;
 }
 
