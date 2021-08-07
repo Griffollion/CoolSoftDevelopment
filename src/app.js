@@ -52,26 +52,24 @@ changeButton.render();
 const inputData = new Data(".container-term-btn__data");
 inputData.render();
 
-
-
-if (!localStorage.getItem("cal")){
-    localStorage.setItem("cal", 0)
-} 
+if (!localStorage.getItem("cal")) {
+  localStorage.setItem("cal", 0);
+}
 
 let textArea = document.querySelector(".textarea");
 textArea.onclick = function () {
   let content = document.querySelector(".card_task");
   let node = document.createElement("div");
   content.addEventListener("change", () => {
-    node.innerHTML = content.value
-    let cal = +localStorage.getItem("cal")
-    localStorage.setItem(`task${cal}`, content.value);
-    cal++
-    localStorage.setItem("cal",cal)
+    node.innerHTML = content.value;
+    let cal = +localStorage.getItem("cal");
+    let task = {
+      title: content.value,
+    };
+    localStorage.setItem(`numberTask${cal}`, JSON.stringify(task));
+    cal++;
+    localStorage.setItem("cal", cal);
     content.remove();
-    addTask(node)
-   
-   
-  
+    addTask(node);
   });
 };
