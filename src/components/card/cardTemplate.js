@@ -1,5 +1,4 @@
-
-export const CardTemplate = document.createElement('template')
+export const CardTemplate = document.createElement("template");
 
 CardTemplate.innerHTML = `
 <div class="card">
@@ -8,9 +7,9 @@ CardTemplate.innerHTML = `
 </div>
 <div class="card_list">
   <div class="card_list-tasks"></div>
-  
+  <div class="textarea"></div>
 </div>
   <div class="card__button">
   </div>
 </div>
-        `
+        `;
