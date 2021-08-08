@@ -5,8 +5,20 @@ export function addArea() {
   return container.append(input);
 }
 
-export function addTask(tag) {
-  tag.className = "task in_done";
+export function addTask(className, text) {
+  let node = document.createElement("div");
+  node.className = `task ${className}`;
+  node.innerHTML = text;
   let container = document.querySelector(".card_list-tasks");
-  return container.append(tag);
+  return container.append(node);
+}
+
+export function addTasksToCardsFromStorage() {
+  for (let key in localStorage) {
+    if (!localStorage.hasOwnProperty(key) || key == "cal") {
+      continue;
+    }
+    let task = JSON.parse(localStorage.getItem(key));
+    addTask(task.class, task.title);
+  }
 }

@@ -1,5 +1,5 @@
-import styles from "./card.css";
-import { CardTemplate } from "./cardTemplate";
+import styles from "./Card.css";
+import { CardTemplate } from "./CardTemplate";
 
 
 export function createCard(title) {
