@@ -16,13 +16,11 @@ export function addTask(className, text) {
   return container.append(node);
 }
 
-
-export function addTasksToCardsFromStorage() {
-  for (let key in localStorage) {
-    if (!localStorage.hasOwnProperty(key) || key == "cal") {
-      continue;
-    }
-    let task = JSON.parse(localStorage.getItem(key));
-    addTask(task.class, task.title);
-  }
+export function addTasksToCardsFromStorage(){
+  let tasksArr = JSON.parse(localStorage.getItem("tasksArray"))
+  if (tasksArr) {
+    tasksArr.forEach(element => {
+      addTask(element.class, element.title)
+    });
+  } 
 }

@@ -14,7 +14,6 @@ cardInProgress.render(".container-cards");
 const cardDone = new createCard("done");
 cardDone.render(".container-cards");
 
-addTasksToCardsFromStorage()
 
 const cardButton = new Button(
   "",
@@ -57,6 +56,12 @@ if (!localStorage.getItem("cal")) {
   localStorage.setItem("cal", 0);
 }
 
+let tasksArray = []
+if (localStorage.getItem("tasksArray")) {
+  tasksArray = JSON.parse(localStorage.getItem("tasksArray"))
+  addTasksToCardsFromStorage()
+}
+
 let textArea = document.querySelector(".textarea");
 textArea.onclick = function () {
   let content = document.querySelector(".card_task");
@@ -67,7 +72,8 @@ textArea.onclick = function () {
       class: "in_done",
       id: cal,
     };
-    localStorage.setItem(`numberTask${cal}`, JSON.stringify(task));
+    tasksArray.push(task)
+    localStorage.setItem("tasksArray", JSON.stringify(tasksArray));
     cal++;
     localStorage.setItem("cal", cal);
     content.remove();
