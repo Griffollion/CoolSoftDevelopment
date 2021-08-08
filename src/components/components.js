@@ -13,6 +13,7 @@ export function addTask(className, text) {
   return container.append(node);
 }
 
+
 export function addTasksToCardsFromStorage() {
   for (let key in localStorage) {
     if (!localStorage.hasOwnProperty(key) || key == "cal") {
