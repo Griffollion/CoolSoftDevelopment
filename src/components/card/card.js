@@ -2,6 +2,7 @@ import styles from "./Card.css";
 import { CardTemplate } from "./CardTemplate";
 
 
+
 export function createCard(title) {
   this.component = CardTemplate.content.querySelector("div").cloneNode(true);
   this.component.querySelector('.card__title-text').setAttribute("id", title)

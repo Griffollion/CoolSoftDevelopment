@@ -1,5 +1,6 @@
 export const CardTemplate = document.createElement("template");
 
+
 CardTemplate.innerHTML = `
 <div class="card">
 <div class="card__title">
