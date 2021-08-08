@@ -177,3 +177,8 @@ body {
 
 	list-style-type: none;
 }
+
+.new__card-header-close{
+	font-size: 20px;
+	cursor: pointer;
+}

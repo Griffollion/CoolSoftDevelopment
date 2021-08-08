@@ -3,14 +3,14 @@ NewCardTemplate.innerHTML = `
 <div class="new__card">
         <div class="new__card-header">
             <div class="new__card-header-right">
-                <div class="new__card-header-name"><span></span>Наименование новой карты</div>
+                <div class="new__card-header-name"></div>
                 <div class="new__card-header-ststus">колонка нахождения
                     <span class="new__card-header-ststus-span">статус</span>
                     <span class="icn__btneye" ></span>
                 </div>
             </div>
             <div class="new__card-header-left">
-                <div class="new__card-header-close"><span></span></div>
+                <div class="new__card-header-close"><span class="icn__btnplus" ></span></div>
             </div>
         </div>
         <div class="new__card-wrapper">
@@ -26,7 +26,6 @@ NewCardTemplate.innerHTML = `
                             <div class="card-info__container-term-input"><input type="checkbox"></div>
                             <div class="card-info__container-term-btn">
                                 <span class="container-term-btn__data"></span>
-                                <span class="container-term-btn__status">статус</span>
                                 <span></span>
                             </div>
                         </div>
@@ -69,6 +68,7 @@ NewCardTemplate.innerHTML = `
                         <li class="card-create__button moving"></li>
                         <li class="card-create__button copying"></li>
                         <li class="card-create__button archiving"></li>
+                        <li class="card-create__button cancel"></li>
                     </ul>
                 </div>
             </div>
