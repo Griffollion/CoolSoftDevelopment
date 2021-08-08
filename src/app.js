@@ -1,10 +1,9 @@
 import styles from "./css/styles.css";
-import { addArea } from "./components/components";
-import { addTask } from "./components/components";
-import { Button } from "./components/buttons/button";
+import { addArea, addTask, addTasksToCardsFromStorage } from "./components/components";
+import { Button } from "./components/Buttons/Button";
 import { NewCard } from "./components/NewCard/NewCard";
 import { Data } from "./components/Data/Data";
-import { createCard } from "./components/card/card";
+import { createCard } from "./components/Card/Card";
 
 const cardToDo = new createCard("todo");
 cardToDo.render(".container-cards");
@@ -14,6 +13,8 @@ cardInProgress.render(".container-cards");
 
 const cardDone = new createCard("done");
 cardDone.render(".container-cards");
+
+addTasksToCardsFromStorage()
 
 const cardButton = new Button(
   "",
@@ -59,18 +60,17 @@ if (!localStorage.getItem("cal")) {
 let textArea = document.querySelector(".textarea");
 textArea.onclick = function () {
   let content = document.querySelector(".card_task");
-  let node = document.createElement("div");
   content.addEventListener("change", () => {
-    node.innerHTML = content.value;
     let cal = +localStorage.getItem("cal");
     let task = {
       title: content.value,
+      class: "in_done",
+      id: cal,
     };
-    
     localStorage.setItem(`numberTask${cal}`, JSON.stringify(task));
     cal++;
     localStorage.setItem("cal", cal);
     content.remove();
-    addTask(node);
+    addTask(task.class, content.value);
   });
 };
