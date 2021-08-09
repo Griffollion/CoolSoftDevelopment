@@ -1,7 +1,9 @@
 .card {
 	overflow: hidden;
+
 	width: 275px;
 	margin: 10px;
+
 	border-radius: 5px;
 	background-color: rgb(214, 212, 212);
 }
@@ -11,33 +13,25 @@
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+
 	height: 40px;
 }
 
 .card__title-text {
 	padding: 10px 8px;
+
 	text-align: left;
-	color: #172b4d;
-	font-size: 14px;
-	font-weight: 400;
+
+	color: #172B4D;
+
+	font-size: 20px;
+	font-weight: 500;
 }
 
 .card__list {
 	width: 32px;
 	height: 32px;
 	margin-right: 5px;
-	text-align: end;
-	overflow-wrap: break-word;
-	overflow: hidden;
-	padding: 0 4px;
-	
 
-}
-.card_list-tasks{
-	padding: 0 4px;
-	overflow-wrap: break-word;
-	overflow: hidden;
-}
-.card__button {
-	color: #5e6c84;
+	text-align: end;
 }
