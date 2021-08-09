@@ -10,7 +10,6 @@
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-
 	height: 40px;
 }
 
@@ -27,6 +26,16 @@
 	height: 32px;
 	margin-right: 5px;
 	text-align: end;
+	overflow-wrap: break-word;
+	overflow: hidden;
+	padding: 0 4px;
+	
+
+}
+.card_list-tasks{
+	padding: 0 4px;
+	overflow-wrap: break-word;
+	overflow: hidden;
 }
 .card__button {
 	color: #5e6c84;

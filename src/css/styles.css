@@ -80,3 +80,17 @@ body {
   justify-content: center;
 }
 
+.textarea {
+	margin: 0 4px;
+	overflow-wrap: break-word;
+	overflow: hidden;
+	
+}
+textarea {
+	resize: auto;
+	width: 267px;
+	padding: 0 4px;
+	border-radius: 5px;
+	overflow-wrap: break-word;
+	overflow: hidden;
+}
