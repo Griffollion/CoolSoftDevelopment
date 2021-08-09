@@ -1,10 +1,16 @@
 export function addArea() {
   if (document.querySelector(".card_task")) {
   } else {
+    let taskText = document.getElementsByClassName('task')
+    if (taskText.length >= 5) {
+      alert('У вас есть уже 5 задач')
+      return
+    } else {
     const input = document.createElement("div");
     input.innerHTML = `<textarea class="card_task"></textarea>`;
     let container = document.querySelector(".textarea");
     return container.append(input);
+  }
   }
 }
 

@@ -2,6 +2,7 @@ import styles from "./css/styles.css";
 import { addTask, addTasksToCardsFromStorage } from "./initUserInterface";
 import { loadCards, loadNewCard } from "./components/components";
 
+//localStorage.clear()
 loadCards();
 
 if (!localStorage.getItem("cal")) {
@@ -25,12 +26,16 @@ textArea.onclick = function () {
       id: cal,
     };
     tasksArray.push(task);
+ 
     localStorage.setItem("tasksArray", JSON.stringify(tasksArray));
     cal++;
     localStorage.setItem("cal", cal);
     content.remove();
     addTask(task.class, content.value);
+    
   });
 };
+
+
 
 // loadNewCard()

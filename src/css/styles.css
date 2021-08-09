@@ -36,6 +36,8 @@ body {
 	align-items: center;
 	justify-content: space-between;
 	padding: 20px;
+	font-size: 30px;
+	font-weight: 600;
 }
 
 .logo {
@@ -44,35 +46,27 @@ body {
 
 .logo a {
 	text-decoration: none;
-
 	color: gray;
-
-	font-size: 30px;
-	font-weight: 700;
+	
 }
 
 .logo:hover a {
 	transition: color 0.3s ease;
-
 	color: honeydew;
 }
 
 .icon-users {
 	padding: 10px 30px;
-
-	color: antiquewhite;
-	border-radius: 15px;
-	background: gray;
-
+	color: gray;
+	font-size: 26px;
 	font-weight: 600;
 }
 
 .icon-users:hover {
 	cursor: pointer;
-	transition: color 0.3s ease, background 0.3s ease;
-
-	color: gray;
-	background: antiquewhite;
+	transition: color 0.3s ease;
+	color: honeydew;
+	
 }
 
 .container-cards {
@@ -81,16 +75,40 @@ body {
 }
 
 .textarea {
-	margin: 0 4px;
+	margin: 0 10px;
 	overflow-wrap: break-word;
 	overflow: hidden;
-	
+	word-break: break-all;
+	box-shadow: 0 0 5px rgb(100, 100, 100);	
 }
+
 textarea {
 	resize: auto;
-	width: 267px;
-	padding: 0 4px;
+	width: 255px;
+	padding: 0 5px;
 	border-radius: 5px;
 	overflow-wrap: break-word;
 	overflow: hidden;
+	word-break: break-all;
+	box-shadow: 0 0 5px rgb(100, 100, 100);
+	
+}
+.task {
+	
+	height: 100%;
+	min-height: 30px;
+	background-color: rgb(233, 233, 233);
+	border-radius: 5px;
+	overflow-wrap: break-word;
+	overflow: hidden;
+	word-break: break-all;
+	margin-bottom: 10px;
+	padding: 0 5px;
+	box-shadow: 0 0 5px rgb(100, 100, 100);
+	
+}
+.task:hover {
+	background-color: rgb(204, 202, 202);
+	cursor: pointer;
+	box-shadow: 0 0 5px rgb(100, 100, 100)
 }

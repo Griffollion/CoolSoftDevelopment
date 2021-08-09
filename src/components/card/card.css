@@ -1,6 +1,7 @@
 .card {
 	overflow: hidden;
 	width: 275px;
+	max-height: 350px;
 	margin: 10px;
 	border-radius: 5px;
 	background-color: rgb(214, 212, 212);
@@ -23,20 +24,21 @@
 }
 
 .card__list {
-	width: 32px;
-	height: 32px;
+	width: 255px;
 	margin-right: 5px;
 	text-align: end;
 	overflow-wrap: break-word;
 	overflow: hidden;
-	padding: 0 4px;
+	padding: 0 10px;
+	word-break: break-all;
 	
 
 }
 .card_list-tasks{
-	padding: 0 4px;
+	padding: 0 10px;
 	overflow-wrap: break-word;
 	overflow: hidden;
+	word-break: break-all;
 }
 .card__button {
 	color: #5e6c84;
