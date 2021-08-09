@@ -1,5 +1,4 @@
-import styles from './Button.css'
-
+import styles from './button.css'
 
 export function Button (icon, node, text, doAction) {
   this.template = document.createElement('div')
