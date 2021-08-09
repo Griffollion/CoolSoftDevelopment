@@ -23,8 +23,8 @@ export function loadCards() {
   cardButton.render();
 }
 
-export function loadNewCard() {
-  const newCard = new NewCard(".container-global");
+export function loadNewCard(obj) {
+  const newCard = new NewCard(".container-global", obj);
   newCard.render();
 
   const usersButton = new Button("icn__btnuser", ".user", "Участники");

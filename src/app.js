@@ -1,5 +1,9 @@
 import styles from "./css/styles.css";
-import { addTask, addTasksToCardsFromStorage } from "./initUserInterface";
+import {
+  addTask,
+  addTasksToCardsFromStorage,
+  loadCurrentTask,
+} from "./initUserInterface";
 import { loadCards, loadNewCard } from "./components/components";
 
 loadCards();
@@ -26,11 +30,13 @@ textArea.onclick = function () {
     };
     tasksArray.push(task);
     localStorage.setItem("tasksArray", JSON.stringify(tasksArray));
+    content.remove();
+    addTask(task.class, content.value, cal);
     cal++;
     localStorage.setItem("cal", cal);
-    content.remove();
-    addTask(task.class, content.value);
   });
 };
 
-// loadNewCard()
+loadCurrentTask()
+
+
