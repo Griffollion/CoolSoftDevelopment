@@ -45,41 +45,15 @@ export function findTaskIntoStorage(currentId){
   return currentTask[0]
 }
 
-export function saveDataValue (item, currentTask) {
+export function saveDataValue (item, currentTask, key) {
   const input = document.querySelector(item)
   input.addEventListener('change', () => {
     const getKey = JSON.parse(localStorage.getItem('tasksArray'))
     getKey.forEach(ele => {
-      if (ele.id === currentTask) {
-        ele.data = item.value
+      if (ele.id === currentTask.id) {
+        ele[key] = input.value
       }
     })
     localStorage.setItem('tasksArray', JSON.stringify(getKey))
   })
 }
-
-// export function saveDescriptionValue (box, item) {
-//   const container = document.querySelector(box)
-//   container.addEventListener('change', () => {
-//     const getKey = JSON.parse(localStorage.getItem('tasksArray'))
-//     getKey.forEach(ele => {
-//       getKey[ele.id].description = item.value
-//       console.log(getKey)
-//       const getKeystr = JSON.stringify(getKey)
-//       localStorage.setItem('tasksArray', getKeystr)
-//     })
-//   })
-// }
-
-// export function saveCommentValue (box, item) {
-//   const container = document.querySelector(box)
-//   container.addEventListener('change', () => {
-//     const getKey = JSON.parse(localStorage.getItem('tasksArray'))
-//     getKey.forEach(ele => {
-//       getKey[ele.id].comment = item.value
-//       console.log(getKey)
-//       const getKeystr = JSON.stringify(getKey)
-//       localStorage.setItem('tasksArray', getKeystr)
-//     })
-//   })
-// }
