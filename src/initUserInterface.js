@@ -44,3 +44,42 @@ export function findTaskIntoStorage(currentId){
   let currentTask = array.filter(el => el.id == currentId)
   return currentTask[0]
 }
+
+export function saveDataValue (box, item) {
+  const container = document.querySelector(box)
+  container.addEventListener('change', () => {
+    const getKey = JSON.parse(localStorage.getItem('tasksArray'))
+    getKey.forEach(ele => {
+      getKey[ele.id].data = item.value
+      console.log(getKey)
+      const getKeystr = JSON.stringify(getKey)
+      localStorage.setItem('tasksArray', getKeystr)
+    })
+  })
+}
+
+export function saveDescriptionValue (box, item) {
+  const container = document.querySelector(box)
+  container.addEventListener('change', () => {
+    const getKey = JSON.parse(localStorage.getItem('tasksArray'))
+    getKey.forEach(ele => {
+      getKey[ele.id].description = item.value
+      console.log(getKey)
+      const getKeystr = JSON.stringify(getKey)
+      localStorage.setItem('tasksArray', getKeystr)
+    })
+  })
+}
+
+export function saveCommentValue (box, item) {
+  const container = document.querySelector(box)
+  container.addEventListener('change', () => {
+    const getKey = JSON.parse(localStorage.getItem('tasksArray'))
+    getKey.forEach(ele => {
+      getKey[ele.id].comment = item.value
+      console.log(getKey)
+      const getKeystr = JSON.stringify(getKey)
+      localStorage.setItem('tasksArray', getKeystr)
+    })
+  })
+}

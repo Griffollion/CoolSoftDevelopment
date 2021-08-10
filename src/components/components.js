@@ -54,6 +54,12 @@ export function loadNewCard(obj) {
   );
   delButton.render();
 
+  const cancelButton = new Button(
+    "", 
+    ".save", 
+    "Сохранить");
+  cancelButton.render();
+
   const showButton = new Button(
     "",
     ".card-info__actions-btn",

@@ -6,11 +6,11 @@ NewCardTemplate.innerHTML = `
                 <div class="new__card-header-name"><span></span>Наименование новой карты</div>
                 <div class="new__card-header-ststus">колонка нахождения
                     <span class="new__card-header-ststus-span">статус</span>
-                    <span class="icn__btneye" ></span>
+                    <span class="icn__btneye"></span>
                 </div>
             </div>
             <div class="new__card-header-left">
-                <div class="new__card-header-close"><span></span></div>
+            <div class="new__card-header-close"><span class="icn__btnplus"></span></div>
             </div>
         </div>
         <div class="new__card-wrapper">
@@ -55,6 +55,9 @@ NewCardTemplate.innerHTML = `
                     <div class="card-info__actions-text">
                         <textarea class="textarea-actions" placeholder="Напишите коментарий..."></textarea>
                     </div>
+                    <ul class="card-create">
+                    <li class="card-create__button save"></li>
+                </ul>
                 </div>
             </div>
             <div class="new__card-create">

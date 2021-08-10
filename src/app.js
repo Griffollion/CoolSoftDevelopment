@@ -5,6 +5,7 @@ import {
   loadCurrentTask,
 } from "./initUserInterface";
 import { loadCards, loadNewCard } from "./components/components";
+import { saveCommentValue, saveDataValue, saveDescriptionValue } from './initUserInterface'
 
 loadCards();
 
@@ -39,4 +40,9 @@ textArea.onclick = function () {
 
 loadCurrentTask()
 
-
+const inputData = document.querySelector('.container-term-btn__data')
+const inputDescription = document.querySelector('.textarea-description')
+const inputComment = document.querySelector('.textarea-actions')
+saveDataValue('.container-term-btn__data', inputData)
+saveDescriptionValue('.textarea-description', inputDescription)
+saveCommentValue('.textarea-actions', inputComment)
