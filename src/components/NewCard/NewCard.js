@@ -1,4 +1,4 @@
-import styles from './NewCard.css'
+import styles from "./NewCard.css"
 import { NewCardTemplate } from './NewCardTemplate'
 
 export function NewCard (node, obj) {

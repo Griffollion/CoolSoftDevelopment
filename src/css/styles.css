@@ -14,17 +14,20 @@ html {
 body {
 	width: 1400px;
 	margin: 0 auto;
+
 	white-space: nowrap;
+
+	color: #172B4D;
 	background: url(/src/img/sky-1.jpg) no-repeat;
 	background-size: cover;
+
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 17px;
 	font-weight: 400;
-	color: #172B4D;
 }
 
 .wrapper {
-	width: 1400px;
+	width: 1200px;
 	max-width: 100%;
 	margin: 0 auto;
 	padding: 0 10px 50px 10px;
@@ -38,6 +41,7 @@ body {
 	justify-content: space-around;
 
 	padding: 20px;
+
 	font-size: 30px;
 	font-weight: 600;
 }
@@ -48,18 +52,21 @@ body {
 
 .logo a {
 	text-decoration: none;
-	color: gray;
 
+	color: gray;
 }
 
 .logo:hover a {
 	transition: color 0.3s ease;
+
 	color: honeydew;
 }
 
 .icon-users {
 	padding: 10px 30px;
+
 	color: gray;
+
 	font-size: 26px;
 	font-weight: 600;
 }
@@ -67,50 +74,58 @@ body {
 .icon-users:hover {
 	cursor: pointer;
 	transition: color 0.3s ease;
-	color: honeydew;
 
+	color: honeydew;
 }
 
 .container-cards {
 	display: flex;
-	justify-content: center;
 }
 
 .textarea {
-	margin: 0 10px;
-	overflow-wrap: break-word;
 	overflow: hidden;
+
+	margin: 0 10px;
+
 	word-break: break-all;
+
 	box-shadow: 0 0 5px rgb(100, 100, 100);
+	overflow-wrap: break-word;
 }
 
 textarea {
-	resize: auto;
+	overflow: hidden;
+
 	width: 255px;
 	padding: 0 5px;
-	border-radius: 5px;
-	overflow-wrap: break-word;
-	overflow: hidden;
-	word-break: break-all;
-	box-shadow: 0 0 5px rgb(100, 100, 100);
 
+	resize: auto;
+	word-break: break-all;
+
+	border-radius: 5px;
+	box-shadow: 0 0 5px rgb(100, 100, 100);
+	overflow-wrap: break-word;
 }
+
 .task {
+	overflow: hidden;
 
 	height: 100%;
 	min-height: 30px;
-	background-color: rgb(233, 233, 233);
-	border-radius: 5px;
-	overflow-wrap: break-word;
-	overflow: hidden;
-	word-break: break-all;
 	margin-bottom: 10px;
 	padding: 0 5px;
-	box-shadow: 0 0 5px rgb(100, 100, 100);
 
+	word-break: break-all;
+
+	border-radius: 5px;
+	background-color: rgb(233, 233, 233);
+	box-shadow: 0 0 5px rgb(100, 100, 100);
+	overflow-wrap: break-word;
 }
+
 .task:hover {
-	background-color: rgb(204, 202, 202);
 	cursor: pointer;
-	box-shadow: 0 0 5px rgb(100, 100, 100)
+
+	background-color: rgb(204, 202, 202);
+	box-shadow: 0 0 5px rgb(100, 100, 100);
 }

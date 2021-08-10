@@ -1,57 +1,56 @@
 
-	color: #172B4D;
-
-	font-size: 14px;
-	font-weight: 400;
-	line-height: 20px;
-}
-
-
 .new__card {
 	position: relative;
+
 	overflow: hidden;
+
 	width: 768px;
 	min-height: 600px;
 	margin: 80px auto;
-	margin-top: -130px;
+	margin-top: -200px;
 	padding: 20px;
+
 	border-radius: 2px;
 
 	background: #F4F5F7;
 	box-shadow: 0 0 7px 1000px rgba(0, 0, 0, 0.3);
-
 }
 
 .new__card-header {
 	display: flex;
 	justify-content: space-between;
+
 	margin-bottom: 30px;
 }
 
 .new__card-header-name {
-	font-size: 18px;
-	line-height: 20px;
-	font-weight: 600;
 	margin-bottom: 10px;
+
+	font-size: 18px;
+	font-weight: 600;
+	line-height: 20px;
 }
 
 .new__card-header-ststus {
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
-	color: #5e6c84;
-	font-size: 14px;
 
+	color: #5E6C84;
+
+	font-size: 14px;
 }
 
 .new__card-header-ststus-span {
 	margin: 0 10px 0 5px;
+
 	cursor: pointer;
+
 	border-bottom: 1px solid;
 }
 
 .new__card-header-ststus-span:hover {
-	color: #172b4d;
+	color: #172B4D;
 }
 
 .new__card-wrapper {
@@ -77,7 +76,9 @@
 .card-info__container-users-title,
 .card-info__container-term-title {
 	margin-bottom: 5px;
-	color: #5e6c84;
+
+	color: #5E6C84;
+
 	font-size: 12px;
 	font-weight: 500;
 }
@@ -96,8 +97,11 @@
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
+
 	padding: 6px 12px;
+
 	cursor: pointer;
+
 	border-radius: 3px;
 	background-color: rgba(9, 30, 66, 0.04);
 }
@@ -115,12 +119,14 @@
 .card-info__actions-wrapper {
 	display: flex;
 	align-items: center;
+
 	margin-bottom: 15px;
 }
 
 .card-info__description-title,
 .card-info__actions-title {
 	margin-right: 10px;
+
 	font-size: 17px;
 	font-weight: 600;
 }
@@ -128,21 +134,25 @@
 .textarea-description {
 	width: 100%;
 	margin: 0;
+
 	cursor: pointer;
+
 	border: none;
 	outline: none;
-	background-color: #ebebeb;
+	background-color: #EBEBEB;
 }
 
 .textarea-actions {
 	width: 100%;
 	margin: 0;
+
 	cursor: pointer;
 }
 
 .card-create {
 	display: flex;
 	flex-direction: column;
+
 	margin: 0;
 	margin-bottom: 20px;
 	padding: 0;
@@ -154,20 +164,25 @@
 
 .card-create__title {
 	margin-bottom: 5px;
+
 	color: #5E6C84;
+
 	font-size: 12px;
 	font-weight: 500;
 }
 
 .card-create__button {
 	justify-content: left;
+
 	margin-bottom: 7px;
+
 	list-style-type: none;
-	color: #4f5c74;
+
+	color: #4F5C74;
 }
 
 .new__card-header-close {
-	font-size: 20px;
 	cursor: pointer;
-}
 
+	font-size: 20px;
+}
