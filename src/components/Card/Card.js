@@ -1,4 +1,4 @@
-import styles from "./card.css";
+import styles from "./Card.css";
 import { CardTemplate } from "./cardTemplate";
 
 

@@ -40,9 +40,11 @@ textArea.onclick = function () {
 
 loadCurrentTask()
 
-const inputData = document.querySelector('.container-term-btn__data')
+const inputData = document.querySelector('.myDate')
 const inputDescription = document.querySelector('.textarea-description')
 const inputComment = document.querySelector('.textarea-actions')
-saveDataValue('.container-term-btn__data', inputData)
-saveDescriptionValue('.textarea-description', inputDescription)
-saveCommentValue('.textarea-actions', inputComment)
+if (document.querySelector('.template')) {
+  saveDataValue('.container-term-btn__data', inputData)
+  saveDescriptionValue('.textarea-description', inputDescription)
+  saveCommentValue('.textarea-actions', inputComment)
+}

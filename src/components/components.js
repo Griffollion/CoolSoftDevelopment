@@ -1,7 +1,7 @@
-import { Button } from "./buttons/button";
+import { Button } from "./Buttons/Button";
 import { NewCard } from "./NewCard/NewCard";
 import { Data } from "./Data/Data";
-import { createCard } from "./card/card";
+import { createCard } from "./Card/Card";
 import { addArea } from "../initUserInterface";
 
 export function loadCards() {
