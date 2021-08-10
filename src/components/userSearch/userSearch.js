@@ -1,9 +1,13 @@
+
+
+
+
 function renderUser (obj) {
   return (`<div class="user-search__form--user-list">
           <div class="user-list__avatar">
-            <h2 class="user-list__initial">
+            <div class="user-list__initial">
             ${obj.name.split(' ').map(function (item) { return item[0] }).join('')}
-            </h2>
+            </div>
           </div>
           <div class="user-list--ticker">
           <div class="user-list__name">
