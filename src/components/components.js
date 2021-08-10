@@ -1,7 +1,7 @@
-import { Button } from "./buttons/button";
+import { Button } from "./Buttons/Button";
 import { NewCard } from "./NewCard/NewCard";
 import { Data } from "./Data/Data";
-import { createCard } from "./card/card";
+import { createCard } from "./Card/Card";
 import { addArea } from "../initUserInterface";
 
 export function loadCards() {
@@ -54,6 +54,12 @@ export function loadNewCard(obj) {
   );
   delButton.render();
 
+  const cancelButton = new Button(
+    "", 
+    ".save", 
+    "Сохранить");
+  cancelButton.render();
+
   const showButton = new Button(
     "",
     ".card-info__actions-btn",
@@ -70,4 +76,5 @@ export function loadNewCard(obj) {
 
   const inputData = new Data(".container-term-btn__data");
   inputData.render();
+  
 }
