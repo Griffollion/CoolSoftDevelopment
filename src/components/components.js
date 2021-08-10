@@ -2,7 +2,8 @@ import { Button } from "./Buttons/Button";
 import { NewCard } from "./NewCard/NewCard";
 import { Data } from "./Data/Data";
 import { createCard } from "./Card/Card";
-import { addArea, saveDataValue } from "../initUserInterface";
+import { addArea, saveValue, loadCurrentTask } from "../initUserInterface";
+
 
 export function loadCards() {
   const cardToDo = new createCard("todo");
@@ -76,5 +77,10 @@ export function loadNewCard(obj) {
 
   const inputData = new Data(".container-term-btn__data");
   inputData.render();
-  saveDataValue('.myDate', obj)
+
+
+  saveDataValue('.myDate', obj, 'data')
+  saveDataValue('.textarea-description', obj, 'description')
+  saveDataValue('.textarea-actions', obj, 'comment')
+
 }
