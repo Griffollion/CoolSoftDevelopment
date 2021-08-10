@@ -45,7 +45,7 @@ export function findTaskIntoStorage(currentId){
   return currentTask[0]
 }
 
-export function saveDataValue (item, currentTask, key) {
+export function saveValue (item, currentTask, key) {
   const input = document.querySelector(item)
   input.addEventListener('change', () => {
     const getKey = JSON.parse(localStorage.getItem('tasksArray'))
@@ -57,3 +57,4 @@ export function saveDataValue (item, currentTask, key) {
     localStorage.setItem('tasksArray', JSON.stringify(getKey))
   })
 }
+
