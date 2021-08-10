@@ -1,15 +1,14 @@
-.users-search__wraper{
+.users-search__wraper {
     position: relative;
 }
 .user-search {
-    font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Noto Sans,Ubuntu,Droid Sans,Helvetica Neue,sans-serif;
     padding: 5px;
     display: flex;
     flex-direction: column;
     border-radius: 5px;
     background-color: white;
-    width: 180px;
-    height: 250px;
+    width: 300px;
+    height: 390px;
     position: absolute;
     top: 50px;
     right: -35px;
@@ -24,31 +23,28 @@
     grid-template-areas: 'none title exit';
     border-bottom-style: solid;
     border-width: 1px;
-    font-size: 15px;
+    font-size: 25px;
     margin-bottom: 5px;
     grid-gap: 5px;
-    height: 20px;
+    height: 40px;
     color: #172b4d
-    
-
 }
 .user-search__header--title{
     grid-area: title;
     text-align: center;
+    padding-top: 10px;
 
 }
 .user-search__header--exit{
     grid-area: exit;
     text-align: end;
     text-decoration: none;
-    
-    
 }
 .user-search__header--exit:hover{
     color: red;
 }
 .user-search__list-wraper{
-    font-size: 10px;
+    font-size: 20px;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -56,9 +52,9 @@
 }
 .user-search__title2{
     text-align: left;
-    font-size: 10px;
+    font-size: 20px;
     justify-content: left;
-    width: 180px;
+    
     margin-bottom: 10px;
     margin-top: 5px;
     padding-left: 5px;
@@ -69,8 +65,8 @@
     width: auto;
     overflow-y: scroll;
     overflow-x: hidden;
-    height: 170px;
-    width: 180px;
+    height: 300px;
+    width: 290px;
 }
 #app::-webkit-scrollbar{
     display: none;
@@ -79,19 +75,19 @@
     display: flex;
     align-items: flex-start;
     margin-bottom: 5px;
-    transition: 0s;
-    
-
+}
+.user-search__form--user-list:last-child{
+  margin-bottom: 0px;
 }
 .user-search__form--user-list:hover{
     background-color: rgba(9,30,66,.04);
 }
 .user-list__avatar{
-    width: 20px;
-    height: 20px;
+    width: 45px;
+    height: 45px;
     border-style: solid;
     border-color: rgb(226, 226, 226);
-    border-radius: 50px;
+    border-radius: 70px;
     margin-right: 10px;
     background-color: rgb(226, 226, 226);  
 }
@@ -101,17 +97,16 @@
 }
 .user-list__initial{
     text-align: center;
-    margin-top: 3px;
+    margin-top: 10px;
     font-size: 90%;
 }
 .user-list--ticker{
     display: flex;
     align-items: flex-start;
     float: left;
-    margin-top: 3px;
+    margin-top: 10px;
     overflow: hidden;
 }
 .user-list__name{
     text-align: left;
 }
-
