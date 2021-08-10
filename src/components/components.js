@@ -76,4 +76,5 @@ export function loadNewCard(obj) {
 
   const inputData = new Data(".container-term-btn__data");
   inputData.render();
+  
 }
