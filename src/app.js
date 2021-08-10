@@ -6,6 +6,12 @@ import {
 } from "./initUserInterface";
 import { loadCards, loadNewCard } from "./components/components";
 import { saveCommentValue, saveDataValue, saveDescriptionValue } from './initUserInterface'
+import { UsersSearchTemplate } from './components/UserSearch/UserSearchTemplate'
+import { GetDataFromServer } from './components/UserSearch/UserSearch'
+
+UsersSearchTemplate('.users-template', 'users-searc-template')
+
+GetDataFromServer()
 
 loadCards();
 
@@ -48,3 +54,4 @@ if (document.querySelector('.template')) {
   saveDescriptionValue('.textarea-description', inputDescription)
   saveCommentValue('.textarea-actions', inputComment)
 }
+

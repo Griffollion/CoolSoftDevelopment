@@ -50,7 +50,7 @@ export function saveDataValue (item, currentTask) {
   input.addEventListener('change', () => {
     const getKey = JSON.parse(localStorage.getItem('tasksArray'))
     getKey.forEach(ele => {
-      if (ele.id === currentTask) {
+      if (ele.id === currentTask.id) {
         ele.data = item.value
       }
     })
