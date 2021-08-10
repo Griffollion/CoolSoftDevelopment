@@ -6,6 +6,7 @@ body {
 	line-height: 20px;
 }
 
+
 .new__card {
 	position: relative;
 
@@ -14,10 +15,12 @@ body {
 	width: 768px;
 	min-height: 600px;
 	margin: 80px auto;
+	margin-top: -130px;
 	padding: 20px;
 
 	border-radius: 2px;
 	background: #F4F5F7;
+	box-shadow: 0 0 7px 1000px rgba(0, 0, 0, 0.3);
 }
 
 .new__card-header {
@@ -181,8 +184,4 @@ body {
 .new__card-header-close {
 	font-size: 20px;
 	cursor: pointer;
-}
-
-.save {
-	width: 20%;
 }
