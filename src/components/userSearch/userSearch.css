@@ -2,18 +2,20 @@
     position: relative;
 }
 .user-search {
+    font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Noto Sans,Ubuntu,Droid Sans,Helvetica Neue,sans-serif;
     padding: 5px;
     display: flex;
     flex-direction: column;
     border-radius: 5px;
-    background-color: gray;
+    background-color: white;
     width: 180px;
     height: 250px;
     position: absolute;
     top: 50px;
     right: -35px;
-    color: antiquewhite;
+    color: #3c5279;
     z-index: 3;
+    font-size: 14px;
 }
 .user-search__header{
     display: grid;
@@ -26,6 +28,7 @@
     margin-bottom: 5px;
     grid-gap: 5px;
     height: 20px;
+    color: #172b4d
     
 
 }
@@ -38,7 +41,7 @@
     grid-area: exit;
     text-align: end;
     text-decoration: none;
-    color: antiquewhite;
+    
     
 }
 .user-search__header--exit:hover{
@@ -55,9 +58,10 @@
 
 }
 input::placeholder{
-    color: red;
+    color: #3c5279;
     font-size: 10px;
     background-color: ;
+    width: 100%;
     
 }
 .user-search__title2{
@@ -89,30 +93,34 @@ input::placeholder{
     
 
 }
-.user-search__form--user-list:last-child{
-   
-    margin-bottom: 0;
-
-}
 .user-search__form--user-list:hover{
-    background-color: rgb(199, 196, 196);
-    color: gray;
+    background-color: rgba(9,30,66,.04);
+    
 }
 .user-list__avatar{
     width: 20px;
     height: 20px;
     border-style: solid;
-    border-color: black;
+    border-color: rgb(226, 226, 226);
     border-radius: 50px;
     margin-right: 10px;
-
+    background-color: rgb(226, 226, 226);
+}
+.user-list__avatar:hover{
+    border-color: rgb(194, 182, 182);
+    background-color: rgb(194, 182, 182);
+}
+.user-list__initial{
+    text-align: center;
+    margin-top: 3px;
+    font-size: 90%;
 }
 .user-list--ticker{
     display: flex;
     align-items: flex-start;
-    overflow-x: hidden;
     float: left;
-    margin-top: 5px;
+    margin-top: 3px;
+    overflow: hidden;
 }
 /* .user-list--ticker:hover div {
     position: absolute;
@@ -133,7 +141,4 @@ input::placeholder{
     
 
 }
-.user-list__nickname{
-    margin-left: 3px;
-    padding-top: 5px;
-}
+

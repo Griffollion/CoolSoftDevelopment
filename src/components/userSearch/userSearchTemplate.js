@@ -1,6 +1,5 @@
 import styles from './userSearch.css'
 
-
 export function UsersSearchTemplate (node, text) {
   const container = document.querySelector(node)
   container.innerHTML = `

@@ -1,21 +1,22 @@
-import data from '../data/users.json'
-
 function renderUser (obj) {
   return (`<div class="user-search__form--user-list">
-          <img src="${obj.avatar}" class="user-list__avatar">
+          <div class="user-list__avatar">
+            <h2 class="user-list__initial">
+            ${obj.name.split(' ').map(function (item) { return item[0] }).join('')}
+            </h2>
+          </div>
           <div class="user-list--ticker">
           <div class="user-list__name">
-              ${obj.firstName} ${obj.secondName} (${obj.nickName})
+              ${obj.name} (${obj.username})
           </div>
           </div>
           
       </div>`)
 }
 
-export function getDataFromComputer () {
-  // const response = await fetch('../data/users.json')
-  // console.log(response)
-  // const data = await response.json()
+export async function getDataFromServer () {
+  const response = await fetch('https://jsonplaceholder.typicode.com/users')
+  const data = await response.json()
   data.forEach(function (el) {
     const userListPlace = document.querySelector('#app')
     userListPlace.insertAdjacentHTML('beforeend', renderUser(el))
