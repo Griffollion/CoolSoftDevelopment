@@ -41,13 +41,6 @@ export function loadNewCard(obj) {
   );
   movButton.render();
 
-  const copyButton = new Button(
-    "icn__btncontent_copy",
-    ".copying",
-    "Копирование"
-  );
-  copyButton.render();
-
   const delButton = new Button(
     "icn__btnvideo_label",
     ".archiving",
@@ -56,24 +49,10 @@ export function loadNewCard(obj) {
   delButton.render();
 
   const cancelButton = new Button(
-    "", 
+    "icn__btnattachment", 
     ".save", 
     "Сохранить");
   cancelButton.render();
-
-  const showButton = new Button(
-    "",
-    ".card-info__actions-btn",
-    "Показать подробности"
-  );
-  showButton.render();
-
-  const changeButton = new Button(
-    "",
-    ".card-info__description-btn",
-    "Изменить"
-  );
-  changeButton.render();
 
   const inputData = new Data(".container-term-btn__data");
   inputData.render();

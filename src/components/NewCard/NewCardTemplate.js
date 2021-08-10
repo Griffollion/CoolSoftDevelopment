@@ -36,7 +36,7 @@ NewCardTemplate.innerHTML = `
                     <div class="card-info__description-wrapper">
                         <div class="card-info__description-title">
                             <span></span>
-                            Описание
+                            Описание задачи
                         </div>
                         <div class="card-info__description-btn"></div>
                     </div>
@@ -48,16 +48,13 @@ NewCardTemplate.innerHTML = `
                     <div class="card-info__actions-wrapper">
                         <div class="card-info__actions-title">
                             <span></span>
-                            Действия
+                            Коментарий
                         </div>
                         <div class="card-info__actions-btn"></div>
                     </div>
                     <div class="card-info__actions-text">
                         <textarea class="textarea-actions" placeholder="Напишите коментарий..."></textarea>
                     </div>
-                    <ul class="card-create">
-                    <li class="card-create__button save"></li>
-                </ul>
                 </div>
             </div>
             <div class="new__card-create">
@@ -70,9 +67,11 @@ NewCardTemplate.innerHTML = `
                     <ul class="card-create">
                         <div class="card-create__title">ДЕЙСТВИЯ</div>
                         <li class="card-create__button moving"></li>
-                        <li class="card-create__button copying"></li>
                         <li class="card-create__button archiving"></li>
                     </ul>
+                    <ul class="card-create">
+                    <li class="card-create__button save"></li>
+                </ul>
                 </div>
             </div>
         </div>

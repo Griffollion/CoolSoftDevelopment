@@ -1,12 +1,25 @@
+
+	color: #172B4D;
+
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 20px;
+}
+
+
 .new__card {
 	position: relative;
 	overflow: hidden;
 	width: 768px;
 	min-height: 600px;
 	margin: 80px auto;
+	margin-top: -130px;
 	padding: 20px;
 	border-radius: 2px;
-	background-color: rgb(228, 224, 224);
+
+	background: #F4F5F7;
+	box-shadow: 0 0 7px 1000px rgba(0, 0, 0, 0.3);
+
 }
 
 .new__card-header {
@@ -153,6 +166,8 @@
 	color: #4f5c74;
 }
 
-.card_info__discription-btn {
-	color: #4f5c74;
+.new__card-header-close {
+	font-size: 20px;
+	cursor: pointer;
 }
+
