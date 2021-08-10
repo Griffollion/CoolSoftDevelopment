@@ -55,6 +55,7 @@ export function saveDataValue (item, currentTask) {
       }
     })
     localStorage.setItem('tasksArray', JSON.stringify(getKey))
+  })
 }
 
 // export function saveDescriptionValue (box, item) {

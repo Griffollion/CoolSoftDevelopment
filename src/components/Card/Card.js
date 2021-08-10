@@ -1,5 +1,5 @@
 import styles from "./Card.css";
-import { CardTemplate } from "./cardTemplate";
+import { CardTemplate } from "./CardTemplate";
 
 
 
