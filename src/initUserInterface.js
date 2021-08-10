@@ -57,3 +57,4 @@ export function saveDataValue (item, currentTask, key) {
     localStorage.setItem('tasksArray', JSON.stringify(getKey))
   })
 }
+

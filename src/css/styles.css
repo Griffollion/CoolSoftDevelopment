@@ -12,15 +12,15 @@ html {
 }
 
 body {
+	width: 1400px;
+	margin: 0 auto;
 	white-space: nowrap;
-
-	color: rgba(0, 0, 0, 1);
 	background: url(/src/img/sky-1.jpg) no-repeat;
 	background-size: cover;
-
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 17px;
 	font-weight: 400;
+	color: #172B4D;
 }
 
 .wrapper {
@@ -34,9 +34,10 @@ body {
 .header {
 	display: flex;
 	align-items: center;
-	justify-content: space-around;
-
+	justify-content: space-between;
 	padding: 20px;
+	font-size: 30px;
+	font-weight: 600;
 }
 
 .logo {
@@ -45,38 +46,69 @@ body {
 
 .logo a {
 	text-decoration: none;
-
 	color: gray;
 
-	font-size: 30px;
-	font-weight: 700;
 }
 
 .logo:hover a {
 	transition: color 0.3s ease;
-
 	color: honeydew;
 }
 
 .icon-users {
 	padding: 10px 30px;
-
-	color: antiquewhite;
-	border-radius: 15px;
-	background: gray;
-
+	color: gray;
+	font-size: 26px;
 	font-weight: 600;
 }
 
 .icon-users:hover {
 	cursor: pointer;
-	transition: color 0.3s ease, background 0.3s ease;
+	transition: color 0.3s ease;
+	color: honeydew;
 
-	color: gray;
-	background: antiquewhite;
 }
 
 .container-cards {
-  display: flex;
+	display: flex;
+	justify-content: center;
 }
 
+.textarea {
+	margin: 0 10px;
+	overflow-wrap: break-word;
+	overflow: hidden;
+	word-break: break-all;
+	box-shadow: 0 0 5px rgb(100, 100, 100);
+}
+
+textarea {
+	resize: auto;
+	width: 255px;
+	padding: 0 5px;
+	border-radius: 5px;
+	overflow-wrap: break-word;
+	overflow: hidden;
+	word-break: break-all;
+	box-shadow: 0 0 5px rgb(100, 100, 100);
+
+}
+.task {
+
+	height: 100%;
+	min-height: 30px;
+	background-color: rgb(233, 233, 233);
+	border-radius: 5px;
+	overflow-wrap: break-word;
+	overflow: hidden;
+	word-break: break-all;
+	margin-bottom: 10px;
+	padding: 0 5px;
+	box-shadow: 0 0 5px rgb(100, 100, 100);
+
+}
+.task:hover {
+	background-color: rgb(204, 202, 202);
+	cursor: pointer;
+	box-shadow: 0 0 5px rgb(100, 100, 100)
+}
