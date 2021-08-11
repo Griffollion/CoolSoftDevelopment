@@ -5,6 +5,9 @@ import {
   loadCurrentTask,
 } from "./initUserInterface";
 import { loadCards } from "./components/components";
+import { getUsersSearch } from "./components/components"
+
+getUsersSearch()
 
 
 loadCards();
