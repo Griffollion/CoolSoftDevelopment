@@ -6,7 +6,6 @@ import {
 } from "./initUserInterface";
 import { loadCards } from "./components/components";
 
-
 loadCards();
 
 if (!localStorage.getItem("cal")) {
@@ -20,23 +19,28 @@ if (localStorage.getItem("tasksArray")) {
 }
 
 let textArea = document.querySelector(".textarea");
+
+let isClick = true;
 textArea.onclick = function () {
   let content = document.querySelector(".card_task");
-  content.addEventListener("change", () => {
-    let cal = +localStorage.getItem("cal");
-    let task = {
-      title: content.value,
-      class: "in_done",
-      id: cal,
-    };
-    tasksArray.push(task);
-    localStorage.setItem("tasksArray", JSON.stringify(tasksArray));
-    content.remove();
-    addTask(task.class, content.value, cal);
-    cal++;
-    localStorage.setItem("cal", cal);
-  });
+  if (isClick == true) {
+    content.addEventListener("change", () => {
+      let cal = +localStorage.getItem("cal");
+      let task = {
+        title: content.value,
+        class: "in_done",
+        id: cal,
+      };
+      tasksArray.push(task);
+      localStorage.setItem("tasksArray", JSON.stringify(tasksArray));
+      content.remove();
+      addTask(task.class, content.value, cal);
+      cal++;
+      localStorage.setItem("cal", cal);
+      isClick = true;
+    });
+  }
+  isClick = false;
 };
 
-loadCurrentTask()
-
+loadCurrentTask();

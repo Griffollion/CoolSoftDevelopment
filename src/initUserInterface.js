@@ -2,7 +2,9 @@ import { loadNewCard } from "./components/components";
 
 export function addArea() {
   if (document.querySelector(".card_task")) {
-  } else {
+    return
+  } 
+  else {
     const input = document.createElement("div");
     input.innerHTML = `<textarea class="card_task"></textarea>`;
     let container = document.querySelector(".textarea");
