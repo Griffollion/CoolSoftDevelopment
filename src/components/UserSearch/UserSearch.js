@@ -19,7 +19,7 @@ function renderUser (obj) {
           </div>
           <div class="user-list--ticker">
           <div class="user-list__name">
-              ${obj.name} (${obj.username})
+              ${obj.name}
           </div>
           </div>
           </div>`)
@@ -33,4 +33,9 @@ export async function GetDataFromServer () {
     userListPlace.insertAdjacentHTML('beforeend', renderUser(el))
   })
   return data
+}
+
+export const getUsersSearchModal = function () {
+  const modal = document.querySelector('.modal')
+  modal.classList.add('active')
 }
