@@ -1,0 +1,127 @@
+.overlay {
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    width: 100%;
+    height: 100%;
+
+}
+.modal{
+    opacity: 0;
+    visibility: hidden;
+}
+.modal.active{
+    opacity: 1;
+    visibility: visible;
+}
+.user-search {
+    padding: 5px;
+    flex-direction: column;
+    border-radius: 5px;
+    background-color: white;
+    width: 300px;
+    height: 390px;
+    position: fixed;
+    top: 200px;
+    right: 250px;
+    color: #3c5279;
+    z-index: 20;
+    font-size: 14px;
+}
+
+.user-search__header{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1ак;
+    grid-template-rows: 1fr;
+    grid-template-areas: 'none title exit';
+    border-bottom-style: solid;
+    border-width: 1px;
+    font-size: 25px;
+    margin-bottom: 5px;
+    grid-gap: 5px;
+    height: 40px;
+    color: #172b4d
+}
+.user-search__header--title{
+    grid-area: title;
+    text-align: center;
+    padding-top: 10px;
+
+}
+.user-search__header--exit{
+    grid-area: exit;
+    text-align: end;
+    text-decoration: none;
+}
+.user-search__header--exit:hover{
+    color: red;
+}
+.user-search__list-wraper{
+    font-size: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;  
+}
+.user-search__title2{
+    text-align: left;
+    font-size: 20px;
+    justify-content: left;
+    
+    margin-bottom: 10px;
+    margin-top: 5px;
+    padding-left: 5px;
+    
+}
+#app{
+    padding: 5px;
+    width: auto;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 300px;
+    width: 290px;
+}
+#app::-webkit-scrollbar{
+    display: none;
+}
+.user-search__form--user-list{
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 5px;
+}
+.user-search__form--user-list:last-child{
+  margin-bottom: 0px;
+}
+.user-search__form--user-list:hover{
+    background-color: rgba(9,30,66,.04);
+}
+.user-list__avatar{
+    width: 45px;
+    height: 45px;
+    border-style: solid;
+    border-color: rgb(226, 226, 226);
+    border-radius: 70px;
+    margin-right: 10px;
+    background-color: rgb(226, 226, 226);  
+}
+.user-list__avatar:hover{
+    border-color: rgb(194, 182, 182);
+    background-color: rgb(194, 182, 182);
+}
+.user-list__initial{
+    text-align: center;
+    margin-top: 10px;
+    font-size: 90%;
+}
+.user-list--ticker{
+    display: flex;
+    align-items: flex-start;
+    float: left;
+    margin-top: 10px;
+    overflow: hidden;
+}
+.user-list__name{
+    text-align: left;
+}

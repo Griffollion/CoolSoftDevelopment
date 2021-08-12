@@ -74,6 +74,7 @@ export function transferTask(obj, card) {
   localStorage.setItem("tasksArray", JSON.stringify(getKey));
 }
 
+
 // export function callModalWindow(obj){
 //   switch (obj.position){
 //     case 'todo':
@@ -99,4 +100,12 @@ export function relocationTask(obj) {
       transferTask(obj, "todo");
   }
   document.querySelector(".new__card").remove();
+
+export function closeCard (btnclass) {
+  if (document.querySelector('.new__card')) {
+    document.querySelector(btnclass).onclick = function () {
+      document.querySelector('.new__card').remove()
+    }
+  }
+
 }

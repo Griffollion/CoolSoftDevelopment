@@ -2,12 +2,20 @@ import { Button } from "./Buttons/Button";
 import { NewCard } from "./NewCard/NewCard";
 import { Data } from "./Data/Data";
 import { createCard } from "./Card/Card";
+
 import {
   addArea,
   saveValue,
   callModalWindow,
   relocationTask,
 } from "../initUserInterface";
+
+
+import { GetDataFromServer, CreateUsersTemplate, GetUsersSearchModal, getUsersSearchModal } from "./UserSearch/UserSearch"
+import { closeCard } from "../initUserInterface";
+
+
+
 
 export function loadCards() {
   const cardToDo = new createCard("todo");
@@ -28,11 +36,17 @@ export function loadCards() {
   cardButton.render();
 }
 
+export function getUsersSearch() {
+  const loadUsersTemplate = new CreateUsersTemplate('.container-global');
+  loadUsersTemplate.render();
+  GetDataFromServer()
+}
+
 export function loadNewCard(obj) {
   const newCard = new NewCard(".container-global", obj);
   newCard.render();
 
-  const usersButton = new Button("icn__btnuser", ".user", "Участники");
+  const usersButton = new Button("icn__btnuser", ".user", "Участники", getUsersSearchModal);
   usersButton.render();
 
   const dateButton = new Button("icn__btnaccess_time", ".data", "Дата");
@@ -56,8 +70,20 @@ export function loadNewCard(obj) {
   );
   delButton.render();
 
-  const cancelButton = new Button("icn__btnattachment", ".save", "Сохранить");
+
+  const cancelButton = new Button(
+    "icn__btnattachment",
+    ".save",
+    "Сохранить",
+    closeCard('.save'));
   cancelButton.render();
+
+  const closeButton = new Button(
+    "",
+    ".close",
+    "X",
+    closeCard('.close'));
+  closeButton.render();
 
   const inputData = new Data(".container-term-btn__data");
   inputData.render();
@@ -75,4 +101,5 @@ export function loadNewCard(obj) {
 //   cancelButton.render();
 //   modalWindow.render();
 // }
+
 
