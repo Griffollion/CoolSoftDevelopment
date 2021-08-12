@@ -3,7 +3,9 @@ import { NewCard } from "./NewCard/NewCard";
 import { Data } from "./Data/Data";
 import { createCard } from "./Card/Card";
 import { addArea, saveValue } from "../initUserInterface"
+import { GetDataFromServer, CreateUsersTemplate, GetUsersSearchModal, getUsersSearchModal } from "./UserSearch/UserSearch"
 import { closeCard } from "../initUserInterface";
+
 
 
 export function loadCards() {
@@ -25,11 +27,17 @@ export function loadCards() {
   cardButton.render();
 }
 
+export function getUsersSearch() {
+  const loadUsersTemplate = new CreateUsersTemplate('.container-global');
+  loadUsersTemplate.render();
+  GetDataFromServer()
+}
+
 export function loadNewCard(obj) {
   const newCard = new NewCard(".container-global", obj);
   newCard.render();
 
-  const usersButton = new Button("icn__btnuser", ".user", "Участники");
+  const usersButton = new Button("icn__btnuser", ".user", "Участники", getUsersSearchModal);
   usersButton.render();
 
   const dateButton = new Button("icn__btnaccess_time", ".data", "Дата");
@@ -72,3 +80,5 @@ export function loadNewCard(obj) {
   saveValue('.textarea-actions', obj, 'comment')
 
 }
+
+
