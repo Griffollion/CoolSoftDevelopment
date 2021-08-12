@@ -3,10 +3,7 @@ import { NewCardTemplate } from "./NewCardTemplate"
 
 export function NewCard (node, obj) {
   this.component = NewCardTemplate.content.querySelector('div').cloneNode(true)
-  // if (obj.data) {
-  //   this.component.querySelector('.myDate').innerHTML = obj.data
-  // }
-  if (obj.description) {
+   if (obj.description) {
     this.component.querySelector('.textarea-description').innerHTML = obj.description
   }
   if (obj.comment) {
