@@ -17,7 +17,7 @@ export function addTask(className, text, id) {
   node.id = `${id}`;
   node.innerHTML = text;
   let container = document.querySelector(`#${className}`);
-  return container.append(node);
+  container.append(node);
 }
 
 export function addTasksToCardsFromStorage() {
@@ -100,6 +100,7 @@ export function relocationTask(obj) {
       transferTask(obj, "todo");
   }
   document.querySelector(".new__card").remove();
+}
 
 export function closeCard (btnclass) {
   if (document.querySelector('.new__card')) {
