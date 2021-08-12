@@ -85,7 +85,7 @@ export function loadNewCard(obj) {
     closeCard);
   closeButton.render();
 
-  const inputData = new Data(".container-term-btn__data");
+  const inputData = new Data(".container-term-btn__data", obj);
   inputData.render();
 
   saveValue(".myDate", obj, "data");

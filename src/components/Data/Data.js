@@ -1,11 +1,13 @@
 import styles from './Data.css'
 
-export function Data (node) {
+export function Data (node, obj) {
     this.template = document.createElement('input')
-    this.template.value = ''
+    if (obj.data){
+      this.template.value = obj.data
+    }
     this.template.type = type="date"
     this.template.className = `myDate`
-    this.render = function () {
+       this.render = function () {
       const container = document.querySelector(node)
       container.append(this.template)
     }
