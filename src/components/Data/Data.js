@@ -2,7 +2,7 @@ import styles from './Data.css'
 
 export function Data (node) {
     this.template = document.createElement('input')
-    this.template.value = 'выберите дату'
+    this.template.value = ''
     this.template.type = type="date"
     this.template.className = `myDate`
     this.render = function () {
