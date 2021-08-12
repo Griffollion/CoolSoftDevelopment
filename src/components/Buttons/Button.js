@@ -9,6 +9,6 @@ export function Button (icon, node, text, doAction) {
     container.append(this.template)
   }
   this.template.onclick = () => {
-    doAction
+    doAction()
   }
 }
