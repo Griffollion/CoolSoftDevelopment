@@ -62,6 +62,8 @@ export function saveValue(item, currentTask, key) {
 export function transferTask(obj, card) {
   let activeTask = document.getElementById(`${obj.id}`);
   let destination = document.querySelector(`#${card}`);
+  activeTask.classList.remove(obj.position)
+  activeTask.classList.add(card)
   destination.append(activeTask);
   const getKey = JSON.parse(localStorage.getItem("tasksArray"));
   getKey.forEach((ele) => {

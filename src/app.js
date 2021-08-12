@@ -26,16 +26,16 @@ textArea.onclick = function () {
   if (isClick) {
     content.addEventListener("change", () => {
       let cal = +localStorage.getItem("cal");
+      cal++;
       let task = {
         title: content.value,
-        position: "todo",
+        position: 'todo',
         id: cal,
       };
+      addTask(task.position, content.value, cal);
       tasksArray.push(task);
       localStorage.setItem("tasksArray", JSON.stringify(tasksArray));
       content.remove();
-      addTask(task.position, content.value, cal);
-      cal++;
       localStorage.setItem("cal", cal);
       isClick = true;
     });
