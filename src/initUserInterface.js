@@ -103,5 +103,5 @@ export function relocationTask(obj) {
 }
 
 export function closeCard () {
-      document.querySelector('.new__card').remove()
+  document.querySelector('.new__card').remove()
 }
