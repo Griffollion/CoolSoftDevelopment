@@ -19,7 +19,6 @@ if (localStorage.getItem("tasksArray")) {
 }
 
 let textArea = document.querySelector(".textarea");
-
 let isClick = true;
 textArea.onclick = function () {
   let content = document.querySelector(".card_task");
@@ -32,12 +31,13 @@ textArea.onclick = function () {
         position: 'todo',
         id: cal,
       };
-      addTask(task.position, content.value, cal);
       tasksArray.push(task);
       localStorage.setItem("tasksArray", JSON.stringify(tasksArray));
-      content.remove();
+      addTask(task.position, content.value, cal);
       localStorage.setItem("cal", cal);
+      content.remove();
       isClick = true;
+      // document.location.reload();
     });
   }
   isClick = false;
