@@ -181,8 +181,6 @@
 	color: #4F5C74;
 }
 
-.new__card-header-close {
-	cursor: pointer;
-
-	font-size: 20px;
+.new__card-header-left .button {
+	border-radius: 50%;
 }

@@ -58,3 +58,10 @@ export function saveValue (item, currentTask, key) {
   })
 }
 
+export function closeCard (btnclass) {
+  if (document.querySelector('.new__card')) {
+    document.querySelector(btnclass).onclick = function () {
+      document.querySelector('.new__card').remove()
+    }
+  }
+}
