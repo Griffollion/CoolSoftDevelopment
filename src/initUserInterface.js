@@ -16,7 +16,7 @@ export function addTask(className, text, id) {
   node.className = `task ${className}`;
   node.id = `${id}`;
   node.innerHTML = text;
-  let container = document.querySelector(".card_list-tasks");
+  let container = document.querySelector(`#${className}`);
   return container.append(node);
 }
 
