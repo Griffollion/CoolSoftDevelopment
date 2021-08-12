@@ -3,12 +3,11 @@ import {
   addTask,
   addTasksToCardsFromStorage,
   loadCurrentTask,
-} from "./initUserInterface";
+} from "./initUserInterface"
 import { loadCards } from "./components/components";
 import { getUsersSearch } from "./components/components"
 
 getUsersSearch()
-
 
 loadCards();
 
@@ -23,22 +22,29 @@ if (localStorage.getItem("tasksArray")) {
 }
 
 let textArea = document.querySelector(".textarea");
+let isClick = true;
 textArea.onclick = function () {
   let content = document.querySelector(".card_task");
-  content.addEventListener("change", () => {
-    let cal = +localStorage.getItem("cal");
-    let task = {
-      title: content.value,
-      class: "in_done",
-      id: cal,
-    };
-    tasksArray.push(task);
-    localStorage.setItem("tasksArray", JSON.stringify(tasksArray));
-    content.remove();
-    addTask(task.class, content.value, cal);
-    cal++;
-    localStorage.setItem("cal", cal);
-  });
+  if (isClick) {
+    content.addEventListener("change", () => {
+      let cal = +localStorage.getItem("cal");
+      cal++;
+      let task = {
+        title: content.value,
+        position: 'todo',
+        id: cal,
+      };
+      tasksArray.push(task);
+      localStorage.setItem("tasksArray", JSON.stringify(tasksArray));
+      addTask(task.position, content.value, cal);
+      localStorage.setItem("cal", cal);
+      content.remove();
+      isClick = true;
+      // document.location.reload();
+    });
+  }
+  isClick = false;
+  
 };
 
 loadCurrentTask()
