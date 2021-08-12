@@ -9,8 +9,7 @@ NewCardTemplate.innerHTML = `
                     <span class="icn__btneye"></span>
                 </div>
             </div>
-            <div class="new__card-header-left">
-            <div class="new__card-header-close"><span class="icn__btnplus"></span></div>
+            <div class="new__card-header-left close">
             </div>
         </div>
         <div class="new__card-wrapper">

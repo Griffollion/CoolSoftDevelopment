@@ -4,6 +4,9 @@ import { Data } from "./Data/Data";
 import { createCard } from "./Card/Card";
 import { addArea, saveValue } from "../initUserInterface"
 import { GetDataFromServer, CreateUsersTemplate, GetUsersSearchModal, getUsersSearchModal } from "./UserSearch/UserSearch"
+import { closeCard } from "../initUserInterface";
+
+
 
 export function loadCards() {
   const cardToDo = new createCard("todo");
@@ -55,10 +58,18 @@ export function loadNewCard(obj) {
   delButton.render();
 
   const cancelButton = new Button(
-    "icn__btnattachment", 
-    ".save", 
-    "Сохранить");
+    "icn__btnattachment",
+    ".save",
+    "Сохранить",
+    closeCard('.save'));
   cancelButton.render();
+
+  const closeButton = new Button(
+    "",
+    ".close",
+    "X",
+    closeCard('.close'));
+  closeButton.render();
 
   const inputData = new Data(".container-term-btn__data");
   inputData.render();
