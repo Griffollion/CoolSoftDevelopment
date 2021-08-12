@@ -1,5 +1,5 @@
 import styles from "./NewCard.css"
-import { NewCardTemplate } from './NewCardTemplate'
+import { NewCardTemplate } from "./NewCardTemplate"
 
 export function NewCard (node, obj) {
   this.component = NewCardTemplate.content.querySelector('div').cloneNode(true)
