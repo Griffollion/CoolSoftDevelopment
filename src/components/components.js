@@ -75,14 +75,14 @@ export function loadNewCard(obj) {
     "icn__btnattachment",
     ".save",
     "Сохранить",
-    closeCard('.save'));
+    closeCard);
   cancelButton.render();
 
   const closeButton = new Button(
     "",
     ".close",
     "X",
-    closeCard('.close'));
+    closeCard);
   closeButton.render();
 
   const inputData = new Data(".container-term-btn__data");

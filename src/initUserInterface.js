@@ -102,11 +102,6 @@ export function relocationTask(obj) {
   document.querySelector(".new__card").remove();
 }
 
-export function closeCard (btnclass) {
-  if (document.querySelector('.new__card')) {
-    document.querySelector(btnclass).onclick = function () {
+export function closeCard () {
       document.querySelector('.new__card').remove()
-    }
-  }
-
 }
