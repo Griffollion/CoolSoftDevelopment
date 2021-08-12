@@ -39,4 +39,3 @@ textArea.onclick = function () {
 };
 
 loadCurrentTask()
-

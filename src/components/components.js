@@ -3,6 +3,7 @@ import { NewCard } from "./NewCard/NewCard";
 import { Data } from "./Data/Data";
 import { createCard } from "./Card/Card";
 import { addArea, saveValue } from "../initUserInterface"
+import { closeCard } from "../initUserInterface";
 
 
 export function loadCards() {
@@ -49,10 +50,18 @@ export function loadNewCard(obj) {
   delButton.render();
 
   const cancelButton = new Button(
-    "icn__btnattachment", 
-    ".save", 
-    "Сохранить");
+    "icn__btnattachment",
+    ".save",
+    "Сохранить",
+    closeCard('.save'));
   cancelButton.render();
+
+  const closeButton = new Button(
+    "",
+    ".close",
+    "X",
+    closeCard('.close'));
+  closeButton.render();
 
   const inputData = new Data(".container-term-btn__data");
   inputData.render();
