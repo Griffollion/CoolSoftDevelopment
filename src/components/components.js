@@ -2,19 +2,15 @@ import { Button } from "./Buttons/Button";
 import { NewCard } from "./NewCard/NewCard";
 import { Data } from "./Data/Data";
 import { createCard } from "./Card/Card";
-
+import { GetDataFromServer, CreateUsersTemplate, ToCloseModalUsersTemplate } from "./UserSearch/UserSearch"
 import {
   addArea,
   saveValue,
   callModalWindow,
   relocationTask,
-  deleteTask
+  deleteTask,
+  closeCard 
 } from "../initUserInterface";
-
-
-import { GetDataFromServer, CreateUsersTemplate, GetUsersSearchModal, getUsersSearchModal } from "./UserSearch/UserSearch"
-import { closeCard } from "../initUserInterface";
-
 
 
 
@@ -37,17 +33,23 @@ export function loadCards() {
   cardButton.render();
 }
 
-export function getUsersSearch() {
+function getUsersSearch () {
   const loadUsersTemplate = new CreateUsersTemplate('.container-global');
   loadUsersTemplate.render();
-  GetDataFromServer()
+  GetDataFromServer();
+
+  const closeModalFromExit = document.querySelector('.user-search__header--exit')
+  const closeVodalFromOverlay = document.querySelector('.overlay')
+
+  closeModalFromExit.addEventListener('click', ToCloseModalUsersTemplate)
+  closeVodalFromOverlay.addEventListener('click', ToCloseModalUsersTemplate)
 }
 
 export function loadNewCard(obj) {
   const newCard = new NewCard(".container-global", obj);
   newCard.render();
 
-  const usersButton = new Button("icn__btnuser", ".user", "Участники", getUsersSearchModal);
+  const usersButton = new Button("icn__btnuser", ".user", "Участники", getUsersSearch);
   usersButton.render();
 
   const dateButton = new Button("icn__btnaccess_time", ".data", "Дата");
