@@ -3,21 +3,13 @@ import {
   addTask,
   addTasksToCardsFromStorage,
   loadCurrentTask,
-} from "./initUserInterface"
+} from "./initUserInterface";
 import { loadCards } from "./components/components";
-import { getUsersSearch } from "./components/components"
-
-getUsersSearch()
+import { getUsersSearch } from "./components/components";
 
 loadCards();
 
-if (!localStorage.getItem("cal")) {
-  localStorage.setItem("cal", 0);
-}
-
-let tasksArray = [];
 if (localStorage.getItem("tasksArray")) {
-  tasksArray = JSON.parse(localStorage.getItem("tasksArray"));
   addTasksToCardsFromStorage();
 }
 
@@ -27,24 +19,32 @@ textArea.onclick = function () {
   let content = document.querySelector(".card_task");
   if (isClick) {
     content.addEventListener("change", () => {
+      if (!localStorage.getItem("cal")) {
+        localStorage.setItem("cal", 0);
+      }
       let cal = +localStorage.getItem("cal");
       cal++;
       let task = {
         title: content.value,
-        position: 'todo',
+        position: "todo",
         id: cal,
       };
+      let tasksArray
+      if (!localStorage.getItem("tasksArray")) {
+        tasksArray = [];
+      } else {
+        tasksArray = JSON.parse(localStorage.getItem("tasksArray"));
+      }
       tasksArray.push(task);
       localStorage.setItem("tasksArray", JSON.stringify(tasksArray));
       addTask(task.position, content.value, cal);
       localStorage.setItem("cal", cal);
       content.remove();
       isClick = true;
-      // document.location.reload();
     });
   }
   isClick = false;
-  
 };
 
-loadCurrentTask()
+loadCurrentTask();
+getUsersSearch();
