@@ -1,4 +1,3 @@
-
 .new__card {
 	position: relative;
 
@@ -23,18 +22,26 @@
 	margin-bottom: 30px;
 }
 
-.new__card-header-name {
-	margin-bottom: 10px;
+.new__card-header-right {
+	display: flex;
+	flex-direction: column;
+	width: 80%;
+}
 
+.new__card-header-right .new__card-header-name {
+	border: none;
+	box-shadow: none;
+	width: 100%;
 	font-size: 18px;
 	font-weight: 600;
 	line-height: 20px;
+	background-color: #F4F5F7;
 }
 
 .new__card-header-ststus {
 	display: inline-flex;
 	align-items: center;
-	justify-content: center;
+	justify-content: baseline;
 
 	color: #5E6C84;
 
