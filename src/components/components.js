@@ -8,6 +8,7 @@ import {
   saveValue,
   callModalWindow,
   relocationTask,
+  deleteTask
 } from "../initUserInterface";
 
 
@@ -66,7 +67,9 @@ export function loadNewCard(obj) {
   const delButton = new Button(
     "icn__btnvideo_label",
     ".archiving",
-    "Архивация"
+    "Архивация",
+    deleteTask, 
+    obj
   );
   delButton.render();
 
