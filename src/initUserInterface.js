@@ -12,7 +12,7 @@ export function addArea() {
 }
 
 export function addTask(className, text, id) {
-  let node = document.createElement("div");
+  let node = document.querySelector('.card-task').cloneNode(true)
   node.className = `task ${className}`;
   node.id = `${id}`;
   node.innerHTML = text;
@@ -39,6 +39,8 @@ export function loadCurrentTask() {
     });
   });
 }
+
+
 
 export function findTaskIntoStorage(currentId) {
   let array = JSON.parse(localStorage.getItem("tasksArray"));
