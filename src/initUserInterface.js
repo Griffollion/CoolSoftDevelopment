@@ -12,7 +12,7 @@ export function addArea() {
 }
 
 export function addTask(className, text, id) {
-  let node = document.querySelector('.card-task').cloneNode(true)
+  let node = document.querySelector(".card-task").cloneNode(true);
   node.className = `task ${className}`;
   node.id = `${id}`;
   node.innerHTML = text;
@@ -40,8 +40,6 @@ export function loadCurrentTask() {
   });
 }
 
-
-
 export function findTaskIntoStorage(currentId) {
   let array = JSON.parse(localStorage.getItem("tasksArray"));
   let currentTask = array.filter((el) => el.id == currentId);
@@ -64,8 +62,8 @@ export function saveValue(item, currentTask, key) {
 export function transferTask(obj, card) {
   let activeTask = document.getElementById(`${obj.id}`);
   let destination = document.querySelector(`#${card}`);
-  activeTask.classList.remove(obj.position)
-  activeTask.classList.add(card)
+  activeTask.classList.remove(obj.position);
+  activeTask.classList.add(card);
   destination.append(activeTask);
   const getKey = JSON.parse(localStorage.getItem("tasksArray"));
   getKey.forEach((ele) => {
@@ -75,7 +73,6 @@ export function transferTask(obj, card) {
   });
   localStorage.setItem("tasksArray", JSON.stringify(getKey));
 }
-
 
 // export function callModalWindow(obj){
 //   switch (obj.position){
@@ -104,6 +101,16 @@ export function relocationTask(obj) {
   document.querySelector(".new__card").remove();
 }
 
-export function closeCard () {
-  document.querySelector('.new__card').remove()
+export function closeCard() {
+  document.querySelector(".new__card").remove();
+}
+
+
+export function deleteTask(obj) {
+  let tasksArr = JSON.parse(localStorage.getItem("tasksArray"));
+  let index = tasksArr.findIndex((el) => el.id == obj.id);
+  document.getElementById(`${obj.id}`).remove();
+  document.querySelector(".new__card").remove();
+  tasksArr.splice(index, 1);
+  localStorage.setItem("tasksArray", JSON.stringify(tasksArr));
 }
