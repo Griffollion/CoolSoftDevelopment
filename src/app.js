@@ -1,21 +1,51 @@
-import styles from './css/styles.css'
-import { Button } from './components/buttons/button'
-import { NewCard } from './components/NewCard/NewCard'
+import styles from "./css/styles.css";
+import {
+  addTask,
+  addTasksToCardsFromStorage,
+  loadCurrentTask,
+} from "./initUserInterface";
+import { loadCards } from "./components/components";
+import { getUsersSearch } from "./components/components";
 
-const newCard = new NewCard('.container-global')
-newCard.render()
+loadCards();
 
-const usersButton = new Button('icn__btnuser', '.user', 'Участники')
-usersButton.render()
-const dateButton = new Button('icn__btnaccess_time', '.data', 'Дата')
-dateButton.render()
-const movButton = new Button('icn__btnarrow-right2', '.moving', 'Перемещение')
-movButton.render()
-const copyButton = new Button('icn__btncontent_copy', '.copying', 'Копирование')
-copyButton.render()
-const delButton = new Button('icn__btnvideo_label', '.archiving', 'Архивация')
-delButton.render()
-const showButton = new Button('', '.card-info__actions-btn', 'Показать подробности')
-showButton.render()
-const changeButton = new Button('', '.card-info__description-btn', 'Изменить')
-changeButton.render()
+if (localStorage.getItem("tasksArray")) {
+  addTasksToCardsFromStorage();
+}
+
+let textArea = document.querySelector(".textarea");
+let isClick = true;
+textArea.onclick = function () {
+  let content = document.querySelector(".card_task");
+  if (isClick) {
+    content.addEventListener("change", () => {
+      if (!localStorage.getItem("cal")) {
+        localStorage.setItem("cal", 0);
+      }
+      let cal = +localStorage.getItem("cal");
+      cal++;
+      let task = {
+        title: content.value,
+        position: "todo",
+        id: cal,
+      };
+      let tasksArray;
+      if (!localStorage.getItem("tasksArray")) {
+        tasksArray = [];
+      } else {
+        tasksArray = JSON.parse(localStorage.getItem("tasksArray"));
+      }
+      tasksArray.push(task);
+      localStorage.setItem("tasksArray", JSON.stringify(tasksArray));
+      addTask(task.position, content.value, cal);
+      localStorage.setItem("cal", cal);
+      content.remove();
+      isClick = true;
+      loadCurrentTask();
+    });
+  }
+  isClick = false;
+};
+
+loadCurrentTask();
+getUsersSearch();
