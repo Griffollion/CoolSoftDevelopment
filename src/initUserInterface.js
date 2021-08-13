@@ -55,6 +55,9 @@ export function saveValue(item, currentTask, key) {
         ele[key] = input.value;
       }
     });
+    if (key == "title") {
+      document.getElementById(currentTask.id).innerHTML = input.value;
+    }
     localStorage.setItem("tasksArray", JSON.stringify(getKey));
   });
 }
@@ -104,7 +107,6 @@ export function relocationTask(obj) {
 export function closeCard() {
   document.querySelector(".new__card").remove();
 }
-
 
 export function deleteTask(obj) {
   let tasksArr = JSON.parse(localStorage.getItem("tasksArray"));
