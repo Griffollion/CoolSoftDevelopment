@@ -94,6 +94,7 @@ export function loadNewCard(obj) {
   saveValue(".myDate", obj, "data");
   saveValue(".textarea-description", obj, "description");
   saveValue(".textarea-actions", obj, "comment");
+  saveValue(".new__card-header-name", obj, "title");
 }
 
 // export function loadModalWindow(obj, direction) {

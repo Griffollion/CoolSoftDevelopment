@@ -105,6 +105,7 @@ export function closeCard() {
   document.querySelector(".new__card").remove();
 }
 
+
 export function deleteTask(obj) {
   let tasksArr = JSON.parse(localStorage.getItem("tasksArray"));
   let index = tasksArr.findIndex((el) => el.id == obj.id);
