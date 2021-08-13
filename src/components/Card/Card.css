@@ -1,12 +1,16 @@
 .card {
 	overflow: hidden;
+	position: relative;
 
 	width: 275px;
-	
 	margin: 10px;
 
 	border-radius: 5px;
 	background-color: rgb(214, 212, 212);
+}
+
+.card:first-child {
+	padding-bottom: 40px;
 }
 
 .card__title {
@@ -50,5 +54,8 @@
 }
 
 .card__button {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
 	color: #5E6C84;
 }

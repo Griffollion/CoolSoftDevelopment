@@ -1,9 +1,20 @@
 import styles from "./NewCard.css"
-import { NewCardTemplate } from './NewCardTemplate'
+import { NewCardTemplate } from "./NewCardTemplate"
 
 export function NewCard (node, obj) {
   this.component = NewCardTemplate.content.querySelector('div').cloneNode(true)
-  this.component.querySelector('.new__card-header-name').innerHTML = obj.title
+  if (obj.description) {
+    this.component.querySelector('.textarea-description').innerHTML = obj.description
+  }
+  if (obj.comment) {
+    this.component.querySelector('.textarea-actions').innerHTML = obj.comment
+  }
+  if (obj.position) {
+    this.component.querySelector('.new__card-header-ststus-span').innerHTML = obj.position
+  }
+  if (obj.title) {
+    this.component.querySelector('.new__card-header-name').innerHTML = obj.title
+  }
   this.render = function () {
     const body = document.querySelector(node)
     body.append(this.component)

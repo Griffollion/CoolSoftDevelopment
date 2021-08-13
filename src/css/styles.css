@@ -97,7 +97,7 @@ body {
 textarea {
 	overflow: hidden;
 
-	width: 255px;
+	width: 100%;
 	padding: 0 5px;
 
 	resize: auto;

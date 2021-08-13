@@ -4,37 +4,48 @@ import {
   addTasksToCardsFromStorage,
   loadCurrentTask,
 } from "./initUserInterface";
-import { loadCards } from "./components/components";
+import { loadCards, getUsersSearch  } from "./components/components";
+
 
 loadCards();
 
-if (!localStorage.getItem("cal")) {
-  localStorage.setItem("cal", 0);
-}
-
-let tasksArray = [];
 if (localStorage.getItem("tasksArray")) {
-  tasksArray = JSON.parse(localStorage.getItem("tasksArray"));
   addTasksToCardsFromStorage();
 }
 
 let textArea = document.querySelector(".textarea");
+let isClick = true;
 textArea.onclick = function () {
   let content = document.querySelector(".card_task");
-  content.addEventListener("change", () => {
-    let cal = +localStorage.getItem("cal");
-    let task = {
-      title: content.value,
-      class: "in_done",
-      id: cal,
-    };
-    tasksArray.push(task);
-    localStorage.setItem("tasksArray", JSON.stringify(tasksArray));
-    content.remove();
-    addTask(task.class, content.value, cal);
-    cal++;
-    localStorage.setItem("cal", cal);
-  });
+  if (isClick) {
+    content.addEventListener("change", () => {
+      if (!localStorage.getItem("cal")) {
+        localStorage.setItem("cal", 0);
+      }
+      let cal = +localStorage.getItem("cal");
+      cal++;
+      let task = {
+        title: content.value,
+        position: "todo",
+        id: cal,
+      };
+      let tasksArray;
+      if (!localStorage.getItem("tasksArray")) {
+        tasksArray = [];
+      } else {
+        tasksArray = JSON.parse(localStorage.getItem("tasksArray"));
+      }
+      tasksArray.push(task);
+      localStorage.setItem("tasksArray", JSON.stringify(tasksArray));
+      addTask(task.position, content.value, cal);
+      localStorage.setItem("cal", cal);
+      content.remove();
+      isClick = true;
+      loadCurrentTask();
+    });
+  }
+  isClick = false;
 };
 
-loadCurrentTask()
+loadCurrentTask();
+getUsersSearch();
