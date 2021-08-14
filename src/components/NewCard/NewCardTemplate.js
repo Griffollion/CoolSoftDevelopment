@@ -1,5 +1,6 @@
 export const NewCardTemplate = document.createElement('template')
 NewCardTemplate.innerHTML = `
+<div class="wrapper__new-card">
 <div class="new__card">
         <div class="new__card-header">
             <div class="new__card-header-right">
@@ -74,5 +75,6 @@ NewCardTemplate.innerHTML = `
                 </div>
             </div>
         </div>
+    </div>
     </div>
 `
