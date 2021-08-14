@@ -11,7 +11,7 @@ import {
   deleteTask,
   closeCard 
 } from "../initUserInterface";
-
+import { LimitCard } from "./LimitCard/LimitCard";
 
 
 export function loadCards() {
@@ -108,4 +108,14 @@ export function loadNewCard(obj) {
 //   modalWindow.render();
 // }
 
-
+export function createLimitCard(){
+  const limitCard = new LimitCard(".container-global")
+  limitCard.render()
+ 
+  const okButton = new Button(
+  "",
+  ".close",
+  "Ок",
+  closeCard);
+  okButton.render()
+}
