@@ -101,11 +101,11 @@ export function relocationTask(obj) {
     case "done":
       transferTask(obj, "todo");
   }
-  document.querySelector(".new__card").remove();
+  document.querySelector(".wrapper__new-card").remove();
 }
 
 export function closeCard() {
-  document.querySelector(".new__card").remove();
+  document.querySelector(".wrapper__new-card").remove();
 }
 
 export function closecrd(cls) {
@@ -116,7 +116,7 @@ export function deleteTask(obj) {
   let tasksArr = JSON.parse(localStorage.getItem("tasksArray"));
   let index = tasksArr.findIndex((el) => el.id == obj.id);
   document.getElementById(`${obj.id}`).remove();
-  document.querySelector(".new__card").remove();
+  document.querySelector(".wrapper__new-card").remove();
   tasksArr.splice(index, 1);
   localStorage.setItem("tasksArray", JSON.stringify(tasksArr));
 }

@@ -18,13 +18,13 @@ import { EventCard } from "./EventCard/EventCard";
 
 export function loadCards() {
   const cardToDo = new createCard("todo");
-  cardToDo.render(".container-cards");
+  cardToDo.render();
 
   const cardInProgress = new createCard("in_progress");
-  cardInProgress.render(".container-cards");
+  cardInProgress.render();
 
   const cardDone = new createCard("done");
-  cardDone.render(".container-cards");
+  cardDone.render();
 
   const cardButton = new Button(
     "",
@@ -48,7 +48,7 @@ function getUsersSearch () {
 }
 
 export function loadNewCard(obj) {
-  const newCard = new NewCard(".container-global", obj);
+  const newCard = new NewCard(obj);
   newCard.render();
 
   const usersButton = new Button("icn__btnuser", ".user", "Участники", getUsersSearch);
