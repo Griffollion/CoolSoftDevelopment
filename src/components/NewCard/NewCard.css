@@ -200,7 +200,7 @@
 	border-radius: 50%;
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 800px) {
 	.wrapper__new-card{
 		width: unset;
 		height: unset;
