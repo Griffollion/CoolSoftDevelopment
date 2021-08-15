@@ -13,7 +13,7 @@
 
 	overflow: hidden;
 
-	width: 768px;
+	max-width: 768px;
 	min-height: 600px;
 	margin: 70px auto;
 	padding: 20px;
@@ -198,4 +198,31 @@
 
 .new__card-header-left .button {
 	border-radius: 50%;
+}
+
+@media (max-width: 1000px) {
+	.wrapper__new-card{
+		width: unset;
+		height: unset;
+	}
+
+	.new__card{
+		margin: 10px;
+	}
+
+	.new__card-wrapper {
+		flex-direction: column;
+	}
+
+	.card-info__container {
+		flex-direction: column;
+	}
+
+	.card-info__container-term-wrapper {
+		justify-content: unset;
+	}
+
+	.new__card-create {
+		display: flex;
+	}
 }
