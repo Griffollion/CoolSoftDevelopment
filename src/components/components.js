@@ -9,9 +9,11 @@ import {
   callModalWindow,
   relocationTask,
   deleteTask,
-  closeCard 
+  closeCard,
+  closecrd,
 } from "../initUserInterface";
 import { LimitCard } from "./LimitCard/LimitCard";
+import { EventCard } from "./EventCard/EventCard";
 
 
 export function loadCards() {
@@ -111,11 +113,13 @@ export function loadNewCard(obj) {
 export function createLimitCard(){
   const limitCard = new LimitCard(".container-global")
   limitCard.render()
- 
+
   const okButton = new Button(
   "",
   ".close",
   "Ок",
-  closeCard);
+  closecrd(".limitCard")
+  )
   okButton.render()
 }
+
