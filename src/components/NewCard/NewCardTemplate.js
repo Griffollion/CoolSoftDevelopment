@@ -4,7 +4,7 @@ NewCardTemplate.innerHTML = `
 <div class="new__card">
         <div class="new__card-header">
             <div class="new__card-header-right">
-                <textarea class="new__card-header-name">Наименование новой карты</textarea>
+                <textarea class="new__card-header-name user-content">Наименование новой карты</textarea>
                 <div class="new__card-header-ststus">колонка нахождения
                     <span class="new__card-header-ststus-span">статус</span>
                     <span class="icn__btneye"></span>
@@ -23,7 +23,7 @@ NewCardTemplate.innerHTML = `
                     <div class="card-info__container-term">
                         <div class="card-info__container-term-title">СРОК</div>
                         <div class="card-info__container-term-wrapper">
-                            <div class="card-info__container-term-input"><input type="checkbox"></div>
+                            <div class="card-info__container-term-input"><input type="checkbox" class="user-content"></div>
                             <div class="card-info__container-term-btn">
                                 <span class="container-term-btn__data"></span>
                                 <span class="container-term-btn__status">статус</span>
@@ -41,7 +41,7 @@ NewCardTemplate.innerHTML = `
                         <div class="card-info__description-btn"></div>
                     </div>
                     <div class="card-info__description-text">
-                        <textarea class="textarea-description" placeholder="Введите отписание задачи!"></textarea>
+                        <textarea class="textarea-description user-content" placeholder="Введите отписание задачи!"></textarea>
                     </div>
                 </div>
                 <div class="card-info__actions">
@@ -53,7 +53,7 @@ NewCardTemplate.innerHTML = `
                         <div class="card-info__actions-btn"></div>
                     </div>
                     <div class="card-info__actions-text">
-                        <textarea class="textarea-actions" placeholder="Напишите коментарий..."></textarea>
+                        <textarea class="textarea-actions user-content" placeholder="Напишите коментарий..."></textarea>
                     </div>
                 </div>
             </div>

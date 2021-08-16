@@ -6,7 +6,7 @@ export function Data (node, obj) {
       this.template.value = obj.data
     }
     this.template.type = type="date"
-    this.template.className = `myDate`
+    this.template.className = `myDate user-content`
        this.render = function () {
       const container = document.querySelector(node)
       container.append(this.template)

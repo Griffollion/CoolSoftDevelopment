@@ -99,6 +99,13 @@ export function loadNewCard(obj) {
   const inputData = new Data(".container-term-btn__data", obj);
   inputData.render();
 
+  if (obj.position != "todo") {
+    let inputAreas = document.querySelectorAll(".user-content");
+    for (let el of inputAreas) {
+      el.setAttribute("disabled", true);
+    }
+  }
+
   saveValue(".myDate", obj, "data");
   saveValue(".textarea-description", obj, "description");
   saveValue(".textarea-actions", obj, "comment");
