@@ -48,5 +48,4 @@ textArea.onclick = function () {
 };
 
 loadCurrentTask();
-getUsersSearch();
 getDateCard()
