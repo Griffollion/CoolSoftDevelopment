@@ -4,7 +4,7 @@ import {
   addTasksToCardsFromStorage,
   loadCurrentTask,
 } from "./initUserInterface";
-import { loadCards, getUsersSearch  } from "./components/components";
+import { loadCards, getUsersSearch, getDateCard } from "./components/components";
 
 
 loadCards();
@@ -49,3 +49,4 @@ textArea.onclick = function () {
 
 loadCurrentTask();
 getUsersSearch();
+getDateCard()

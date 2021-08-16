@@ -2,7 +2,7 @@ import styles from './Data.css'
 
 export function Data (node, obj) {
     this.template = document.createElement('input')
-    if (obj.data){
+    if (obj.data) {
       this.template.value = obj.data
     }
     this.template.type = type="date"
