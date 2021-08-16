@@ -1,4 +1,8 @@
-import { loadNewCard, loadModalWindow } from "./components/components";
+import {
+  loadNewCard,
+  createEventCard,
+  createLimitCard,
+} from "./components/components";
 
 export function addArea() {
   if (document.querySelector(".card_task")) {
@@ -62,33 +66,38 @@ export function saveValue(item, currentTask, key) {
   });
 }
 
-export function transferTask(obj, card) {
-  let activeTask = document.getElementById(`${obj.id}`);
-  let destination = document.querySelector(`#${card}`);
-  activeTask.classList.remove(obj.position);
-  activeTask.classList.add(card);
-  destination.append(activeTask);
-  const getKey = JSON.parse(localStorage.getItem("tasksArray"));
-  getKey.forEach((ele) => {
-    if (ele.id === obj.id) {
-      ele.position = card;
-    }
-  });
-  localStorage.setItem("tasksArray", JSON.stringify(getKey));
+export function callEventWindow(obj) {
+  switch (obj.position) {
+    case "todo":
+      let cardsInProgress = document.querySelectorAll(".in_progress");
+      if (cardsInProgress.length >= 6) {
+        createLimitCard();
+      } else {
+        createEventCard(
+          obj,
+          "Перемещение карточки",
+          "переместить в колонку IN PROGRESS",
+          relocationTask
+        );
+      }
+      break;
+    case "in_progress":
+      createEventCard(
+        obj,
+        "Перемещение карточки",
+        "переместить в колонку DONE",
+        relocationTask
+      );
+      break;
+    case "done":
+      createEventCard(
+        obj,
+        "Перемещение карточки",
+        "переместить в колонку TODO",
+        relocationTask
+      );
+  }
 }
-
-// export function callModalWindow(obj){
-//   switch (obj.position){
-//     case 'todo':
-//     loadModalWindow(obj, 'переместить в колонку IN PROGRESS')
-//     break
-//     case 'in_progress':
-//     loadModalWindow(obj, 'переместить в колонку DONE')
-//     break
-//     case 'done':
-//     loadModalWindow(obj, 'переместить в колонку TODO')
-// }
-// }
 
 export function relocationTask(obj) {
   switch (obj.position) {
@@ -104,8 +113,36 @@ export function relocationTask(obj) {
   document.querySelector(".wrapper__new-card").remove();
 }
 
-export function closeCard() {
+export function transferTask(obj, card) {
+  let activeTask = document.getElementById(`${obj.id}`);
+  let destination = document.querySelector(`#${card}`);
+  activeTask.classList.remove(obj.position);
+  activeTask.classList.add(card);
+  destination.append(activeTask);
+  document.querySelector(".eventCard").remove();
+  const getKey = JSON.parse(localStorage.getItem("tasksArray"));
+  getKey.forEach((ele) => {
+    if (ele.id === obj.id) {
+      ele.position = card;
+    }
+  });
+  localStorage.setItem("tasksArray", JSON.stringify(getKey));
+}
+
+export function closeNewCard() {
   document.querySelector(".wrapper__new-card").remove();
+}
+
+export function closeLimit() {
+  document.querySelector(".limitCard").remove();
+}
+
+export function closeEvent() {
+  document.querySelector(".eventCard").remove();
+}
+
+export function callDeleteCard(obj) {
+  createEventCard(obj, "Архивация", "удалить задачу?", deleteTask);
 }
 
 export function deleteTask(obj) {
@@ -113,6 +150,7 @@ export function deleteTask(obj) {
   let index = tasksArr.findIndex((el) => el.id == obj.id);
   document.getElementById(`${obj.id}`).remove();
   document.querySelector(".wrapper__new-card").remove();
+  document.querySelector(".eventCard").remove();
   tasksArr.splice(index, 1);
   localStorage.setItem("tasksArray", JSON.stringify(tasksArr));
 }

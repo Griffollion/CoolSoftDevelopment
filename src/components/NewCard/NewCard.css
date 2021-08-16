@@ -1,11 +1,13 @@
 .wrapper__new-card {
-    position: fixed;
-    z-index: 10;
-    top: 0;
-    left: 0;
-    background-color: rgba(0, 0, 0, 0.3);
-    width: 100%;
-    height: 100%;
+	position: fixed;
+	z-index: 10;
+	top: 0;
+	left: 0;
+
+	width: 100%;
+	height: 100%;
+
+	background-color: rgba(0, 0, 0, 0.3);
 }
 
 .new__card {
@@ -33,17 +35,20 @@
 .new__card-header-right {
 	display: flex;
 	flex-direction: column;
+
 	width: 80%;
 }
 
 .new__card-header-right .new__card-header-name {
-	border: none;
-	box-shadow: none;
 	width: 100%;
+
+	border: none;
+	background-color: #F4F5F7;
+	box-shadow: none;
+
 	font-size: 18px;
 	font-weight: 600;
 	line-height: 20px;
-	background-color: #F4F5F7;
 }
 
 .new__card-header-ststus {
@@ -201,12 +206,12 @@
 }
 
 @media (max-width: 800px) {
-	.wrapper__new-card{
+	.wrapper__new-card {
 		width: unset;
 		height: unset;
 	}
 
-	.new__card{
+	.new__card {
 		margin: 10px;
 	}
 
