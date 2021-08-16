@@ -18,6 +18,7 @@ import {
   closeNewCard,
   closeEvent,
 } from "../initUserInterface";
+import { Menu } from "./Menu/Menu";
 
 export function loadCards() {
   const cardToDo = new createCard("todo");
@@ -133,4 +134,18 @@ export function createEventCard(obj, title, text, callback) {
 
   const moveButton = new Button("", ".event", "Да", callback, obj);
   moveButton.render();
+}
+
+export function createMenu() {
+  const menu = new Menu()
+  menu.render()
+
+  const menuBtn = new Button(
+    "",
+    ".icon-users",
+    "Menu",
+    //
+  )
+menuBtn.render()
+
 }
