@@ -18,6 +18,7 @@ import {
   closeNewCard,
   closeEvent,
 } from "../initUserInterface";
+import { DataCard, closeDataCard, getInputDataValue } from "./DataCard/DataCard";
 
 export function loadCards() {
   const cardToDo = new createCard("todo");
@@ -52,6 +53,16 @@ function getUsersSearch() {
   closeVodalFromOverlay.addEventListener("click", ToCloseModalUsersTemplate);
 }
 
+function getDateCard () {
+  const dataCard = new DataCard('.container-global')
+  dataCard.render()
+
+  getInputDataValue()
+
+  const closeDateCard = document.querySelector('.card__header-close')
+  closeDateCard.addEventListener('click', closeDataCard)
+}
+
 export function loadNewCard(obj) {
   const newCard = new NewCard(obj);
   newCard.render();
@@ -64,7 +75,7 @@ export function loadNewCard(obj) {
   );
   usersButton.render();
 
-  const dateButton = new Button("icn__btnaccess_time", ".data", "Дата");
+  const dateButton = new Button("icn__btnaccess_time", ".data", "Дата", getDateCard);
   dateButton.render();
 
   const movButton = new Button(

@@ -7,6 +7,7 @@ import {
 import { loadCards } from "./components/components";
 
 
+
 loadCards();
 
 if (localStorage.getItem("tasksArray")) {
