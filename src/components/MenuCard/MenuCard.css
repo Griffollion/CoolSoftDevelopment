@@ -8,6 +8,7 @@
     position: fixed;
     right: 230px;
     top: 80px;
+    border: 1px groove #172B4D;
    
 }
 .menu li{

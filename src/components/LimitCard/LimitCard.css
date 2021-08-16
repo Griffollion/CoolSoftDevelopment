@@ -1,37 +1,37 @@
 .limitCard {
-	position: absolute;
+	position: relative;
 	z-index: 11;
-
 	align-items: center;
 	justify-content: center;
-
-	margin: 20px auto;
-
 	text-align: center;
-
 	border-radius: 5px;
-	background-color: #FFF;
+	background-color: #F4F5F7;
+	border: 1px groove #172B4D;
+	box-shadow: 5px 5px 5px #a6adb1;
+	width: 500px;
+	left: 350px
 }
 
 .limitCard__title {
 	margin-bottom: 15px;
 	padding-top: 10px;
-
-	color: red;
-
+	color: #172B4D;
 	font-size: 20px;
 	font-weight: bold;
 }
 
 .limitCard__notice {
 	padding: 5px;
-
 	font-size: 18px;
 }
 
 .limitCard__footer {
 	align-items: center;
 	justify-content: center;
-
 	margin: 5px auto;
+}
+
+.limitCard__footer_button, .close{
+	text-align: center;
+	
 }
