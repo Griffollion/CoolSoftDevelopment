@@ -108,8 +108,12 @@ export function closeCard() {
   document.querySelector(".wrapper__new-card").remove();
 }
 
-export function closecrd(cls) {
-  document.querySelector(cls).remove();
+export function closeLimit() {
+  document.querySelector(".limitCard").remove();
+}
+
+export function closeEvent() {
+  document.querySelector(".eventCard").remove();
 }
 
 export function deleteTask(obj) {

@@ -10,7 +10,8 @@ import {
   relocationTask,
   deleteTask,
   closeCard,
-  closecrd,
+  closeLimit,
+  closeEvent,
 } from "../initUserInterface";
 import { LimitCard } from "./LimitCard/LimitCard";
 import { EventCard } from "./EventCard/EventCard";
@@ -61,7 +62,7 @@ export function loadNewCard(obj) {
     "icn__btnarrow-right2",
     ".moving",
     "Перемещение",
-    relocationTask,
+    createEventCard("move", "move?", "move", relocationTask),
     obj
     // callModalWindow,
   );
@@ -72,7 +73,7 @@ export function loadNewCard(obj) {
     "icn__btnvideo_label",
     ".archiving",
     "Архивация",
-    deleteTask, 
+    createEventCard("del", "del?", "delete", deleteTask),
     obj
   );
   delButton.render();
@@ -118,8 +119,28 @@ export function createLimitCard(){
   "",
   ".close",
   "Ок",
-  closecrd(".limitCard")
+  closeLimit
   )
   okButton.render()
 }
 
+export function createEventCard(title,text, btn, func){
+  const eventCard = new EventCard(title, text, ".container-global")
+  eventCard.render()
+
+  const cancelButton = new Button (
+    "",
+  ".cancel",
+  "Отменить",
+  closeEvent 
+  )
+cancelButton.render()
+
+const delButton = new Button (
+  "",
+  ".event",
+  btn,
+  func
+)
+delButton.render()
+}
