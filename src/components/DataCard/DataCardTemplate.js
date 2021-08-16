@@ -1,4 +1,4 @@
-export const DataCardTemplate = document.createElement('template')
+export const DataCardTemplate = document.createElement("template");
 DataCardTemplate.innerHTML = `
         <div class="date__card-wrapper">
         <div class="date__card" >
@@ -15,4 +15,4 @@ DataCardTemplate.innerHTML = `
             </div>
         </div>
         </div>
-`
+`;
