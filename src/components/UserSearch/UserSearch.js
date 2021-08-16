@@ -32,10 +32,8 @@ export async function GetDataFromServer () {
     const userListPlace = document.querySelector('#app')
     userListPlace.insertAdjacentHTML('beforeend', renderUser(el))
   })
-  return data
 }
 
-export const getUsersSearchModal = function () {
-  const modal = document.querySelector('.modal')
-  modal.classList.add('active')
+export function ToCloseModalUsersTemplate () {
+  document.querySelector('.popup__users-template').remove()
 }

@@ -1,9 +1,10 @@
 export const NewCardTemplate = document.createElement('template')
 NewCardTemplate.innerHTML = `
+<div class="wrapper__new-card">
 <div class="new__card">
         <div class="new__card-header">
             <div class="new__card-header-right">
-                <div class="new__card-header-name"><span></span>Наименование новой карты</div>
+                <textarea class="new__card-header-name">Наименование новой карты</textarea>
                 <div class="new__card-header-ststus">колонка нахождения
                     <span class="new__card-header-ststus-span">статус</span>
                     <span class="icn__btneye"></span>
@@ -74,5 +75,6 @@ NewCardTemplate.innerHTML = `
                 </div>
             </div>
         </div>
+    </div>
     </div>
 `

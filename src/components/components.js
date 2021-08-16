@@ -2,30 +2,30 @@ import { Button } from "./Buttons/Button";
 import { NewCard } from "./NewCard/NewCard";
 import { Data } from "./Data/Data";
 import { createCard } from "./Card/Card";
-
+import { GetDataFromServer, CreateUsersTemplate, ToCloseModalUsersTemplate } from "./UserSearch/UserSearch"
 import {
   addArea,
   saveValue,
   callModalWindow,
   relocationTask,
+  deleteTask,
+  closeCard,
+  closeLimit,
+  closeEvent,
 } from "../initUserInterface";
-
-
-import { GetDataFromServer, CreateUsersTemplate, GetUsersSearchModal, getUsersSearchModal } from "./UserSearch/UserSearch"
-import { closeCard } from "../initUserInterface";
-
-
+import { LimitCard } from "./LimitCard/LimitCard";
+import { EventCard } from "./EventCard/EventCard";
 
 
 export function loadCards() {
   const cardToDo = new createCard("todo");
-  cardToDo.render(".container-cards");
+  cardToDo.render();
 
   const cardInProgress = new createCard("in_progress");
-  cardInProgress.render(".container-cards");
+  cardInProgress.render();
 
   const cardDone = new createCard("done");
-  cardDone.render(".container-cards");
+  cardDone.render();
 
   const cardButton = new Button(
     "",
@@ -36,17 +36,23 @@ export function loadCards() {
   cardButton.render();
 }
 
-export function getUsersSearch() {
+function getUsersSearch () {
   const loadUsersTemplate = new CreateUsersTemplate('.container-global');
   loadUsersTemplate.render();
-  GetDataFromServer()
+  GetDataFromServer();
+
+  const closeModalFromExit = document.querySelector('.user-search__header--exit')
+  const closeVodalFromOverlay = document.querySelector('.overlay')
+
+  closeModalFromExit.addEventListener('click', ToCloseModalUsersTemplate)
+  closeVodalFromOverlay.addEventListener('click', ToCloseModalUsersTemplate)
 }
 
 export function loadNewCard(obj) {
-  const newCard = new NewCard(".container-global", obj);
+  const newCard = new NewCard(obj);
   newCard.render();
 
-  const usersButton = new Button("icn__btnuser", ".user", "Участники", getUsersSearchModal);
+  const usersButton = new Button("icn__btnuser", ".user", "Участники", getUsersSearch);
   usersButton.render();
 
   const dateButton = new Button("icn__btnaccess_time", ".data", "Дата");
@@ -56,8 +62,8 @@ export function loadNewCard(obj) {
     "icn__btnarrow-right2",
     ".moving",
     "Перемещение",
-    relocationTask,
-    obj
+    createEventCard,
+    "Перемещение", "Переместить?", "да", relocationTask
     // callModalWindow,
   );
   movButton.render();
@@ -66,7 +72,9 @@ export function loadNewCard(obj) {
   const delButton = new Button(
     "icn__btnvideo_label",
     ".archiving",
-    "Архивация"
+    "Архивация",
+    createEventCard,
+    "Архивация", "Перенести в архив?", "да", deleteTask
   );
   delButton.render();
 
@@ -91,6 +99,7 @@ export function loadNewCard(obj) {
   saveValue(".myDate", obj, "data");
   saveValue(".textarea-description", obj, "description");
   saveValue(".textarea-actions", obj, "comment");
+  saveValue(".new__card-header-name", obj, "title");
 }
 
 // export function loadModalWindow(obj, direction) {
@@ -102,4 +111,36 @@ export function loadNewCard(obj) {
 //   modalWindow.render();
 // }
 
+export function createLimitCard(){
+  const limitCard = new LimitCard(".container-global")
+  limitCard.render()
 
+  const okButton = new Button(
+  "",
+  ".close",
+  "Ок",
+  closeLimit
+  )
+  okButton.render()
+}
+
+export function createEventCard(title,text, btn, func){
+  const eventCard = new EventCard(title, text, ".container-global")
+  eventCard.render()
+
+  const cancelButton = new Button (
+    "",
+  ".cancel",
+  "Отменить",
+  closeEvent 
+  )
+cancelButton.render()
+
+const delButton = new Button (
+  "",
+  ".event",
+  btn,
+  func
+)
+delButton.render()
+}

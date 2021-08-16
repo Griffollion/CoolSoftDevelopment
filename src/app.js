@@ -5,7 +5,7 @@ import {
   loadCurrentTask,
 } from "./initUserInterface";
 import { loadCards } from "./components/components";
-import { getUsersSearch } from "./components/components";
+
 
 loadCards();
 
@@ -29,7 +29,7 @@ textArea.onclick = function () {
         position: "todo",
         id: cal,
       };
-      let tasksArray
+      let tasksArray;
       if (!localStorage.getItem("tasksArray")) {
         tasksArray = [];
       } else {
@@ -41,10 +41,11 @@ textArea.onclick = function () {
       localStorage.setItem("cal", cal);
       content.remove();
       isClick = true;
+      loadCurrentTask();
     });
   }
   isClick = false;
 };
 
 loadCurrentTask();
-getUsersSearch();
+
