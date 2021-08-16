@@ -62,8 +62,8 @@ export function loadNewCard(obj) {
     "icn__btnarrow-right2",
     ".moving",
     "Перемещение",
-    createEventCard("move", "move?", "move", relocationTask),
-    obj
+    createEventCard,
+    "Перемещение", "Переместить?", "да", relocationTask
     // callModalWindow,
   );
   movButton.render();
@@ -73,8 +73,8 @@ export function loadNewCard(obj) {
     "icn__btnvideo_label",
     ".archiving",
     "Архивация",
-    createEventCard("del", "del?", "delete", deleteTask),
-    obj
+    createEventCard,
+    "Архивация", "Перенести в архив?", "да", deleteTask
   );
   delButton.render();
 

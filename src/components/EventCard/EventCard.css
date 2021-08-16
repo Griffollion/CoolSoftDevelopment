@@ -9,7 +9,7 @@
     align-items: center;
     margin: 20px auto;
     position: relative;
-    z-index: 5;
+    z-index: 100;
     
     }
     .eventCard__title{
