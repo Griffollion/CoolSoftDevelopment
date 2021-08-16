@@ -12,13 +12,10 @@ html {
 }
 
 body {
-	width: 1400px;
-	margin: 0 auto;
-
 	white-space: nowrap;
 
 	color: #172B4D;
-	background: url(/src/img/sky-1.jpg) no-repeat;
+	background: url(/src/img/sky-1.jpg) repeat;
 	background-size: cover;
 
 	font-family: Arial, Helvetica, sans-serif;
@@ -78,9 +75,12 @@ body {
 	color: honeydew;
 }
 
+.container-global {
+	position: relative;
+}
+
 .container-cards {
 	display: flex;
-
 }
 
 .textarea {
@@ -129,4 +129,14 @@ textarea {
 
 	background-color: rgb(204, 202, 202);
 	box-shadow: 0 0 5px rgb(100, 100, 100);
+}
+
+@media (max-width: 800px) {
+	.wrapper {
+		margin: 0;
+	}
+
+	.container-cards {
+		flex-direction: column;
+	}
 }

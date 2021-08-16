@@ -7,8 +7,8 @@ export function createCard(title) {
   this.component = CardTemplate.content.querySelector("div").cloneNode(true);
   this.component.querySelector('.card_list-tasks').setAttribute('id', title)
   this.component.querySelector('.card__title-text').innerHTML = title
-  this.render = function (node) {
-    const container = document.querySelector(node);
+  this.render = function () {
+    const container = document.querySelector(".container-cards");
     container.append(this.component);
   };
 }

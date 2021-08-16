@@ -1,7 +1,7 @@
 import styles from "./NewCard.css"
 import { NewCardTemplate } from "./NewCardTemplate"
 
-export function NewCard (node, obj) {
+export function NewCard (obj) {
   this.component = NewCardTemplate.content.querySelector('div').cloneNode(true)
   if (obj.description) {
     this.component.querySelector('.textarea-description').innerHTML = obj.description
@@ -16,7 +16,7 @@ export function NewCard (node, obj) {
     this.component.querySelector('.new__card-header-name').innerHTML = obj.title
   }
   this.render = function () {
-    const body = document.querySelector(node)
+    const body = document.querySelector(".container-global")
     body.append(this.component)
   }
 }
