@@ -141,6 +141,10 @@ export function closeEvent() {
   document.querySelector(".eventCard").remove();
 }
 
+export function closeMenu() {
+document.querySelector(".menu").remove()
+}
+
 export function callDeleteCard(obj) {
   createEventCard(obj, "Архивация", "удалить задачу?", deleteTask);
 }

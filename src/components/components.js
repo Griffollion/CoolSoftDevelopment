@@ -17,8 +17,10 @@ import {
   callDeleteCard,
   closeNewCard,
   closeEvent,
+  closeMenu,
 } from "../initUserInterface";
 import { Menu } from "./Menu/Menu";
+import { MenuCard } from "./MenuCard/MenuCard";
 
 export function loadCards() {
   const cardToDo = new createCard("todo");
@@ -144,8 +146,53 @@ export function createMenu() {
     "",
     ".icon-users",
     "Menu",
-    //
+    createMenuCard,
   )
 menuBtn.render()
 
+}
+
+export function createMenuCard() {
+  const menuCard = new MenuCard()
+  menuCard.render()
+
+  const clsMenu = new Button(
+    "",
+    ".menu_header-close",
+    "X",
+    closeMenu,
+  )
+  clsMenu.render()
+
+  const clearToDo = new Button(
+    "",
+    ".clrtodo",
+    "Очистить todo",
+    //function
+  )
+  clearToDo.render()
+
+  const clearInPrcs = new Button(
+    "",
+    ".clrinprcs",
+    "Очистить in process",
+    //function
+  )
+  clearInPrcs.render()
+
+  const clearDone = new Button(
+    "",
+    ".clrdone",
+    "Очистить done",
+    //function
+  )
+  clearDone.render()
+
+  const clearAll = new Button(
+    "",
+    ".clrall",
+    "Очистить всё",
+    //function
+  )
+  clearAll.render()
 }
