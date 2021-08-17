@@ -11,6 +11,7 @@ import {
 } from "./UserSearch/UserSearch";
 import {
   addArea,
+  cancelArea,
   saveValue,
   closeLimit,
   callEventWindow,
@@ -41,6 +42,14 @@ export function loadCards() {
     addArea
   );
   cardButton.render();
+
+  const cancelButton = new Button(
+    "",
+    ".card__button",
+    "отмена",
+    cancelArea
+  );
+  cancelButton.render();
 }
 
 function getUsersSearch() {
