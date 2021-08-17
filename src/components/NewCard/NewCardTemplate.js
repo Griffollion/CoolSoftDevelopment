@@ -18,7 +18,7 @@ NewCardTemplate.innerHTML = `
                 <div class="card-info__container">
                     <div class="card-info__container-users">
                         <div class="card-info__container-users-title">УЧАСТНИКИ</div>
-                        <div class="card-info__container-users-icons"><span></span></div>
+                        <div class="card-info__container-users-icons"></div>
                     </div>
                     <div class="card-info__container-term">
                         <div class="card-info__container-term-title">СРОК</div>

@@ -126,6 +126,7 @@
 
 .user-search__form--user-list:hover {
 	background-color: rgba(9, 30, 66, 0.04);
+	cursor: pointer;
 }
 
 .user-list__avatar {
