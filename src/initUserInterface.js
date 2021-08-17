@@ -170,6 +170,7 @@ export function clearTask(obj){
       ele.data = ''
       ele.description = ''
       ele.comment = ''
+      ele["users"] = []
     }
   });
    localStorage.setItem("tasksArray", JSON.stringify(getKey));
