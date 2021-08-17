@@ -23,8 +23,7 @@
 	border-radius: 3px;
 	background-color: #F4F5F7;
 
-	font-family: 'Ubuntu', 'Droid Sans', 'Helvetica Neue', sans-serif;
-	font-size: 14px;
+	font-size: 16px;
 	font-weight: 400;
 }
 
@@ -37,6 +36,11 @@
 	padding-bottom: 20px;
 
 	border-bottom: 1px solid rgba(9, 30, 66, 0.13);
+}
+
+.card__header-name {
+	padding-left: 100px;
+	font-weight: 600;
 }
 
 .card__header-close {
@@ -61,4 +65,11 @@
 	border: none;
 	outline: none;
 	background-color: rgba(9, 30, 66, 0.04);
+}
+
+@media (max-width: 800px) {
+	.date__card{
+		top: 300px;
+		right: unset;
+	}
 }

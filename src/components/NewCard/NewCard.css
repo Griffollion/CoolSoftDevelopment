@@ -137,8 +137,8 @@
 
 .card-info__description-wrapper,
 .card-info__actions-wrapper {
-	display: flex;
-	align-items: center;
+	/* display: flex;
+	align-items: center; */
 
 	margin-bottom: 15px;
 }
