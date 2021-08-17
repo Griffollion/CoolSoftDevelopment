@@ -114,6 +114,7 @@ export function relocationTask(obj) {
       transferTask(obj, "done");
       break;
     case "done":
+      clearTask(obj)
       transferTask(obj, "todo");
   }
   document.querySelector(".wrapper__new-card").remove();
@@ -134,6 +135,7 @@ export function transferTask(obj, card) {
   });
   localStorage.setItem("tasksArray", JSON.stringify(getKey));
 }
+
 
 export function closeNewCard() {
   document.querySelector(".wrapper__new-card").remove();
@@ -159,4 +161,16 @@ export function deleteTask(obj) {
   document.querySelector(".eventCard").remove();
   tasksArr.splice(index, 1);
   localStorage.setItem("tasksArray", JSON.stringify(tasksArr));
+}
+
+export function clearTask(obj){
+  const getKey = JSON.parse(localStorage.getItem("tasksArray"));
+  getKey.forEach((ele) => {
+    if (ele.id === obj.id) {
+      ele.data = ''
+      ele.description = ''
+      ele.comment = ''
+    }
+  });
+   localStorage.setItem("tasksArray", JSON.stringify(getKey));
 }
