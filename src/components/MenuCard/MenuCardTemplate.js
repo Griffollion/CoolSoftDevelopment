@@ -1,5 +1,6 @@
 export const MenuCardTemplate = document.createElement('template')
 MenuCardTemplate.innerHTML = `
+<div class = "wrapper_menu">
 <div class="menu">
 <div class="menu_header">
   <div class="menu_header-tittle">Очистить список</div>
@@ -12,5 +13,6 @@ MenuCardTemplate.innerHTML = `
     <li class="menu_list clrdone"></li>
     <li class="menu_list clrall"></li>
   </ul>
+</div>
 </div>
 `

@@ -1,15 +1,24 @@
+.wrapper_limitCard{
+	position: fixed;
+	z-index: 10;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
 .limitCard {
-	position: relative;
+	position: fixed;
+	top: 250px;
+	left: 540px;
+	width: 500px;
+	height: 125px;
 	z-index: 11;
-	align-items: center;
-	justify-content: center;
 	text-align: center;
 	border-radius: 5px;
 	background-color: #F4F5F7;
 	border: 1px groove #172B4D;
-	box-shadow: 5px 5px 5px #a6adb1;
-	width: 500px;
-	left: 350px
 }
 
 .limitCard__title {
@@ -18,6 +27,7 @@
 	color: #172B4D;
 	font-size: 20px;
 	font-weight: bold;
+	background-color: rgba(9, 30, 66, 0.205);
 }
 
 .limitCard__notice {
@@ -31,7 +41,13 @@
 	margin: 5px auto;
 }
 
-.limitCard__footer_button, .close{
+.limitCard__footer_button{
+	text-align: center;	
+	margin: auto;
+	width: 50px;
+}
+.limitCard__footer_button .button{
+	font-size: 20px;
+	font-weight: bold;
 	text-align: center;
-	
 }

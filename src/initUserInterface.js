@@ -119,7 +119,7 @@ export function transferTask(obj, card) {
   activeTask.classList.remove(obj.position);
   activeTask.classList.add(card);
   destination.append(activeTask);
-  document.querySelector(".eventCard").remove();
+  document.querySelector(".wrapper_eventCard").remove();
   const getKey = JSON.parse(localStorage.getItem("tasksArray"));
   getKey.forEach((ele) => {
     if (ele.id === obj.id) {
@@ -134,15 +134,15 @@ export function closeNewCard() {
 }
 
 export function closeLimit() {
-  document.querySelector(".limitCard").remove();
+  document.querySelector(".wrapper_limitCard").remove();
 }
 
 export function closeEvent() {
-  document.querySelector(".eventCard").remove();
+  document.querySelector(".wrapper_eventCard").remove();
 }
 
 export function closeMenu() {
-document.querySelector(".menu").remove()
+document.querySelector(".wrapper_menu").remove()
 }
 
 export function callDeleteCard(obj) {
@@ -154,7 +154,7 @@ export function deleteTask(obj) {
   let index = tasksArr.findIndex((el) => el.id == obj.id);
   document.getElementById(`${obj.id}`).remove();
   document.querySelector(".wrapper__new-card").remove();
-  document.querySelector(".eventCard").remove();
+  document.querySelector(".wrapper_eventCard").remove();
   tasksArr.splice(index, 1);
   localStorage.setItem("tasksArray", JSON.stringify(tasksArr));
 }

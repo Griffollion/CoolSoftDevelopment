@@ -1,15 +1,23 @@
+.wrapper_menu{
+    position: fixed;
+	z-index: 10;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+}
 .menu{
     width: 220px;
     height: 240px;
     background-color: #F4F5F7;
     color: #172B4D;
     border-radius: 7px;
-    box-shadow: 5px 5px 5px #a6adb1;
     position: fixed;
-    right: 230px;
+    right: 220px;
     top: 80px;
     border: 1px groove #172B4D;
-   
+    z-index: 11;
 }
 .menu li{
     list-style-type: none;

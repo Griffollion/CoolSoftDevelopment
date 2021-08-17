@@ -19,7 +19,6 @@ import {
   closeEvent,
   closeMenu,
 } from "../initUserInterface";
-import { Menu } from "./Menu/Menu";
 import { MenuCard } from "./MenuCard/MenuCard";
 
 export function loadCards() {
@@ -138,19 +137,8 @@ export function createEventCard(obj, title, text, callback) {
   moveButton.render();
 }
 
-export function createMenu() {
-  const menu = new Menu()
-  menu.render()
-
-  const menuBtn = new Button(
-    "",
-    ".icon-users",
-    "Menu",
-    createMenuCard,
-  )
-menuBtn.render()
-
-}
+const menu = document.querySelector(".icon-users")
+menu.addEventListener("click", createMenuCard)
 
 export function createMenuCard() {
   const menuCard = new MenuCard()
