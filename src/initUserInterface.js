@@ -15,6 +15,12 @@ export function addArea() {
   }
 }
 
+export function cancelArea(){
+  if (document.querySelector(".card_task")){
+    document.querySelector(".card_task").remove()
+  }
+}
+
 export function addTask(className, text, id) {
   let node = document.querySelector(".card-task").cloneNode(true);
   node.className = `task ${className}`;
