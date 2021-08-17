@@ -52,11 +52,11 @@ export function loadCards() {
   cancelButton.render();
 }
 
-function getUsersSearch() {
-  const loadUsersTemplate = new CreateUsersTemplate(".container-global");
+function getUsersSearch(obj) {
+  const loadUsersTemplate = new CreateUsersTemplate();
   loadUsersTemplate.render();
-  GetDataFromServer();
-
+  GetDataFromServer(obj);
+ 
   const closeModalFromExit = document.querySelector(
     ".user-search__header--exit"
   );
@@ -74,7 +74,8 @@ export function loadNewCard(obj) {
     "icn__btnuser",
     ".user",
     "Участники",
-    getUsersSearch
+    getUsersSearch,
+    obj
   );
   usersButton.render();
 
