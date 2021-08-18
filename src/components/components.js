@@ -11,6 +11,7 @@ import {
 } from "./UserSearch/UserSearch";
 import {
   addArea,
+  cancelArea,
   saveValue,
   closeLimit,
   callEventWindow,
@@ -20,6 +21,12 @@ import {
   closeMenu,
 } from "../initUserInterface";
 import { MenuCard } from "./MenuCard/MenuCard";
+import {
+  DataCard,
+  closeDataCard,
+  getInputDataValue,
+} from "./DataCard/DataCard";
+
 
 export function loadCards() {
   const cardToDo = new createCard("todo");
@@ -38,6 +45,14 @@ export function loadCards() {
     addArea
   );
   cardButton.render();
+
+  const cancelButton = new Button(
+    "",
+    ".card__button",
+    "отмена",
+    cancelArea
+  );
+  cancelButton.render();
 }
 
 function getUsersSearch() {
@@ -66,8 +81,23 @@ export function loadNewCard(obj) {
   );
   usersButton.render();
 
-  const dateButton = new Button("icn__btnaccess_time", ".data", "Дата");
+  const dateButton = new Button(
+    "icn__btnaccess_time",
+    ".data",
+    "Дата",
+    getDateCard
+  );
   dateButton.render();
+
+  function getDateCard() {
+    const dataCard = new DataCard(obj);
+    dataCard.render();
+
+    getInputDataValue(obj);
+
+    const closeDateCard = document.querySelector(".card__header-close");
+    closeDateCard.addEventListener("click", closeDataCard);
+  }
 
   const movButton = new Button(
     "icn__btnarrow-right2",
