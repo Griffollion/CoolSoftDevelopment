@@ -12,19 +12,19 @@ html {
 }
 
 body {
+	width: 1200px;
+	margin: 0 auto;
 	white-space: nowrap;
-
 	color: #172B4D;
 	background: url(/src/img/sky-1.jpg) repeat;
 	background-size: cover;
-
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 17px;
 	font-weight: 400;
 }
 
 .wrapper {
-	width: 1200px;
+	
 	max-width: 100%;
 	margin: 0 auto;
 	padding: 0 10px 50px 10px;
@@ -32,13 +32,11 @@ body {
 
 /* slyles header */
 .header {
+
 	display: flex;
 	align-items: center;
-
-	justify-content: space-around;
-
+	justify-content: space-between;
 	padding: 20px;
-
 	font-size: 30px;
 	font-weight: 600;
 }
@@ -76,10 +74,12 @@ body {
 }
 
 .container-global {
+	
 	position: relative;
 }
 
 .container-cards {
+	justify-content: space-around;
 	display: flex;
 }
 

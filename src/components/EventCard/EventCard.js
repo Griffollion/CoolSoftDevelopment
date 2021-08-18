@@ -8,5 +8,5 @@ export function EventCard(title, text) {
     this.render = function () {
         const body = document.querySelector(".container-global")
         body.append(this.component)
-      }
+      } 
   }

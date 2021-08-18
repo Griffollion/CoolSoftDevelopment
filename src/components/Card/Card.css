@@ -1,13 +1,10 @@
 .card {
 	position: relative;
-
 	overflow: hidden;
-
 	width: 275px;
 	margin: 10px;
-
 	border-radius: 5px;
-	background-color: rgb(214, 212, 212);
+	background-color: #F4F5F7;
 }
 
 .card:first-child {
@@ -18,28 +15,22 @@
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-
 	height: 40px;
 }
 
 .card__title-text {
 	padding: 10px 8px;
-
 	text-align: left;
-
 	color: #172B4D;
-
 	font-size: 20px;
 	font-weight: 500;
 }
 
 .card__list {
 	overflow: hidden;
-
 	width: 255px;
 	margin-right: 5px;
 	padding: 0 10px;
-
 	text-align: end;
 	word-break: break-all;
 	overflow-wrap: break-word;
@@ -47,9 +38,7 @@
 
 .card_list-tasks {
 	overflow: hidden;
-
 	padding: 0 10px;
-
 	word-break: break-all;
 	overflow-wrap: break-word;
 }
@@ -58,8 +47,6 @@
 	display: flex;
 	position: absolute;
 	bottom: 0;
-
 	width: 100%;
-
 	color: #5E6C84;
 }

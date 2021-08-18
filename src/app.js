@@ -4,11 +4,12 @@ import {
   addTasksToCardsFromStorage,
   loadCurrentTask,
 } from "./initUserInterface";
-import { loadCards } from "./components/components";
+import { loadCards, createMenu } from "./components/components";
 
 
 
 loadCards();
+
 
 if (localStorage.getItem("tasksArray")) {
   addTasksToCardsFromStorage();
@@ -49,4 +50,4 @@ textArea.onclick = function () {
 };
 
 loadCurrentTask();
-
+createMenu();
