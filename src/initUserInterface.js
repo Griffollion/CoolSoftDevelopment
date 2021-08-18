@@ -15,9 +15,9 @@ export function addArea() {
   }
 }
 
-export function cancelArea(){
-  if (document.querySelector(".card_task")){
-    document.querySelector(".card_task").remove()
+export function cancelArea() {
+  if (document.querySelector(".card_task")) {
+    document.querySelector(".card_task").remove();
   }
 }
 
@@ -114,7 +114,7 @@ export function relocationTask(obj) {
       transferTask(obj, "done");
       break;
     case "done":
-      clearTask(obj)
+      clearTask(obj);
       transferTask(obj, "todo");
   }
   document.querySelector(".wrapper__new-card").remove();
@@ -136,7 +136,6 @@ export function transferTask(obj, card) {
   localStorage.setItem("tasksArray", JSON.stringify(getKey));
 }
 
-
 export function closeNewCard() {
   document.querySelector(".wrapper__new-card").remove();
 }
@@ -150,7 +149,7 @@ export function closeEvent() {
 }
 
 export function closeMenu() {
-document.querySelector(".wrapper_menu").remove()
+  document.querySelector(".wrapper_menu").remove();
 }
 
 export function callDeleteCard(obj) {
@@ -167,15 +166,37 @@ export function deleteTask(obj) {
   localStorage.setItem("tasksArray", JSON.stringify(tasksArr));
 }
 
-export function clearTask(obj){
+export function clearTask(obj) {
   const getKey = JSON.parse(localStorage.getItem("tasksArray"));
   getKey.forEach((ele) => {
     if (ele.id === obj.id) {
-      ele.data = ''
-      ele.description = ''
-      ele.comment = ''
-      ele["users"] = []
+      ele.data = "";
+      ele.description = "";
+      ele.comment = "";
+      ele["users"] = [];
     }
   });
-   localStorage.setItem("tasksArray", JSON.stringify(getKey));
+  localStorage.setItem("tasksArray", JSON.stringify(getKey));
+}
+
+export function deleteСard(param) {
+  let tasksArr = JSON.parse(localStorage.getItem("tasksArray"));
+  let deleteCards = document.querySelectorAll(`.${param}`);
+  for (let el of deleteCards) {
+    el.remove();
+  }
+  document.querySelector(".wrapper_menu").remove();
+  let newArr = tasksArr.filter((el) => el.position != param);
+  if (newArr == undefined) newArr = [];
+  localStorage.setItem("tasksArray", JSON.stringify(newArr));
+}
+
+export function deleteAllCards() {
+  let deleteCards = document.querySelectorAll(`.task`);
+  for (let el of deleteCards) {
+    el.remove();
+  }
+  document.querySelector(".wrapper_menu").remove();
+  let tasksArr = [];
+  localStorage.setItem("tasksArray", JSON.stringify(tasksArr));
 }

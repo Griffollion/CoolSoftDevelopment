@@ -4,16 +4,15 @@ import {
   addTasksToCardsFromStorage,
   loadCurrentTask,
 } from "./initUserInterface";
-import { loadCards, createMenu } from "./components/components";
-
-
+import { loadCards, createMenuCard } from "./components/components";
 
 loadCards();
-
 
 if (localStorage.getItem("tasksArray")) {
   addTasksToCardsFromStorage();
 }
+
+localStorage.setItem("filter", true)
 
 let textArea = document.querySelector(".textarea");
 let isClick = true;
@@ -44,10 +43,16 @@ textArea.onclick = function () {
       content.remove();
       isClick = true;
       loadCurrentTask();
+      localStorage.setItem("filter", false)    
     });
   }
   isClick = false;
 };
 
-loadCurrentTask();
-createMenu();
+console.log(localStorage.getItem("filter"))
+if (localStorage.getItem("filter")) {
+  loadCurrentTask();
+}
+
+const menu = document.querySelector(".icon-users");
+menu.addEventListener("click", createMenuCard);

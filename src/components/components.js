@@ -19,6 +19,8 @@ import {
   closeNewCard,
   closeEvent,
   closeMenu,
+  deleteСard,
+  deleteAllCards,
 } from "../initUserInterface";
 import { MenuCard } from "./MenuCard/MenuCard";
 import {
@@ -168,8 +170,6 @@ export function createEventCard(obj, title, text, callback) {
   moveButton.render();
 }
 
-const menu = document.querySelector(".icon-users")
-menu.addEventListener("click", createMenuCard)
 
 export function createMenuCard() {
   const menuCard = new MenuCard()
@@ -187,15 +187,17 @@ export function createMenuCard() {
     "",
     ".clrtodo",
     "Очистить todo",
-    //function
+    deleteСard,
+    "todo"
   )
   clearToDo.render()
 
   const clearInPrcs = new Button(
     "",
     ".clrinprcs",
-    "Очистить in process",
-    //function
+    "Очистить in progress",
+    deleteСard,
+    "in_progress"
   )
   clearInPrcs.render()
 
@@ -203,7 +205,8 @@ export function createMenuCard() {
     "",
     ".clrdone",
     "Очистить done",
-    //function
+    deleteСard,
+    "done"
   )
   clearDone.render()
 
@@ -211,7 +214,7 @@ export function createMenuCard() {
     "",
     ".clrall",
     "Очистить всё",
-    //function
+    deleteAllCards
   )
   clearAll.render()
 }
