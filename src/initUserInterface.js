@@ -179,6 +179,43 @@ export function clearTask(obj) {
   localStorage.setItem("tasksArray", JSON.stringify(getKey));
 }
 
+export function callEventMenu(param) {
+  switch (param) {
+    case "todo":
+      createEventCard(
+        param,
+        "Удаление списка",
+        "очистить список TODO?",
+        deleteСard
+      );
+
+      break;
+    case "in_progress":
+      createEventCard(
+        param,
+        "Удаление списка",
+        "очистить список IN_PROGRESS? ",
+        deleteСard
+      );
+      break;
+    case "done":
+      createEventCard(
+        param,
+        "Удаление списка",
+        "очистить список DONE?",
+        deleteСard
+      );
+      break;
+    case "task":
+      createEventCard(
+        param,
+        "Удаление списка",
+        "очистить весь список?",
+        deleteAllCards
+      );
+  }
+}
+
 export function deleteСard(param) {
   let tasksArr = JSON.parse(localStorage.getItem("tasksArray"));
   let deleteCards = document.querySelectorAll(`.${param}`);
@@ -186,6 +223,7 @@ export function deleteСard(param) {
     el.remove();
   }
   document.querySelector(".wrapper_menu").remove();
+  document.querySelector(".wrapper_eventCard").remove();
   let newArr = tasksArr.filter((el) => el.position != param);
   if (newArr == undefined) newArr = [];
   localStorage.setItem("tasksArray", JSON.stringify(newArr));
@@ -197,6 +235,7 @@ export function deleteAllCards() {
     el.remove();
   }
   document.querySelector(".wrapper_menu").remove();
+  document.querySelector(".wrapper_eventCard").remove();
   let tasksArr = [];
   localStorage.setItem("tasksArray", JSON.stringify(tasksArr));
 }

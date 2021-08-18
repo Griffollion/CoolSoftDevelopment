@@ -19,8 +19,7 @@ import {
   closeNewCard,
   closeEvent,
   closeMenu,
-  deleteСard,
-  deleteAllCards,
+  callEventMenu,
 } from "../initUserInterface";
 import { MenuCard } from "./MenuCard/MenuCard";
 import {
@@ -187,7 +186,7 @@ export function createMenuCard() {
     "",
     ".clrtodo",
     "Очистить todo",
-    deleteСard,
+    callEventMenu,
     "todo"
   )
   clearToDo.render()
@@ -196,7 +195,7 @@ export function createMenuCard() {
     "",
     ".clrinprcs",
     "Очистить in progress",
-    deleteСard,
+    callEventMenu,
     "in_progress"
   )
   clearInPrcs.render()
@@ -205,7 +204,7 @@ export function createMenuCard() {
     "",
     ".clrdone",
     "Очистить done",
-    deleteСard,
+    callEventMenu,
     "done"
   )
   clearDone.render()
@@ -214,7 +213,8 @@ export function createMenuCard() {
     "",
     ".clrall",
     "Очистить всё",
-    deleteAllCards
+    callEventMenu,
+    "task"
   )
   clearAll.render()
 }

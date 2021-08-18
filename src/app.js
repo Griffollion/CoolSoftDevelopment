@@ -12,8 +12,6 @@ if (localStorage.getItem("tasksArray")) {
   addTasksToCardsFromStorage();
 }
 
-localStorage.setItem("filter", true)
-
 let textArea = document.querySelector(".textarea");
 let isClick = true;
 textArea.onclick = function () {
@@ -43,16 +41,12 @@ textArea.onclick = function () {
       content.remove();
       isClick = true;
       loadCurrentTask();
-      localStorage.setItem("filter", false)    
     });
   }
   isClick = false;
 };
 
-console.log(localStorage.getItem("filter"))
-if (localStorage.getItem("filter")) {
-  loadCurrentTask();
-}
+loadCurrentTask();
 
 const menu = document.querySelector(".icon-users");
 menu.addEventListener("click", createMenuCard);
