@@ -18,12 +18,16 @@ import {
   callDeleteCard,
   closeNewCard,
   closeEvent,
+  closeMenu,
+  callEventMenu,
 } from "../initUserInterface";
+import { MenuCard } from "./MenuCard/MenuCard";
 import {
   DataCard,
   closeDataCard,
   getInputDataValue,
 } from "./DataCard/DataCard";
+
 
 export function loadCards() {
   const cardToDo = new createCard("todo");
@@ -163,4 +167,54 @@ export function createEventCard(obj, title, text, callback) {
 
   const moveButton = new Button("", ".event", "Да", callback, obj);
   moveButton.render();
+}
+
+
+export function createMenuCard() {
+  const menuCard = new MenuCard()
+  menuCard.render()
+
+  const clsMenu = new Button(
+    "",
+    ".menu_header-close",
+    "X",
+    closeMenu,
+  )
+  clsMenu.render()
+
+  const clearToDo = new Button(
+    "",
+    ".clrtodo",
+    "Очистить todo",
+    callEventMenu,
+    "todo"
+  )
+  clearToDo.render()
+
+  const clearInPrcs = new Button(
+    "",
+    ".clrinprcs",
+    "Очистить in progress",
+    callEventMenu,
+    "in_progress"
+  )
+  clearInPrcs.render()
+
+  const clearDone = new Button(
+    "",
+    ".clrdone",
+    "Очистить done",
+    callEventMenu,
+    "done"
+  )
+  clearDone.render()
+
+  const clearAll = new Button(
+    "",
+    ".clrall",
+    "Очистить всё",
+    callEventMenu,
+    "task"
+  )
+  clearAll.render()
 }

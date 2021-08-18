@@ -4,9 +4,7 @@ import {
   addTasksToCardsFromStorage,
   loadCurrentTask,
 } from "./initUserInterface";
-import { loadCards } from "./components/components";
-
-
+import { loadCards, createMenuCard } from "./components/components";
 
 loadCards();
 
@@ -50,3 +48,5 @@ textArea.onclick = function () {
 
 loadCurrentTask();
 
+const menu = document.querySelector(".icon-users");
+menu.addEventListener("click", createMenuCard);

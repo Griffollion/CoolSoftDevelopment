@@ -15,9 +15,9 @@ export function addArea() {
   }
 }
 
-export function cancelArea(){
-  if (document.querySelector(".card_task")){
-    document.querySelector(".card_task").remove()
+export function cancelArea() {
+  if (document.querySelector(".card_task")) {
+    document.querySelector(".card_task").remove();
   }
 }
 
@@ -114,7 +114,7 @@ export function relocationTask(obj) {
       transferTask(obj, "done");
       break;
     case "done":
-      clearTask(obj)
+      clearTask(obj);
       transferTask(obj, "todo");
   }
   document.querySelector(".wrapper__new-card").remove();
@@ -126,7 +126,7 @@ export function transferTask(obj, card) {
   activeTask.classList.remove(obj.position);
   activeTask.classList.add(card);
   destination.append(activeTask);
-  document.querySelector(".eventCard").remove();
+  document.querySelector(".wrapper_eventCard").remove();
   const getKey = JSON.parse(localStorage.getItem("tasksArray"));
   getKey.forEach((ele) => {
     if (ele.id === obj.id) {
@@ -136,17 +136,20 @@ export function transferTask(obj, card) {
   localStorage.setItem("tasksArray", JSON.stringify(getKey));
 }
 
-
 export function closeNewCard() {
   document.querySelector(".wrapper__new-card").remove();
 }
 
 export function closeLimit() {
-  document.querySelector(".limitCard").remove();
+  document.querySelector(".wrapper_limitCard").remove();
 }
 
 export function closeEvent() {
-  document.querySelector(".eventCard").remove();
+  document.querySelector(".wrapper_eventCard").remove();
+}
+
+export function closeMenu() {
+  document.querySelector(".wrapper_menu").remove();
 }
 
 export function callDeleteCard(obj) {
@@ -158,20 +161,81 @@ export function deleteTask(obj) {
   let index = tasksArr.findIndex((el) => el.id == obj.id);
   document.getElementById(`${obj.id}`).remove();
   document.querySelector(".wrapper__new-card").remove();
-  document.querySelector(".eventCard").remove();
+  document.querySelector(".wrapper_eventCard").remove();
   tasksArr.splice(index, 1);
   localStorage.setItem("tasksArray", JSON.stringify(tasksArr));
 }
 
-export function clearTask(obj){
+export function clearTask(obj) {
   const getKey = JSON.parse(localStorage.getItem("tasksArray"));
   getKey.forEach((ele) => {
     if (ele.id === obj.id) {
-      ele.data = ''
-      ele.description = ''
-      ele.comment = ''
-      ele["users"] = []
+      ele.data = "";
+      ele.description = "";
+      ele.comment = "";
+      ele["users"] = [];
     }
   });
-   localStorage.setItem("tasksArray", JSON.stringify(getKey));
+  localStorage.setItem("tasksArray", JSON.stringify(getKey));
+}
+
+export function callEventMenu(param) {
+  switch (param) {
+    case "todo":
+      createEventCard(
+        param,
+        "Удаление списка",
+        "очистить список TODO?",
+        deleteСard
+      );
+
+      break;
+    case "in_progress":
+      createEventCard(
+        param,
+        "Удаление списка",
+        "очистить список IN_PROGRESS? ",
+        deleteСard
+      );
+      break;
+    case "done":
+      createEventCard(
+        param,
+        "Удаление списка",
+        "очистить список DONE?",
+        deleteСard
+      );
+      break;
+    case "task":
+      createEventCard(
+        param,
+        "Удаление списка",
+        "очистить весь список?",
+        deleteAllCards
+      );
+  }
+}
+
+export function deleteСard(param) {
+  let tasksArr = JSON.parse(localStorage.getItem("tasksArray"));
+  let deleteCards = document.querySelectorAll(`.${param}`);
+  for (let el of deleteCards) {
+    el.remove();
+  }
+  document.querySelector(".wrapper_menu").remove();
+  document.querySelector(".wrapper_eventCard").remove();
+  let newArr = tasksArr.filter((el) => el.position != param);
+  if (newArr == undefined) newArr = [];
+  localStorage.setItem("tasksArray", JSON.stringify(newArr));
+}
+
+export function deleteAllCards() {
+  let deleteCards = document.querySelectorAll(`.task`);
+  for (let el of deleteCards) {
+    el.remove();
+  }
+  document.querySelector(".wrapper_menu").remove();
+  document.querySelector(".wrapper_eventCard").remove();
+  let tasksArr = [];
+  localStorage.setItem("tasksArray", JSON.stringify(tasksArr));
 }
