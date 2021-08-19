@@ -40,7 +40,6 @@ textArea.onclick = function () {
       localStorage.setItem("cal", cal);
       content.remove();
       isClick = true;
-      loadCurrentTask();
     });
   }
   isClick = false;

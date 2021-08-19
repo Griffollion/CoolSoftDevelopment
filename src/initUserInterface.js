@@ -36,12 +36,14 @@ export function addTasksToCardsFromStorage() {
 }
 
 export function loadCurrentTask() {
-  let allTask = document.querySelectorAll(".task");
-  allTask.forEach((el) => {
+  let allCards = document.querySelectorAll(".card");
+  allCards.forEach((el) => {
     el.addEventListener("click", (event) => {
-      let target = event.currentTarget;
-      let currentTask = findTaskIntoStorage(target.id);
-      loadNewCard(currentTask);
+      let target = event.target;
+      if (target.matches('.task')){
+        let currentTask = findTaskIntoStorage(target.id);
+        loadNewCard(currentTask);
+      }      
     });
   });
 }
