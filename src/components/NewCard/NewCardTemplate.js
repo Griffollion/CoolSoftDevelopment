@@ -48,12 +48,12 @@ NewCardTemplate.innerHTML = `
                     <div class="card-info__actions-wrapper">
                         <div class="card-info__actions-title">
                             <span></span>
-                            Коментарий
+                            Комментарий
                         </div>
                         <div class="card-info__actions-btn"></div>
                     </div>
                     <div class="card-info__actions-text">
-                        <textarea class="textarea-actions user-content" placeholder="Напишите коментарий..."></textarea>
+                        <textarea class="textarea-actions user-content" placeholder="Напишите комментарий..."></textarea>
                     </div>
                 </div>
             </div>

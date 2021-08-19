@@ -58,7 +58,7 @@
 
 	color: #5E6C84;
 
-	font-size: 14px;
+	font-size: 16px;
 }
 
 .new__card-header-ststus-span {
@@ -99,7 +99,7 @@
 
 	color: #5E6C84;
 
-	font-size: 12px;
+	font-size: 14px;
 	font-weight: 500;
 }
 
@@ -187,7 +187,7 @@
 
 	color: #5E6C84;
 
-	font-size: 12px;
+	font-size: 14px;
 	font-weight: 500;
 }
 
@@ -207,8 +207,8 @@
 
 @media (max-width: 800px) {
 	.wrapper__new-card {
-		width: unset;
-		height: unset;
+		width: 100%;
+		height: 100%;
 	}
 
 	.new__card {
@@ -229,5 +229,13 @@
 
 	.new__card-create {
 		display: flex;
+	}
+
+	.textarea-description {
+		width: 80vw;
+	}
+
+	.textarea-actions {
+		width: 80vw;
 	}
 }
