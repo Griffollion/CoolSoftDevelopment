@@ -4,6 +4,18 @@ import {
   createLimitCard,
 } from "./components/components";
 
+import {
+  GetDataFromServer,
+  CreateUsersTemplate,
+  ToCloseModalUsersTemplate,
+} from "./components/UserSearch/UserSearch";
+
+import {
+  DataCard,
+  getInputDataValue,
+  closeDataCard,
+} from "./components/DataCard/DataCard"
+
 export function addArea() {
   if (document.querySelector(".card_task")) {
     return;
@@ -238,4 +250,28 @@ export function deleteAllCards() {
   document.querySelector(".wrapper_eventCard").remove();
   let tasksArr = [];
   localStorage.setItem("tasksArray", JSON.stringify(tasksArr));
+}
+
+export function getDateCard(obj) {
+  const dataCard = new DataCard(obj);
+  dataCard.render();
+
+  getInputDataValue(obj);
+
+  const closeDateCard = document.querySelector(".card__header-close");
+  closeDateCard.addEventListener("click", closeDataCard);
+}
+
+export function getUsersSearch(obj) {
+  const loadUsersTemplate = new CreateUsersTemplate();
+  loadUsersTemplate.render();
+  GetDataFromServer(obj);
+
+  const closeModalFromExit = document.querySelector(
+    ".user-search__header--exit"
+  );
+  const closeVodalFromOverlay = document.querySelector(".overlay");
+
+  closeModalFromExit.addEventListener("click", ToCloseModalUsersTemplate);
+  closeVodalFromOverlay.addEventListener("click", ToCloseModalUsersTemplate);
 }

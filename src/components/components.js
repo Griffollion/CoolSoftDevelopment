@@ -5,11 +5,6 @@ import { createCard } from "./Card/Card";
 import { EventCard } from "./EventCard/EventCard";
 import { LimitCard } from "./LimitCard/LimitCard";
 import {
-  GetDataFromServer,
-  CreateUsersTemplate,
-  ToCloseModalUsersTemplate,
-} from "./UserSearch/UserSearch";
-import {
   addArea,
   cancelArea,
   saveValue,
@@ -20,13 +15,11 @@ import {
   closeEvent,
   closeMenu,
   callEventMenu,
+  getDateCard,
+  getUsersSearch
 } from "../initUserInterface";
 import { MenuCard } from "./MenuCard/MenuCard";
-import {
-  DataCard,
-  closeDataCard,
-  getInputDataValue,
-} from "./DataCard/DataCard";
+
 
 
 export function loadCards() {
@@ -56,20 +49,6 @@ export function loadCards() {
   cancelButton.render();
 }
 
-function getUsersSearch(obj) {
-  const loadUsersTemplate = new CreateUsersTemplate();
-  loadUsersTemplate.render();
-  GetDataFromServer(obj);
- 
-  const closeModalFromExit = document.querySelector(
-    ".user-search__header--exit"
-  );
-  const closeVodalFromOverlay = document.querySelector(".overlay");
-
-  closeModalFromExit.addEventListener("click", ToCloseModalUsersTemplate);
-  closeVodalFromOverlay.addEventListener("click", ToCloseModalUsersTemplate);
-}
-
 export function loadNewCard(obj) {
   const newCard = new NewCard(obj);
   newCard.render();
@@ -87,19 +66,10 @@ export function loadNewCard(obj) {
     "icn__btnaccess_time",
     ".data",
     "Дата",
-    getDateCard
+    getDateCard,
+    obj
   );
   dateButton.render();
-
-  function getDateCard() {
-    const dataCard = new DataCard(obj);
-    dataCard.render();
-
-    getInputDataValue(obj);
-
-    const closeDateCard = document.querySelector(".card__header-close");
-    closeDateCard.addEventListener("click", closeDataCard);
-  }
 
   const movButton = new Button(
     "icn__btnarrow-right2",
