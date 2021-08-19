@@ -4,30 +4,17 @@ import { Data } from "./Data/Data";
 import { createCard } from "./Card/Card";
 import { EventCard } from "./EventCard/EventCard";
 import { LimitCard } from "./LimitCard/LimitCard";
+import { MenuCard } from "./MenuCard/MenuCard";
+import { DataCard, getInputDataValue } from "./DataCard/DataCard";
 import {
   GetDataFromServer,
   CreateUsersTemplate,
-  ToCloseModalUsersTemplate,
 } from "./UserSearch/UserSearch";
-import {
-  addArea,
-  cancelArea,
-  saveValue,
-  closeLimit,
-  callEventWindow,
-  callDeleteCard,
-  closeNewCard,
-  closeEvent,
-  closeMenu,
-  callEventMenu,
-} from "../initUserInterface";
-import { MenuCard } from "./MenuCard/MenuCard";
-import {
-  DataCard,
-  closeDataCard,
-  getInputDataValue,
-} from "./DataCard/DataCard";
+import { addArea, cancelArea, saveValue } from "../initUserInterface";
+import { callDeleteCard, callEventMenu } from "../removing";
+import { callEventWindow } from "../moving/";
 
+// создание списков todo, in progress, done
 
 export function loadCards() {
   const cardToDo = new createCard("todo");
@@ -47,28 +34,11 @@ export function loadCards() {
   );
   cardButton.render();
 
-  const cancelButton = new Button(
-    "",
-    ".card__button",
-    "отмена",
-    cancelArea
-  );
+  const cancelButton = new Button("", ".card__button", "отмена", cancelArea);
   cancelButton.render();
 }
 
-function getUsersSearch(obj) {
-  const loadUsersTemplate = new CreateUsersTemplate();
-  loadUsersTemplate.render();
-  GetDataFromServer(obj);
- 
-  const closeModalFromExit = document.querySelector(
-    ".user-search__header--exit"
-  );
-  const closeVodalFromOverlay = document.querySelector(".overlay");
-
-  closeModalFromExit.addEventListener("click", ToCloseModalUsersTemplate);
-  closeVodalFromOverlay.addEventListener("click", ToCloseModalUsersTemplate);
-}
+// вызов карточки с данными задачи
 
 export function loadNewCard(obj) {
   const newCard = new NewCard(obj);
@@ -87,19 +57,10 @@ export function loadNewCard(obj) {
     "icn__btnaccess_time",
     ".data",
     "Дата",
-    getDateCard
+    getDateCard,
+    obj
   );
   dateButton.render();
-
-  function getDateCard() {
-    const dataCard = new DataCard(obj);
-    dataCard.render();
-
-    getInputDataValue(obj);
-
-    const closeDateCard = document.querySelector(".card__header-close");
-    closeDateCard.addEventListener("click", closeDataCard);
-  }
 
   const movButton = new Button(
     "icn__btnarrow-right2",
@@ -146,6 +107,48 @@ export function loadNewCard(obj) {
   saveValue(".new__card-header-name", obj, "title");
 }
 
+function closeNewCard() {
+  document.querySelector(".wrapper__new-card").remove();
+}
+
+// функция вызова даты на краточке
+
+function getDateCard(obj) {
+  const dataCard = new DataCard(obj);
+  dataCard.render();
+
+  getInputDataValue(obj);
+
+  const closeDateCard = document.querySelector(".card__header-close");
+  closeDateCard.addEventListener("click", closeDataCard);
+}
+
+function closeDataCard() {
+  document.querySelector(".date__card-wrapper").remove();
+}
+
+// вызов окна с участниками
+
+function getUsersSearch(obj) {
+  const loadUsersTemplate = new CreateUsersTemplate();
+  loadUsersTemplate.render();
+  GetDataFromServer(obj);
+
+  const closeModalFromExit = document.querySelector(
+    ".user-search__header--exit"
+  );
+  const closeVodalFromOverlay = document.querySelector(".overlay");
+
+  closeModalFromExit.addEventListener("click", ToCloseModalUsersTemplate);
+  closeVodalFromOverlay.addEventListener("click", ToCloseModalUsersTemplate);
+}
+
+function ToCloseModalUsersTemplate() {
+  document.querySelector(".popup__users-template").remove();
+}
+
+// вызов модального окна на лимит задач
+
 export function createLimitCard() {
   const limitCard = new LimitCard();
   limitCard.render();
@@ -158,6 +161,12 @@ export function createLimitCard() {
   okButton.render();
 }
 
+function closeLimit() {
+  document.querySelector(".wrapper_limitCard").remove();
+}
+
+// вызов модального окна на подтверждение действия
+
 export function createEventCard(obj, title, text, callback) {
   const eventCard = new EventCard(title, text);
   eventCard.render();
@@ -169,18 +178,18 @@ export function createEventCard(obj, title, text, callback) {
   moveButton.render();
 }
 
+function closeEvent() {
+  document.querySelector(".wrapper_eventCard").remove();
+}
+
+// вызов окна меню очистки списков
 
 export function createMenuCard() {
-  const menuCard = new MenuCard()
-  menuCard.render()
+  const menuCard = new MenuCard();
+  menuCard.render();
 
-  const clsMenu = new Button(
-    "",
-    ".menu_header-close",
-    "X",
-    closeMenu,
-  )
-  clsMenu.render()
+  const clsMenu = new Button("", ".menu_header-close", "X", closeMenu);
+  clsMenu.render();
 
   const clearToDo = new Button(
     "",
@@ -188,8 +197,8 @@ export function createMenuCard() {
     "Очистить todo",
     callEventMenu,
     "todo"
-  )
-  clearToDo.render()
+  );
+  clearToDo.render();
 
   const clearInPrcs = new Button(
     "",
@@ -197,8 +206,8 @@ export function createMenuCard() {
     "Очистить in progress",
     callEventMenu,
     "in_progress"
-  )
-  clearInPrcs.render()
+  );
+  clearInPrcs.render();
 
   const clearDone = new Button(
     "",
@@ -206,8 +215,8 @@ export function createMenuCard() {
     "Очистить done",
     callEventMenu,
     "done"
-  )
-  clearDone.render()
+  );
+  clearDone.render();
 
   const clearAll = new Button(
     "",
@@ -215,6 +224,10 @@ export function createMenuCard() {
     "Очистить всё",
     callEventMenu,
     "task"
-  )
-  clearAll.render()
+  );
+  clearAll.render();
+}
+
+function closeMenu() {
+  document.querySelector(".wrapper_menu").remove();
 }
