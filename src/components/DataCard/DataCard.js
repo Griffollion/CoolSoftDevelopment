@@ -16,10 +16,6 @@ export function DataCard(obj) {
   };
 }
 
-export function closeDataCard() {
-  document.querySelector(".date__card-wrapper").remove();
-}
-
 export function getInputDataValue(obj) {
   const inputValue = document.querySelector(".input__date");
   const inputCardValue = document.querySelector(".myDate");

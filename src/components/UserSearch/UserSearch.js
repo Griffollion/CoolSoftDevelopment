@@ -39,11 +39,7 @@ export async function GetDataFromServer(obj) {
   catchUser(obj);
 }
 
-export function ToCloseModalUsersTemplate() {
-  document.querySelector(".popup__users-template").remove();
-}
-
-export function catchUser(obj) {
+function catchUser(obj) {
   let usersList = document.querySelector(".card-info__container-users-icons");
   let allUsers = document.querySelectorAll(".user-search__form--user-list");
   allUsers.forEach((el) => {
