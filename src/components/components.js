@@ -29,7 +29,7 @@ export function loadCards() {
   const cardButton = new Button(
     "",
     ".card__button",
-    "+ Добавить карточку",
+    "+ Добавить",
     addArea
   );
   cardButton.render();

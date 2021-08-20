@@ -13,7 +13,7 @@ UsersTemplate.innerHTML = `
           <div class="user-search__header--exit ">X</div>
       </div>
       <div class="user-search__list-wraper">
-        <div class="user-search__title2">УЧАСТНИКИ ДОСКИ</div>
+        <div class="user-search__title2"></div>
                 
                   <div id="app"></div>
                   

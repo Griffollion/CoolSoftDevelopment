@@ -11,10 +11,10 @@
 }
 
 .limitCard {
-	position: fixed;
+	position: absolute;
 	z-index: 11;
-	top: 250px;
-	left: 540px;
+	top: 50%;
+	left: 35%;
 
 	width: 500px;
 	height: 125px;
@@ -62,4 +62,16 @@
 
 	font-size: 20px;
 	font-weight: bold;
+}
+
+@media (max-width: 800px) {
+	.limitCard {
+		top: 50%;
+		left: 50%;
+
+		width: auto;
+		height: auto;
+
+		transform: translate(-50%, -50%);
+	}
 }

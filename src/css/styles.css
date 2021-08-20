@@ -120,6 +120,11 @@ textarea {
 	padding: 0 5px;
 
 	white-space: normal;
+<<<<<<< HEAD
+=======
+
+	word-break: break-all;
+>>>>>>> dev
 
 	border-radius: 5px;
 	background-color: rgb(233, 233, 233);
