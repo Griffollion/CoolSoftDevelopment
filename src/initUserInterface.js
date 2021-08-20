@@ -1,4 +1,4 @@
-import { loadNewCard, loadModalWindow } from "./components/components";
+import { loadNewCard } from "./components/components";
 
 export function addArea() {
   if (document.querySelector(".card_task")) {
@@ -8,6 +8,12 @@ export function addArea() {
     input.innerHTML = `<textarea class="card_task"></textarea>`;
     let container = document.querySelector(".textarea");
     return container.append(input);
+  }
+}
+
+export function cancelArea() {
+  if (document.querySelector(".card_task")) {
+    document.querySelector(".card_task").remove();
   }
 }
 
@@ -30,12 +36,14 @@ export function addTasksToCardsFromStorage() {
 }
 
 export function loadCurrentTask() {
-  let allTask = document.querySelectorAll(".task");
-  allTask.forEach((el) => {
+  let allCards = document.querySelectorAll(".card");
+  allCards.forEach((el) => {
     el.addEventListener("click", (event) => {
-      let target = event.currentTarget;
-      let currentTask = findTaskIntoStorage(target.id);
-      loadNewCard(currentTask);
+      let target = event.target;
+      if (target.matches('.task')){
+        let currentTask = findTaskIntoStorage(target.id);
+        loadNewCard(currentTask);
+      }      
     });
   });
 }
@@ -55,62 +63,9 @@ export function saveValue(item, currentTask, key) {
         ele[key] = input.value;
       }
     });
+    if (key == "title") {
+      document.getElementById(currentTask.id).innerHTML = input.value;
+    }
     localStorage.setItem("tasksArray", JSON.stringify(getKey));
   });
-}
-
-export function transferTask(obj, card) {
-  let activeTask = document.getElementById(`${obj.id}`);
-  let destination = document.querySelector(`#${card}`);
-  activeTask.classList.remove(obj.position);
-  activeTask.classList.add(card);
-  destination.append(activeTask);
-  const getKey = JSON.parse(localStorage.getItem("tasksArray"));
-  getKey.forEach((ele) => {
-    if (ele.id === obj.id) {
-      ele.position = card;
-    }
-  });
-  localStorage.setItem("tasksArray", JSON.stringify(getKey));
-}
-
-// export function callModalWindow(obj){
-//   switch (obj.position){
-//     case 'todo':
-//     loadModalWindow(obj, 'переместить в колонку IN PROGRESS')
-//     break
-//     case 'in_progress':
-//     loadModalWindow(obj, 'переместить в колонку DONE')
-//     break
-//     case 'done':
-//     loadModalWindow(obj, 'переместить в колонку TODO')
-// }
-// }
-
-export function relocationTask(obj) {
-  switch (obj.position) {
-    case "todo":
-      transferTask(obj, "in_progress");
-      break;
-    case "in_progress":
-      transferTask(obj, "done");
-      break;
-    case "done":
-      transferTask(obj, "todo");
-  }
-  document.querySelector(".new__card").remove();
-}
-
-export function closeCard() {
-  document.querySelector(".new__card").remove();
-}
-
-
-export function deleteTask(obj) {
-  let tasksArr = JSON.parse(localStorage.getItem("tasksArray"));
-  let index = tasksArr.findIndex((el) => el.id == obj.id);
-  document.getElementById(`${obj.id}`).remove();
-  document.querySelector(".new__card").remove();
-  tasksArr.splice(index, 1);
-  localStorage.setItem("tasksArray", JSON.stringify(tasksArr));
 }

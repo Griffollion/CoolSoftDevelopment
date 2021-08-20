@@ -4,8 +4,7 @@ import {
   addTasksToCardsFromStorage,
   loadCurrentTask,
 } from "./initUserInterface";
-import { loadCards } from "./components/components";
-import { getUsersSearch } from "./components/components";
+import { loadCards, createMenuCard } from "./components/components";
 
 loadCards();
 
@@ -41,11 +40,12 @@ textArea.onclick = function () {
       localStorage.setItem("cal", cal);
       content.remove();
       isClick = true;
-      loadCurrentTask();
     });
   }
   isClick = false;
 };
 
 loadCurrentTask();
-getUsersSearch();
+
+const menu = document.querySelector(".icon-users");
+menu.addEventListener("click", createMenuCard);
