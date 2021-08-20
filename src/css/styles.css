@@ -115,7 +115,6 @@ textarea {
 .task {
 	overflow: hidden;
 
-	/* height: fit-content; */
 	min-height: 30px;
 	margin: 10px;
 	padding: 0 5px;

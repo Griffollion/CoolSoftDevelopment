@@ -1,5 +1,5 @@
 .wrapper__new-card {
-	position: fixed;
+	position: absolute;
 	z-index: 10;
 	top: 0;
 	left: 0;
@@ -13,7 +13,7 @@
 }
 
 .new__card {
-	position: relative;
+	/* position: relative; */
 
 	overflow: hidden;
 
