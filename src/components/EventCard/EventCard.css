@@ -52,3 +52,10 @@
 	align-items: center;
 	justify-content: space-between;
 }
+@media (max-width: 800px) {
+	.eventCard{
+		top: 50%;
+	    left: 50%;
+		transform: translate(-50%, -50%);
+	}
+}
