@@ -8,7 +8,7 @@ CardTemplate.innerHTML = `
 </div>
 <div class="card_list">
   <div class="card_list-tasks">
-  <div class="card-task"></div>
+  <div class="card-tasks"></div>
   </div>
   <div class="textarea"></div>
 </div>
