@@ -1,5 +1,7 @@
 @import url('./normolize.css');
+@import url('./fonts.css');
 @import url('../fonts/icomoon/style.css');
+@import url('../fonts/icomoon/fonts/button/button_icon_style.css');
 
 html {
 	box-sizing: border-box;
@@ -21,7 +23,7 @@ body {
 	background: url(/src/img/sky-1.jpg);
 	background-size: cover;
 
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: 'GoogleSans', Arial, Helvetica, sans-serif;
 	font-size: 17px;
 	font-weight: 400;
 }
