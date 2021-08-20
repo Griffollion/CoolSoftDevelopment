@@ -4,7 +4,7 @@ DataCardTemplate.innerHTML = `
         <div class="date__card" >
             <div class="date__card-header">
                 <div class="card__header-name">
-                    Даты
+                    Дата
                 </div>
                 <div class="card__header-close">
                     x

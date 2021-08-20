@@ -1,5 +1,6 @@
 @import url('./normolize.css');
 @import url('../fonts/icomoon/style.css');
+@import url('../fonts/icomoon/fonts/button/button_icon_style.css');
 @import url('../css/fonts.css');
 
 html {
@@ -120,13 +121,11 @@ textarea {
 	padding: 0 5px;
 
 	white-space: normal;
-<<<<<<< HEAD
-=======
 
 	word-break: break-all;
->>>>>>> dev
 
 	border-radius: 5px;
+
 	background-color: rgb(233, 233, 233);
 	box-shadow: 0 0 5px rgb(100, 100, 100);
 	overflow-wrap: break-word;

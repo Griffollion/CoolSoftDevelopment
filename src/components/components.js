@@ -111,7 +111,7 @@ function closeNewCard() {
   document.querySelector(".wrapper__new-card").remove();
 }
 
-// функция вызова даты на краточке
+// функция вызова даты на карточке
 
 function getDateCard(obj) {
   const dataCard = new DataCard(obj);
