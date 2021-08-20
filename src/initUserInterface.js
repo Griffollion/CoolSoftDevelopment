@@ -4,8 +4,8 @@ export function addArea() {
   if (document.querySelector(".card_task")) {
     return;
   } else {
-    const input = document.createElement("div");
-    input.innerHTML = `<textarea class="card_task"></textarea>`;
+    const input = document.createElement("textarea");
+    input.className = "card_task";
     let container = document.querySelector(".textarea");
     return container.append(input);
   }
@@ -18,7 +18,7 @@ export function cancelArea() {
 }
 
 export function addTask(className, text, id) {
-  let node = document.querySelector(".card-task").cloneNode(true);
+  let node = document.querySelector(".card-tasks").cloneNode(true);
   node.className = `task ${className}`;
   node.id = `${id}`;
   node.innerHTML = text;
@@ -40,10 +40,10 @@ export function loadCurrentTask() {
   allCards.forEach((el) => {
     el.addEventListener("click", (event) => {
       let target = event.target;
-      if (target.matches('.task')){
+      if (target.matches(".task")) {
         let currentTask = findTaskIntoStorage(target.id);
         loadNewCard(currentTask);
-      }      
+      }
     });
   });
 }
