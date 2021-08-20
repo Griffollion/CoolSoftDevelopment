@@ -1,5 +1,6 @@
 @import url('./normolize.css');
 @import url('../fonts/icomoon/style.css');
+@import url('../css/fonts.css');
 
 html {
 	box-sizing: border-box;
@@ -21,7 +22,7 @@ body {
 	background: url(/src/img/sky-1.jpg);
 	background-size: cover;
 
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: 'GoogleSans', Arial, Helvetica, sans-serif;
 	font-size: 17px;
 	font-weight: 400;
 }
@@ -113,14 +114,17 @@ textarea {
 .task {
 	overflow: hidden;
 
-	height: 100%;
+	/* height: fit-content; */
 	min-height: 30px;
 	margin: 10px;
 	padding: 0 5px;
 
 	white-space: normal;
+<<<<<<< HEAD
+=======
 
 	word-break: break-all;
+>>>>>>> dev
 
 	border-radius: 5px;
 	background-color: rgb(233, 233, 233);
