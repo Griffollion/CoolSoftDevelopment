@@ -45,7 +45,7 @@ function catchUser(obj) {
   allUsers.forEach((el) => {
     el.addEventListener("click", (event) => {
       let target = event.currentTarget;
-      userName = target.children[1].innerText;
+      let userName = target.children[1].innerText;
       const getKey = JSON.parse(localStorage.getItem("tasksArray"));
       getKey.forEach((ele) => {
         if (ele.id === obj.id) {
