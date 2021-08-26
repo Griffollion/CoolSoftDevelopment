@@ -153,7 +153,7 @@ export function createCardUser(data, obj) {
   const cardUserButton = new Button(
     "",
     ".usercard__button",
-    "удалить участника",
+    "удалить из карточки",
     deleteUser,
     obj
   );
