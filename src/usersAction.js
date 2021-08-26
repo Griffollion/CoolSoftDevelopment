@@ -1,13 +1,3 @@
-// export async function GetDataFromServer(obj) {
-//     const response = await fetch("https://jsonplaceholder.typicode.com/users");
-//     const data = await response.json();
-//     data.forEach(function (el) {
-//       const userListPlace = document.querySelector("#app");
-//       userListPlace.insertAdjacentHTML("beforeend", renderUser(el));
-//     });
-//     catchUser(obj);
-//   }
-
   export async function GetDataFromServer() {
     const response = await fetch("https://jsonplaceholder.typicode.com/users");
     const data = await response.json();
