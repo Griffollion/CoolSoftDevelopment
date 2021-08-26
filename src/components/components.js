@@ -128,15 +128,15 @@ function getUsersSearch(obj) {
   GetDataFromServer().then((data) => {
     const cardUsersSearch = new UsersSearch(data);
     cardUsersSearch.render();
-    catchUser(obj);
+    catchUser(obj, data);
 
     const closeModalFromExit = document.querySelector(
       ".user-search__header--exit"
     );
-    const closeVodalFromOverlay = document.querySelector(".overlay");
+    // const closeVodalFromOverlay = document.querySelector(".overlay");
 
     closeModalFromExit.addEventListener("click", ToCloseModalUsersTemplate);
-    closeVodalFromOverlay.addEventListener("click", ToCloseModalUsersTemplate);
+    // closeVodalFromOverlay.addEventListener("click", ToCloseModalUsersTemplate);
   });
 }
 

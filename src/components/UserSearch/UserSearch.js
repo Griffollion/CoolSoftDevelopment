@@ -17,7 +17,7 @@ export function UsersSearch(data) {
     userListPlace.append(this.itemComponent);
   });
   this.render = function () {
-    const body = document.querySelector(".container-global");
+    const body = document.querySelector(".main");
     body.append(this.component);
   };
 }
