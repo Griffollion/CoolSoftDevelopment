@@ -1,6 +1,6 @@
 .wrapper_limitCard {
 	position: fixed;
-	z-index: 10;
+	z-index: 15;
 	top: 0;
 	left: 0;
 
@@ -16,8 +16,8 @@
 	top: 50%;
 	left: 35%;
 
-	width: 500px;
-	height: 125px;
+	max-width: 500px;
+	min-height: 125px;
 
 	text-align: center;
 
@@ -38,7 +38,7 @@
 }
 
 .limitCard__notice {
-	padding: 5px;
+	padding: 10px;
 
 	font-size: 18px;
 }

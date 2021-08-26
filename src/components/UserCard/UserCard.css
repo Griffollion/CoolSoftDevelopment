@@ -1,0 +1,8 @@
+.usercard {
+    background: cornsilk;
+}
+.usercard__header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}

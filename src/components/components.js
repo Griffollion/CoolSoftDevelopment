@@ -1,11 +1,12 @@
 import { Button } from "./Buttons/Button";
 import { NewCard } from "./NewCard/NewCard";
 import { Data } from "./Data/Data";
-import { createCard } from "./Card/Card";
+import { CreateCard } from "./Card/Card";
 import { EventCard } from "./EventCard/EventCard";
 import { LimitCard } from "./LimitCard/LimitCard";
 import { MenuCard } from "./MenuCard/MenuCard";
 import { DataCard, getInputDataValue } from "./DataCard/DataCard";
+import { UserCard } from "./UserCard/UserCard";
 import {
   GetDataFromServer,
   CreateUsersTemplate,
@@ -13,25 +14,21 @@ import {
 import { addArea, cancelArea, saveValue } from "../initUserInterface";
 import { callDeleteCard, callEventMenu } from "../removing";
 import { callEventWindow } from "../moving/";
+import { func } from "assert-plus";
 
 // создание списков todo, in progress, done
 
 export function loadCards() {
-  const cardToDo = new createCard("todo");
+  const cardToDo = new CreateCard("todo");
   cardToDo.render();
 
-  const cardInProgress = new createCard("in_progress");
+  const cardInProgress = new CreateCard("in_progress");
   cardInProgress.render();
 
-  const cardDone = new createCard("done");
+  const cardDone = new CreateCard("done");
   cardDone.render();
 
-  const cardButton = new Button(
-    "",
-    ".card__button",
-    "+ Добавить",
-    addArea
-  );
+  const cardButton = new Button("", ".card__button", "+ Добавить", addArea);
   cardButton.render();
 
   const cancelButton = new Button("", ".card__button", "отмена", cancelArea);
@@ -145,6 +142,22 @@ function getUsersSearch(obj) {
 
 function ToCloseModalUsersTemplate() {
   document.querySelector(".popup__users-template").remove();
+}
+
+// вызов модального окна участника задачи
+
+export function createCardUser(data, obj) {
+  const cardUser = new UserCard(data);
+  cardUser.render();
+
+  const cardUserButton = new Button(
+    "",
+    ".usercard__button",
+    "удалить из карточки",
+    deleteUser,
+    obj
+  );
+  cardUserButton.render();
 }
 
 // вызов модального окна на лимит задач
