@@ -7,13 +7,11 @@ import { LimitCard } from "./LimitCard/LimitCard";
 import { MenuCard } from "./MenuCard/MenuCard";
 import { DataCard, getInputDataValue } from "./DataCard/DataCard";
 import { UserCard } from "./UserCard/UserCard";
-import {
-  GetDataFromServer,
-  CreateUsersTemplate,
-} from "./UserSearch/UserSearch";
+import { UsersSearch } from "./UserSearch/UserSearch";
 import { addArea, cancelArea, saveValue } from "../initUserInterface";
 import { callDeleteCard, callEventMenu } from "../removing";
 import { callEventWindow } from "../moving/";
+import { GetDataFromServer, catchUser } from "../usersAction/";
 import { func } from "assert-plus";
 
 // создание списков todo, in progress, done
@@ -127,17 +125,19 @@ function closeDataCard() {
 // вызов окна с участниками
 
 function getUsersSearch(obj) {
-  const loadUsersTemplate = new CreateUsersTemplate();
-  loadUsersTemplate.render();
-  GetDataFromServer(obj);
+  GetDataFromServer().then((data) => {
+    const cardUsersSearch = new UsersSearch(data);
+    cardUsersSearch.render();
+    catchUser(obj);
 
-  const closeModalFromExit = document.querySelector(
-    ".user-search__header--exit"
-  );
-  const closeVodalFromOverlay = document.querySelector(".overlay");
+    const closeModalFromExit = document.querySelector(
+      ".user-search__header--exit"
+    );
+    const closeVodalFromOverlay = document.querySelector(".overlay");
 
-  closeModalFromExit.addEventListener("click", ToCloseModalUsersTemplate);
-  closeVodalFromOverlay.addEventListener("click", ToCloseModalUsersTemplate);
+    closeModalFromExit.addEventListener("click", ToCloseModalUsersTemplate);
+    closeVodalFromOverlay.addEventListener("click", ToCloseModalUsersTemplate);
+  });
 }
 
 function ToCloseModalUsersTemplate() {
