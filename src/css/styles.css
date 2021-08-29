@@ -78,10 +78,6 @@ body {
 	color: honeydew;
 }
 
-.container-global {
-	position: relative;
-}
-
 .container-cards {
 	display: flex;
 	justify-content: space-around;

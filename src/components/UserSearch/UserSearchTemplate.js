@@ -9,8 +9,7 @@ UsersTemplate.innerHTML = `
           <div class="user-search__header--exit">X</div>
         </div>
         <div class="user-search__list-wraper">
-          <div class="user-search__title2"></div>
-          <div id="app"></div>
+            <div id="app"></div>
         </div>
       </div>
      </div> 
@@ -26,5 +25,5 @@ UserTemplate.innerHTML = `
           <div class="user-list--ticker">
             <div class="user-list__name"></div>
           </div>
-        </div>
+      </div>
 `
