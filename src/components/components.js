@@ -11,7 +11,11 @@ import { UsersSearch } from "./UserSearch/UserSearch";
 import { addArea, cancelArea, saveValue } from "../initUserInterface";
 import { callDeleteCard, callEventMenu } from "../removing";
 import { callEventWindow } from "../moving/";
-import { GetDataFromServer, catchUser } from "../usersAction/";
+import {
+  GetDataFromServer,
+  catchUser,
+  catchUserInModalCard,
+} from "../usersAction/";
 import { func } from "assert-plus";
 
 // создание списков todo, in progress, done
@@ -100,6 +104,8 @@ export function loadNewCard(obj) {
   saveValue(".textarea-description", obj, "description");
   saveValue(".textarea-actions", obj, "comment");
   saveValue(".new__card-header-name", obj, "title");
+
+  catchUser(obj);
 }
 
 function closeNewCard() {
@@ -128,15 +134,13 @@ function getUsersSearch(obj) {
   GetDataFromServer().then((data) => {
     const cardUsersSearch = new UsersSearch(data);
     cardUsersSearch.render();
-    catchUser(obj);
+
+    catchUserInModalCard(obj);
 
     const closeModalFromExit = document.querySelector(
       ".user-search__header--exit"
     );
-    const closeVodalFromOverlay = document.querySelector(".overlay");
-
     closeModalFromExit.addEventListener("click", ToCloseModalUsersTemplate);
-    closeVodalFromOverlay.addEventListener("click", ToCloseModalUsersTemplate);
   });
 }
 
@@ -146,18 +150,23 @@ function ToCloseModalUsersTemplate() {
 
 // вызов модального окна участника задачи
 
-export function createCardUser(data, obj) {
+export function createUserCard(obj, data, title, callback) {
   const cardUser = new UserCard(data);
   cardUser.render();
 
   const cardUserButton = new Button(
     "",
     ".usercard__button",
-    "удалить из карточки",
-    deleteUser,
-    obj
+    title,
+    callback,
+    obj,
+    data
   );
   cardUserButton.render();
+
+  document.querySelector(".usercard__header-close").onclick = () => {
+    document.querySelector(".usercard__wrapper").remove();
+  };
 }
 
 // вызов модального окна на лимит задач
