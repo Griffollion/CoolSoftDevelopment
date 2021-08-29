@@ -8,10 +8,10 @@ export function UserCard(data) {
   this.component.querySelector(".usercard__header-username").innerText =
     data.name;
   this.component.querySelector(
-    ".usercard__info-email"
-  ).innerText = `nickname: ${data.username}`;
+    ".usercard__info-name"
+  ).innerText = `nick: ${data.username}`;
   this.component.querySelector(
-    ".usercard__info-phone"
+    ".usercard__info-mail"
   ).innerText = `mail: ${data.email}`;
   this.component.querySelector(
     ".usercard__info-website"

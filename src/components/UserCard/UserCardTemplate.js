@@ -7,8 +7,8 @@ UserCardTemplate.innerHTML = `
             <div class = 'usercard__header-close'>X</div>
         </div>
         <div class = 'usercard__info'>
-            <div class = 'usercard__info-email'></div>
-            <div class = 'usercard__info-phone'></div>
+            <div class = 'usercard__info-name'></div>
+            <div class = 'usercard__info-mail'></div>
             <div class = 'usercard__info-website'></div>
         </div>
         <div class = 'usercard__button'></div>
