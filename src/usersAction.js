@@ -12,32 +12,6 @@ function findUserInServer(user) {
   });
 }
 
-// export function catchUserInModalWindow(obj, data) {
-//   let usersList = document.querySelector(".card-info__container-users-icons");
-//   let allUsers = document.querySelectorAll(".user-search__form--user-list");
-//   allUsers.forEach((el) => {
-//     el.addEventListener("click", (event) => {
-//       let target = event.currentTarget;
-//       let userName = target.children[1].innerText;
-//       const getKey = JSON.parse(localStorage.getItem("tasksArray"));
-//       getKey.forEach((ele) => {
-//         if (ele.id === obj.id) {
-//           if (!ele["users"]) {
-//             ele["users"] = [userName];
-//           } else {
-//             ele["users"].push(userName);
-//           }
-//         }
-//       });
-//       let user = document.createElement("div");
-//       user.innerHTML = userName;
-//       user.className = "classUser";
-//       usersList.append(user);
-//       localStorage.setItem("tasksArray", JSON.stringify(getKey));
-//     });
-//   });
-// }
-
 export function catchUserInModalCard(obj) {
   let allUsers = document.querySelectorAll(".user-search__form--user-list");
   allUsers.forEach((el) => {
@@ -99,6 +73,6 @@ function deleteUserFromCard(obj, data) {
       el["users"] = el["users"].filter((ele) => ele != data.name);
     }
   });
-  localStorage.setItem("tasksArray", JSON.stringify(array))
+  localStorage.setItem("tasksArray", JSON.stringify(array));
   document.querySelector(".usercard__wrapper").remove();
 }
