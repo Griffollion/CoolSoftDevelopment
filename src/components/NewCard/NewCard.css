@@ -13,8 +13,6 @@
 }
 
 .new__card {
-	/* position: relative; */
-
 	overflow: hidden;
 
 	max-width: 768px;
@@ -103,6 +101,16 @@
 
 	font-size: 14px;
 	font-weight: 500;
+}
+
+.classUser {
+	padding: 3px;
+}
+
+.classUser:hover {
+	cursor: pointer;
+
+	background-color: rgba(9, 30, 66, 0.205);
 }
 
 .card-info__container-term-wrapper {

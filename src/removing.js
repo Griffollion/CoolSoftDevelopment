@@ -73,4 +73,5 @@ function deleteAllCards() {
   document.querySelector(".wrapper_eventCard").remove();
   let tasksArr = [];
   localStorage.setItem("tasksArray", JSON.stringify(tasksArr));
+  localStorage.setItem("cal", 0)
 }
