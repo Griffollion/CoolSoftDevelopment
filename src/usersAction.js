@@ -58,16 +58,18 @@ export function catchUser(obj) {
   listenerUsers.addEventListener("click", (event) => {
     let target = event.target;
     if (target.matches(".classUser")) {
-      console.log(target.innerText);
+      findUserInServer(target.innerHTML).then((data) => {
+        createUserCard(obj, data, "удалить из карточки", deleteUserFromCard);
+      });
     }
   });
 }
 
 function saveUserOnCard(obj, data) {
   let usersList = document.querySelector(".card-info__container-users-icons");
-  const userName = data.name
-  const getKey = JSON.parse(localStorage.getItem("tasksArray"));
-  getKey.forEach((ele) => {
+  const userName = data.name;
+  const array = JSON.parse(localStorage.getItem("tasksArray"));
+  array.forEach((ele) => {
     if (ele.id === obj.id) {
       if (!ele["users"]) {
         ele["users"] = [userName];
@@ -80,6 +82,23 @@ function saveUserOnCard(obj, data) {
   user.innerHTML = userName;
   user.className = "classUser";
   usersList.append(user);
-  localStorage.setItem("tasksArray", JSON.stringify(getKey));
+  localStorage.setItem("tasksArray", JSON.stringify(array));
+  document.querySelector(".usercard__wrapper").remove();
+}
+
+function deleteUserFromCard(obj, data) {
+  let users = document.querySelectorAll(".classUser");
+  users.forEach((el) => {
+    if (el.innerHTML === data.name) {
+      el.remove();
+    }
+  });
+  const array = JSON.parse(localStorage.getItem("tasksArray"));
+  array.forEach((el) => {
+    if (el.id === obj.id) {
+      el["users"] = el["users"].filter((ele) => ele != data.name);
+    }
+  });
+  localStorage.setItem("tasksArray", JSON.stringify(array))
   document.querySelector(".usercard__wrapper").remove();
 }
