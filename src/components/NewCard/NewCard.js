@@ -29,7 +29,7 @@ export function NewCard(obj) {
     });
   }
   this.render = function () {
-    const body = document.querySelector(".main");
+    const body = document.querySelector(".container-global");
     body.append(this.component);
   };
 }
