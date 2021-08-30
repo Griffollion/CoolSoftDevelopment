@@ -1,0 +1,61 @@
+.usercard__wrapper {
+	position: fixed;
+
+	z-index: 14;
+	top: 0;
+	left: 0;
+
+	width: 100%;
+	height: 100%;
+
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+.usercard {
+	position: absolute;
+
+	z-index: 15;
+
+	top: 40%;
+	left: 45%;
+
+	border-radius: 5px;
+
+	background-color: #F4F5F7;
+}
+
+.usercard__header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	padding: 10px;
+}
+
+.usercard__header-username {
+	font-weight: 600;
+}
+
+.usercard__info {
+	padding: 10px;
+}
+
+.usercard__header-close {
+	padding: 5px 8px;
+
+	border-radius: 50%;
+	background-color: rgb(226, 226, 226);
+}
+
+.usercard__header-close:hover {
+	cursor: pointer;
+
+	background-color: rgba(9, 30, 66, 0.205);
+}
+
+@media (max-width: 800px) {
+	.usercard {
+		top: 20%;
+		left: 10%;
+	}
+}

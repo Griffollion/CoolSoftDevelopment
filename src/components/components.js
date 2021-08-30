@@ -1,37 +1,36 @@
 import { Button } from "./Buttons/Button";
 import { NewCard } from "./NewCard/NewCard";
 import { Data } from "./Data/Data";
-import { createCard } from "./Card/Card";
+import { CreateCard } from "./Card/Card";
 import { EventCard } from "./EventCard/EventCard";
 import { LimitCard } from "./LimitCard/LimitCard";
 import { MenuCard } from "./MenuCard/MenuCard";
 import { DataCard, getInputDataValue } from "./DataCard/DataCard";
-import {
-  GetDataFromServer,
-  CreateUsersTemplate,
-} from "./UserSearch/UserSearch";
+import { UserCard } from "./UserCard/UserCard";
+import { UsersSearch } from "./UserSearch/UserSearch";
 import { addArea, cancelArea, saveValue } from "../initUserInterface";
 import { callDeleteCard, callEventMenu } from "../removing";
 import { callEventWindow } from "../moving/";
+import {
+  GetDataFromServer,
+  catchUser,
+  catchUserInModalCard,
+} from "../usersAction/";
+import { func } from "assert-plus";
 
 // создание списков todo, in progress, done
 
 export function loadCards() {
-  const cardToDo = new createCard("todo");
+  const cardToDo = new CreateCard("todo");
   cardToDo.render();
 
-  const cardInProgress = new createCard("in_progress");
+  const cardInProgress = new CreateCard("in_progress");
   cardInProgress.render();
 
-  const cardDone = new createCard("done");
+  const cardDone = new CreateCard("done");
   cardDone.render();
 
-  const cardButton = new Button(
-    "",
-    ".card__button",
-    "+ Добавить",
-    addArea
-  );
+  const cardButton = new Button("", ".card__button", "+ Добавить", addArea);
   cardButton.render();
 
   const cancelButton = new Button("", ".card__button", "отмена", cancelArea);
@@ -105,6 +104,8 @@ export function loadNewCard(obj) {
   saveValue(".textarea-description", obj, "description");
   saveValue(".textarea-actions", obj, "comment");
   saveValue(".new__card-header-name", obj, "title");
+
+  catchUser(obj);
 }
 
 function closeNewCard() {
@@ -130,21 +131,42 @@ function closeDataCard() {
 // вызов окна с участниками
 
 function getUsersSearch(obj) {
-  const loadUsersTemplate = new CreateUsersTemplate();
-  loadUsersTemplate.render();
-  GetDataFromServer(obj);
+  GetDataFromServer().then((data) => {
+    const cardUsersSearch = new UsersSearch(data);
+    cardUsersSearch.render();
 
-  const closeModalFromExit = document.querySelector(
-    ".user-search__header--exit"
-  );
-  const closeVodalFromOverlay = document.querySelector(".overlay");
+    catchUserInModalCard(obj);
 
-  closeModalFromExit.addEventListener("click", ToCloseModalUsersTemplate);
-  closeVodalFromOverlay.addEventListener("click", ToCloseModalUsersTemplate);
+    const closeModalFromExit = document.querySelector(
+      ".user-search__header--exit"
+    );
+    closeModalFromExit.addEventListener("click", ToCloseModalUsersTemplate);
+  });
 }
 
 function ToCloseModalUsersTemplate() {
   document.querySelector(".popup__users-template").remove();
+}
+
+// вызов модального окна участника задачи
+
+export function createUserCard(obj, data, title, callback) {
+  const cardUser = new UserCard(data);
+  cardUser.render();
+
+  const cardUserButton = new Button(
+    "",
+    ".usercard__button",
+    title,
+    callback,
+    obj,
+    data
+  );
+  cardUserButton.render();
+
+  document.querySelector(".usercard__header-close").onclick = () => {
+    document.querySelector(".usercard__wrapper").remove();
+  };
 }
 
 // вызов модального окна на лимит задач
